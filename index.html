@@ -3,9 +3,12 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Central interna de acessos e suporte da EVEN IMOB" />
   <title>Plataforma EVEN IMOB</title>
 
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   <script src="https://cdn.tailwindcss.com"></script>
 
   <script>
@@ -17,238 +20,664 @@
         extend: {
           colors: {
             primary: '#002D28',
-            evenmore: '#002D28',
-            evenvendas: '#002D28',
+            primaryDark: '#001F1C',
+            primaryLight: '#E7F1EF',
           },
-        }
-      }
-    }
+          boxShadow: {
+            card: '0 20px 50px rgba(0, 0, 0, 0.18)',
+          },
+        },
+      },
+    };
   </script>
 
   <style>
-    .animate-fade-in { animation: fadeIn 0.6s ease-in-out; }
+    html { scroll-behavior: smooth; }
+
+    body {
+      background: linear-gradient(to bottom, #002D28, #000000);
+    }
+
+    .animate-fade-in { animation: fadeIn .45s ease both; }
+    .animate-pop { animation: pop .25s ease both; }
+
     @keyframes fadeIn {
-      from { opacity: 0; transform: translateY(20px); }
+      from { opacity: 0; transform: translateY(14px); }
       to { opacity: 1; transform: translateY(0); }
     }
-    .toast {
-      position: fixed; top: 20px; right: 20px; background: #002D28; color: white;
-      padding: 12px 20px; border-radius: 12px; box-shadow: 0 8px 20px rgba(0,0,0,0.2);
-      opacity: 0; transition: 0.3s; z-index: 9999;
+
+    @keyframes pop {
+      from { opacity: 0; transform: scale(.96); }
+      to { opacity: 1; transform: scale(1); }
     }
-    .toast.show { opacity: 1; }
-    @media (max-width: 768px) {
-      .text-5xl { font-size: 2.5rem; }
-      .text-2xl { font-size: 1.5rem; }
-      .p-8 { padding: 2rem; }
-      .gap-4 { gap: 1rem; }
-      .max-w-md { max-width: 100%; }
+
+    .toast {
+      position: fixed;
+      top: 20px;
+      right: 20px;
+      max-width: min(360px, calc(100vw - 32px));
+      background: #002D28;
+      color: white;
+      padding: 12px 16px;
+      border-radius: 12px;
+      box-shadow: 0 14px 30px rgba(0,0,0,.25);
+      opacity: 0;
+      visibility: hidden;
+      transform: translateY(-8px);
+      transition: .25s ease;
+      z-index: 100;
+      font-size: .875rem;
+      font-weight: 600;
+    }
+
+    .toast.show {
+      opacity: 1;
+      visibility: visible;
+      transform: translateY(0);
+    }
+
+    .modal-backdrop { backdrop-filter: blur(4px); }
+
+    .focus-ring:focus-visible {
+      outline: none;
+      box-shadow: 0 0 0 4px rgba(0,45,40,.18);
+    }
+
+    @media (max-width: 640px) {
+      .toast { top: 12px; right: 12px; }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after {
+        scroll-behavior: auto !important;
+        animation-duration: .01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: .01ms !important;
+      }
     }
   </style>
 </head>
-<body class="bg-gradient-to-b from-[#002D28] to-black min-h-screen flex flex-col items-center justify-center p-4 font-sans">
 
-  <div id="toast" class="toast">Copiado com sucesso!</div>
+<body class="min-h-screen px-4 py-8 font-sans text-gray-900 sm:py-12">
+  <div id="toast" class="toast" role="status" aria-live="polite">Ação concluída.</div>
 
-  <div id="selecao-empresa" class="bg-white shadow-2xl rounded-2xl p-8 max-w-md w-full animate-fade-in">
-    <div class="flex justify-center mb-6"><img src="logo.png" width="200"></div>
-    <h1 class="text-2xl font-extrabold text-primary text-center mb-4">Prezado corretor associado,<br>bem-vindo à plataforma Imob</h1>
-    <p class="text-center text-sm text-gray-600 mb-6">Escolha a empresa à qual você pertence:</p>
-    <div class="flex flex-col gap-4">
-      <button onclick="selecionarEmpresa('evenmore')" class="w-full bg-evenmore text-white font-semibold py-2 rounded-lg hover:opacity-90 transition-all duration-300 transform hover:scale-105">Even More</button>
-      <button onclick="selecionarEmpresa('evenvendas')" class="w-full bg-evenvendas text-white font-semibold py-2 rounded-lg hover:opacity-90 transition-all duration-300 transform hover:scale-105">Even Vendas</button>
-      <button onclick="abrirModalSuporte()" class="w-full bg-gray-400 text-white text-sm font-medium py-2 rounded-lg hover:bg-gray-500 transition-all duration-300">Falar com o Suporte</button>
+  <main class="mx-auto flex min-h-[calc(100vh-6rem)] w-full max-w-md flex-col justify-center">
 
-    </div>
-  </div>
-
-  <div id="plataforma" class="hidden bg-white shadow-2xl rounded-2xl p-8 max-w-md w-full animate-fade-in">
-    <div class="flex justify-between items-center mb-6">
-      <h1 id="tituloEmpresa" class="text-5xl font-extrabold tracking-wide drop-shadow-sm">EVEN</h1>
-      <button onclick="voltarInicio()" class="text-sm text-primary underline hover:text-primary/80 transition">← Voltar</button>
-    </div>
-
-    <h1 id="subtituloEmpresa" class="text-2xl font-extrabold text-center mb-4">Bem-vindo à Plataforma</h1>
-
-    <label class="block text-sm font-semibold text-gray-700 mb-2">Digite seu apelido:</label>
-    <input id="apelido" type="text" placeholder="Ex: Apelido" class="w-full p-2 border rounded-lg mb-4 focus:outline-none focus:ring-2 focus:ring-primary" onkeydown="if(event.key==='Enter') gerarInfo()">
-
-    <button onclick="gerarInfo()" class="w-full bg-primary text-white font-semibold py-2 rounded-lg hover:bg-opacity-90 transition-all duration-300 transform hover:scale-105">Gerar Informações</button>
-
-    <div id="resultado" class="mt-6 hidden animate-fade-in">
-      <h2 class="text-xl font-bold text-primary mb-2">Acessos Gerados:</h2>
-      <ul id="linksAcesso" class="space-y-3"></ul>
-      <button onclick="copiarCredenciais()" class="mt-4 w-full bg-green-600 text-white py-2 rounded-lg hover:bg-green-700 transition">Copiar Credenciais</button>
-
-      <div id="avisoTTI" class="mt-4 bg-red-100 text-red-800 border border-red-300 rounded-lg p-3 text-sm font-semibold flex items-center gap-2 animate-pulse hidden">⚠ Autônomos com perfil TTI (Autônomos associado) não possuem acesso ao e-mail corporativo.</div>
-
-      <div class="mt-2 bg-yellow-100 text-yellow-800 border border-yellow-300 rounded-lg p-3 text-sm font-semibold flex items-center gap-2 animate-fade-in">ℹ️ O e-mail e a senha informados são válidos para todas as plataformas acima. (É necessário fazer a alteração de todas as senhas das plataformas)</div>
-
-      <div class="mt-2 bg-red-100 text-red-800 border border-red-300 rounded-lg p-3 text-sm font-semibold flex items-center gap-2 animate-fade-in">⚠ Autônomos associados com perfil TTI não possuem acesso ao e-mail corporativo.</div>
-
-      <div class="mt-6 bg-primary text-white rounded-xl p-5 shadow-lg animate-fade-in">
-        <h2 class="text-xl font-bold mb-2">Central de Treinamentos - Even</h2>
-        <p class="text-sm mb-4">Para acessar os treinamentos da Even, clique no botão abaixo:</p>
-        <a href="https://evenbr-my.sharepoint.com/:f:/g/personal/rnetto_even_com_br/ElfwG_h4zchFmFfFhvPhUO8BPY5t8nrmex1Z2XwtjmGUEw?e=GiMO3d" target="_blank" rel="noopener noreferrer" class="inline-block bg-primary hover:bg-[#001F1C] transition px-4 py-2 rounded-md font-semibold">Acessar Treinamentos</a>
+    <!-- TELA INICIAL -->
+    <section id="selecao-empresa" class="animate-fade-in rounded-2xl bg-white p-6 shadow-card sm:p-8">
+      <div class="mb-6 flex justify-center">
+        <img src="logo.png" width="200" alt="Logo da EVEN IMOB" class="h-auto max-w-[200px]" />
       </div>
-    </div>
-  </div>
 
-
-  <!-- Ajuda flutuante do Hypnobox -->
-  <a
-    href="https://documentacao.senior.com.br/hypnobox/manual-do-usuario/sobre-ferramenta/sobre-hypnobox/"
-    target="_blank"
-    rel="noopener noreferrer"
-    aria-label="Abrir manual oficial do Hypnobox"
-    title="Abrir manual oficial do Hypnobox"
-    class="fixed bottom-5 right-5 z-40 group flex items-center gap-3 bg-primary text-white rounded-full shadow-2xl p-3 sm:py-3 sm:px-4 hover:bg-[#001F1C] hover:-translate-y-1 transition-all duration-300 focus:outline-none focus:ring-4 focus:ring-white/40"
-  >
-    <span class="relative flex h-11 w-11 shrink-0 items-center justify-center rounded-full bg-white/15">
-      <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" aria-hidden="true">
-        <path stroke-linecap="round" stroke-linejoin="round" d="M8.25 6.75h7.5M8.25 10.5h7.5m-7.5 3.75h4.5M6 3.75h12A2.25 2.25 0 0 1 20.25 6v12A2.25 2.25 0 0 1 18 20.25H6A2.25 2.25 0 0 1 3.75 18V6A2.25 2.25 0 0 1 6 3.75Z" />
-      </svg>
-      <span class="absolute -right-1 -top-1 flex h-5 w-5 items-center justify-center rounded-full bg-white text-[11px] font-extrabold text-primary shadow">?</span>
-    </span>
-
-    <span class="hidden sm:block pr-2 text-left leading-tight">
-      <span class="block text-sm font-bold">Dúvidas no Hypnobox?</span>
-      <span class="block text-xs font-normal text-white/75">Acesse o manual oficial</span>
-    </span>
-  </a>
-  <div id="modalSuporte" class="fixed inset-0 bg-black/50 hidden items-center justify-center z-50">
-    <div class="bg-white rounded-xl p-6 w-full max-w-md animate-fade-in shadow-2xl">
-      <h2 class="text-xl font-bold text-primary mb-4">Como podemos ajudar?</h2>
-      <p class="text-sm text-gray-600 mb-4">Escolha o tipo de suporte:</p>
-      <div class="flex flex-col gap-3">
-        <button onclick="abrirEmailSuporte('Redefinição de senha')" class="bg-primary text-white py-2 rounded-lg hover:opacity-90 transition">Redefinição de senha</button>
-        <button onclick="abrirEmailSuporte('Ajuda com plataforma')" class="bg-primary text-white py-2 rounded-lg hover:opacity-90 transition">Ajuda com plataforma</button>
-        <button onclick="abrirEmailSuporte('Reportar erro')" class="bg-primary text-white py-2 rounded-lg hover:opacity-90 transition">Reportar erro</button>
-        <button onclick="abrirEmailSuporte('Outro assunto')" class="bg-gray-400 text-white py-2 rounded-lg hover:bg-gray-500 transition">Outro assunto</button>
+      <div class="text-center">
+        <p class="mb-2 text-xs font-bold uppercase tracking-[.18em] text-primary/60">Central de acessos</p>
+        <h1 class="text-2xl font-extrabold leading-tight text-primary sm:text-3xl">
+          Bem-vindo à Plataforma Imob
+        </h1>
+        <p class="mt-3 text-sm leading-relaxed text-gray-600">
+          Escolha sua empresa para gerar os acessos e consultar as plataformas disponíveis.
+        </p>
       </div>
-      <button onclick="fecharModalSuporte()" class="mt-4 text-sm underline w-full text-gray-600 hover:text-primary">Cancelar</button>
-    </div>
-  </div>
 
-  <div class="mt-6 text-center animate-fade-in">
-    <p class="text-xs text-gray-400">Desenvolvido por TI · Plataforma Interna EVEN</p>
+      <div class="mt-7 grid gap-3">
+        <button type="button" onclick="selecionarEmpresa('evenmore')"
+          class="focus-ring group flex w-full items-center justify-between rounded-xl bg-primary px-5 py-4 text-left text-white transition hover:-translate-y-0.5 hover:bg-primaryDark hover:shadow-lg">
+          <span>
+            <span class="block text-base font-bold">Even More</span>
+            <span class="block text-xs text-white/70">Acessos da operação Even More</span>
+          </span>
+          <span class="text-xs font-bold uppercase tracking-wide text-white/70">Selecionar</span>
+        </button>
+
+        <button type="button" onclick="selecionarEmpresa('evenvendas')"
+          class="focus-ring group flex w-full items-center justify-between rounded-xl bg-primary px-5 py-4 text-left text-white transition hover:-translate-y-0.5 hover:bg-primaryDark hover:shadow-lg">
+          <span>
+            <span class="block text-base font-bold">Even Vendas</span>
+            <span class="block text-xs text-white/70">Acessos da operação Even Vendas</span>
+          </span>
+          <span class="text-xs font-bold uppercase tracking-wide text-white/70">Selecionar</span>
+        </button>
+
+        <button type="button" onclick="abrirModalSuporte()"
+          class="focus-ring flex w-full items-center justify-center rounded-xl bg-gray-400 px-5 py-3 text-sm font-semibold text-white transition hover:bg-gray-500">
+          Falar com o Suporte
+        </button>
+      </div>
+
+    </section>
+
+    <!-- TELA DA EMPRESA -->
+    <section id="plataforma" class="hidden animate-fade-in rounded-2xl bg-white p-5 shadow-card sm:p-8">
+      <header class="mb-6 flex items-start justify-between gap-4">
+        <div>
+          <span id="badgeEmpresa" class="inline-flex rounded-full bg-primaryLight px-3 py-1 text-xs font-bold uppercase tracking-wide text-primary">
+            Empresa selecionada
+          </span>
+          <h1 id="tituloEmpresa" class="mt-3 text-3xl font-extrabold tracking-tight text-primary sm:text-4xl">EVEN</h1>
+          <p id="subtituloEmpresa" class="mt-1 text-sm text-gray-600">Central de acessos</p>
+        </div>
+
+        <button type="button" onclick="voltarInicio()"
+          class="focus-ring rounded-lg px-3 py-2 text-sm font-semibold text-primary transition hover:bg-primaryLight">
+          Voltar
+        </button>
+      </header>
+
+      <div class="space-y-5">
+        <div>
+          <label for="apelido" class="mb-2 block text-sm font-bold text-gray-700">Digite seu apelido</label>
+          <input id="apelido" type="text" inputmode="text" autocomplete="off" maxlength="40"
+            placeholder="Ex.: seu.apelido"
+            aria-describedby="ajudaApelido erroApelido"
+            class="focus-ring w-full rounded-xl border border-gray-300 px-4 py-3 text-sm text-gray-800 transition placeholder:text-gray-400 focus:border-primary" />
+          <p id="ajudaApelido" class="mt-2 text-xs text-gray-500">
+            Use somente letras, números, ponto, hífen ou sublinhado. Não digite o domínio do e-mail.
+          </p>
+          <p id="erroApelido" class="mt-2 hidden text-xs font-semibold text-red-600" role="alert"></p>
+        </div>
+
+        <button type="button" onclick="gerarInfo()"
+          class="focus-ring w-full rounded-xl bg-primary px-5 py-3 font-bold text-white transition hover:-translate-y-0.5 hover:bg-primaryDark hover:shadow-lg">
+          Gerar informações de acesso
+        </button>
+      </div>
+
+      <section id="resultado" class="mt-7 hidden animate-fade-in" aria-live="polite">
+        <div class="mb-4">
+          <p class="text-xs font-bold uppercase tracking-[.15em] text-primary/60">Resultado</p>
+          <h2 class="text-xl font-extrabold text-primary">Informações de acesso</h2>
+        </div>
+
+        <!-- CREDENCIAIS -->
+        <div class="rounded-2xl border border-gray-200 bg-gray-50 p-4">
+          <div id="linhaEmail" class="flex items-center justify-between gap-3 border-b border-gray-200 pb-4">
+            <div class="min-w-0">
+              <span class="block text-xs font-bold uppercase tracking-wide text-gray-500">E-mail corporativo</span>
+              <span id="emailGerado" class="mt-1 block break-all text-sm font-semibold text-gray-900"></span>
+            </div>
+            <button id="botaoCopiarEmail" type="button" onclick="copiarEmail()"
+              class="focus-ring shrink-0 rounded-lg bg-white px-3 py-2 text-xs font-bold text-primary shadow-sm ring-1 ring-gray-200 transition hover:bg-primaryLight disabled:cursor-not-allowed disabled:opacity-40 disabled:hover:bg-white">
+              Copiar
+            </button>
+          </div>
+
+          <div class="flex items-center justify-between gap-3 pt-4">
+            <div class="min-w-0">
+              <span class="block text-xs font-bold uppercase tracking-wide text-gray-500">Senha temporária</span>
+              <span id="senhaGerada" class="mt-1 block font-mono text-sm font-bold tracking-wider text-gray-900">••••••••••</span>
+            </div>
+
+            <div class="flex shrink-0 gap-2">
+              <button id="botaoMostrarSenha" type="button" onclick="alternarSenha()"
+                class="focus-ring rounded-lg bg-white px-3 py-2 text-xs font-bold text-gray-700 shadow-sm ring-1 ring-gray-200 transition hover:bg-gray-100"
+                aria-pressed="false">
+                Mostrar
+              </button>
+              <button type="button" onclick="copiarSenha()"
+                class="focus-ring rounded-lg bg-white px-3 py-2 text-xs font-bold text-primary shadow-sm ring-1 ring-gray-200 transition hover:bg-primaryLight">
+                Copiar
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <button id="botaoCopiarCredenciais" type="button" onclick="copiarCredenciais()"
+          class="focus-ring mt-3 w-full rounded-xl bg-primary px-4 py-3 text-sm font-bold text-white transition hover:bg-primaryDark">
+          Copiar todas as credenciais
+        </button>
+
+        <!-- AVISOS -->
+        <div id="avisoTTI" class="mt-4 rounded-xl border border-red-200 bg-red-50 p-4 text-sm text-red-800">
+          <p class="font-bold">Atenção para corretores TTI</p>
+          <p class="mt-1 text-xs leading-relaxed">
+            Autônomos associados com perfil TTI não possuem acesso ao e-mail corporativo. Em caso de dúvida, entre em contato com o suporte.
+          </p>
+        </div>
+
+        <div class="mt-3 rounded-xl border border-amber-200 bg-amber-50 p-4 text-sm text-amber-900">
+          <p class="text-xs leading-relaxed">
+            A senha exibida é temporária. Altere a senha em cada plataforma no primeiro acesso, quando solicitado.
+          </p>
+        </div>
+
+        <!-- PLATAFORMAS -->
+        <div class="mt-6">
+          <h3 class="mb-3 text-sm font-extrabold text-gray-800">Plataformas disponíveis</h3>
+          <div id="cardsAcesso" class="grid gap-3"></div>
+        </div>
+      </section>
+    </section>
+
+    <footer class="mt-6 text-center">
+      <p class="text-xs text-white/45">Desenvolvido por TI · Plataforma Interna EVEN</p>
+    </footer>
+  </main>
+
+  <!-- BOTÃO FLUTUANTE DE AJUDA -->
+  <button id="botaoAjuda" type="button" onclick="alternarCentralAjuda()"
+    class="focus-ring fixed bottom-5 right-5 z-40 flex items-center gap-3 rounded-full bg-primary px-3 py-3 text-white shadow-2xl transition hover:-translate-y-1 hover:bg-primaryDark sm:px-4"
+    aria-expanded="false" aria-controls="centralAjuda" aria-label="Abrir Central de Ajuda">
+    <span class="relative flex h-11 w-11 items-center justify-center rounded-full bg-white/15 text-xl" aria-hidden="true">
+?
+    </span>
+    <span class="hidden text-left leading-tight sm:block">
+      <span class="block text-sm font-bold">Precisa de ajuda?</span>
+      <span class="block text-xs text-white/70">Central de Ajuda</span>
+    </span>
+  </button>
+
+  <!-- CENTRAL DE AJUDA -->
+  <aside id="centralAjuda"
+    class="fixed bottom-24 right-4 z-40 hidden w-[calc(100vw-2rem)] max-w-sm animate-pop rounded-2xl bg-white p-4 shadow-2xl ring-1 ring-black/5 sm:right-5"
+    aria-label="Central de Ajuda">
+    <div class="mb-3 flex items-start justify-between gap-3">
+      <div>
+        <p class="text-xs font-bold uppercase tracking-[.15em] text-primary/60">Central de Ajuda</p>
+        <h2 class="text-lg font-extrabold text-primary">Como podemos ajudar?</h2>
+      </div>
+      <button type="button" onclick="fecharCentralAjuda()" class="rounded-lg p-2 text-gray-500 hover:bg-gray-100" aria-label="Fechar Central de Ajuda">✕</button>
+    </div>
+
+    <div class="grid gap-2">
+      <a href="https://documentacao.senior.com.br/hypnobox/manual-do-usuario/sobre-ferramenta/sobre-hypnobox/"
+        target="_blank" rel="noopener noreferrer"
+        class="group flex items-center justify-between rounded-xl border border-gray-200 p-4 transition hover:border-primary/30 hover:bg-primaryLight">
+        <span>
+          <span class="block text-sm font-bold text-gray-900">Manual do Hypnobox</span>
+          <span class="mt-1 block text-xs text-gray-500">Consulte a documentação oficial da plataforma</span>
+        </span>
+        <span class="rounded-lg bg-primaryLight px-3 py-2 text-xs font-bold text-primary">Acessar</span>
+      </a>
+
+      <a href="https://evenbr-my.sharepoint.com/:f:/g/personal/rnetto_even_com_br/ElfwG_h4zchFmFfFhvPhUO8BPY5t8nrmex1Z2XwtjmGUEw?e=GiMO3d"
+        target="_blank" rel="noopener noreferrer"
+        class="group flex items-center justify-between rounded-xl border border-gray-200 p-4 transition hover:border-primary/30 hover:bg-primaryLight">
+        <span>
+          <span class="block text-sm font-bold text-gray-900">Central de Treinamentos</span>
+          <span class="mt-1 block text-xs text-gray-500">Acesse os materiais e orientações da EVEN</span>
+        </span>
+        <span class="rounded-lg bg-primaryLight px-3 py-2 text-xs font-bold text-primary">Acessar</span>
+      </a>
+
+      <button type="button" onclick="abrirModalSuporte(); fecharCentralAjuda();"
+        class="group flex w-full items-center justify-between rounded-xl border border-gray-200 p-4 text-left transition hover:border-primary/30 hover:bg-primaryLight">
+        <span>
+          <span class="block text-sm font-bold text-gray-900">Abrir chamado</span>
+          <span class="mt-1 block text-xs text-gray-500">Envie uma solicitação completa ao suporte</span>
+        </span>
+        <span class="rounded-lg bg-primaryLight px-3 py-2 text-xs font-bold text-primary">Abrir</span>
+      </button>
+    </div>
+
+    <details class="mt-3 rounded-xl bg-gray-50 px-4 py-3">
+      <summary class="cursor-pointer text-sm font-bold text-gray-800">Dúvidas rápidas</summary>
+      <div class="mt-3 space-y-3 text-xs leading-relaxed text-gray-600">
+        <p><strong class="text-gray-800">Esqueci minha senha:</strong> utilize “Abrir chamado” e selecione “Redefinição de senha”.</p>
+        <p><strong class="text-gray-800">Erro no Hypnobox:</strong> consulte primeiro o manual oficial e, se persistir, envie um chamado com a mensagem do erro.</p>
+        <p><strong class="text-gray-800">E-mail não funciona:</strong> confirme a empresa selecionada. Corretores TTI não possuem e-mail corporativo.</p>
+      </div>
+    </details>
+  </aside>
+
+  <!-- MODAL DE SUPORTE -->
+  <div id="modalSuporte" class="modal-backdrop fixed inset-0 z-50 hidden items-center justify-center bg-black/55 p-4" role="dialog" aria-modal="true" aria-labelledby="tituloModalSuporte">
+    <div id="conteudoModalSuporte" class="animate-pop max-h-[90vh] w-full max-w-lg overflow-y-auto rounded-2xl bg-white p-5 shadow-2xl sm:p-6">
+      <div class="mb-5 flex items-start justify-between gap-4">
+        <div>
+          <p class="text-xs font-bold uppercase tracking-[.15em] text-primary/60">Suporte EVEN IMOB</p>
+          <h2 id="tituloModalSuporte" class="text-xl font-extrabold text-primary">Abrir solicitação</h2>
+          <p class="mt-1 text-sm text-gray-600">Preencha os dados para gerar um e-mail mais completo.</p>
+        </div>
+        <button type="button" onclick="fecharModalSuporte()" class="rounded-lg p-2 text-gray-500 hover:bg-gray-100" aria-label="Fechar suporte">✕</button>
+      </div>
+
+      <form id="formSuporte" onsubmit="enviarEmailSuporte(event)" class="space-y-4">
+        <div>
+          <label for="tipoSuporte" class="mb-2 block text-sm font-bold text-gray-700">Tipo da solicitação</label>
+          <select id="tipoSuporte" required class="focus-ring w-full rounded-xl border border-gray-300 px-4 py-3 text-sm focus:border-primary">
+            <option value="">Selecione</option>
+            <option>Redefinição de senha</option>
+            <option>Ajuda com plataforma</option>
+            <option>Reportar erro</option>
+            <option>Outro assunto</option>
+          </select>
+        </div>
+
+        <div>
+          <label for="plataformaSuporte" class="mb-2 block text-sm font-bold text-gray-700">Plataforma</label>
+          <select id="plataformaSuporte" required class="focus-ring w-full rounded-xl border border-gray-300 px-4 py-3 text-sm focus:border-primary">
+            <option value="">Selecione</option>
+            <option>Webmail</option>
+            <option>Hypnobox</option>
+            <option>Portal do Corretor</option>
+            <option>SIGAV</option>
+            <option>Outra</option>
+          </select>
+        </div>
+
+        <div class="grid gap-4 sm:grid-cols-2">
+          <div>
+            <label for="empresaSuporte" class="mb-2 block text-sm font-bold text-gray-700">Empresa</label>
+            <input id="empresaSuporte" type="text" placeholder="Even More ou Even Vendas"
+              class="focus-ring w-full rounded-xl border border-gray-300 px-4 py-3 text-sm focus:border-primary" />
+          </div>
+          <div>
+            <label for="apelidoSuporte" class="mb-2 block text-sm font-bold text-gray-700">Apelido</label>
+            <input id="apelidoSuporte" type="text" placeholder="Seu apelido"
+              class="focus-ring w-full rounded-xl border border-gray-300 px-4 py-3 text-sm focus:border-primary" />
+          </div>
+        </div>
+
+        <div>
+          <label for="descricaoSuporte" class="mb-2 block text-sm font-bold text-gray-700">Descreva o problema</label>
+          <textarea id="descricaoSuporte" rows="4" required placeholder="Informe o que aconteceu e, se possível, a mensagem apresentada na tela."
+            class="focus-ring w-full resize-y rounded-xl border border-gray-300 px-4 py-3 text-sm focus:border-primary"></textarea>
+        </div>
+
+        <div class="flex flex-col-reverse gap-2 sm:flex-row sm:justify-end">
+          <button type="button" onclick="fecharModalSuporte()"
+            class="focus-ring rounded-xl border border-gray-300 px-5 py-3 text-sm font-bold text-gray-700 hover:bg-gray-50">
+            Cancelar
+          </button>
+          <button type="submit"
+            class="focus-ring rounded-xl bg-primary px-5 py-3 text-sm font-bold text-white hover:bg-primaryDark">
+            Gerar e-mail para o suporte
+          </button>
+        </div>
+      </form>
+    </div>
   </div>
 
   <script>
     let empresaSelecionada = '';
+    let emailAtual = '';
+    let senhaVisivel = false;
+    let toastTimer;
+
     const senhaPadrao = 'Even@2026';
 
     const empresas = {
       evenmore: {
-        nome: 'Even More', dominio: 'emci.com.br',
+        nome: 'Even More',
+        dominio: 'emci.com.br',
         links: [
           { nome: 'Webmail', url: 'http://webmail.emci.com.br' },
           { nome: 'Hypnobox', url: 'https://evenmore.hypnobox.com.br' },
           { nome: 'Portal do Corretor', url: 'http://corretor.even.com.br' },
-          { nome: 'SIGAV', url: 'https://sigav.even.com.br' }
-        ]
+          { nome: 'SIGAV', url: 'https://sigav.even.com.br' },
+        ],
       },
       evenvendas: {
-        nome: 'Even Vendas', dominio: 'evci.com.br',
+        nome: 'Even Vendas',
+        dominio: 'evci.com.br',
         links: [
           { nome: 'Webmail', url: 'http://webmail.evci.com.br' },
           { nome: 'Hypnobox', url: 'https://even.hypnobox.com.br' },
           { nome: 'Portal do Corretor', url: 'http://corretor.even.com.br' },
-          { nome: 'SIGAV', url: 'https://sigav.even.com.br' }
-        ]
-      }
+          { nome: 'SIGAV', url: 'https://sigav.even.com.br' },
+        ],
+      },
     };
 
+    const el = (id) => document.getElementById(id);
+
     function selecionarEmpresa(empresa) {
+      if (!empresas[empresa]) return;
+
       empresaSelecionada = empresa;
-      document.getElementById('selecao-empresa').classList.add('hidden');
-      document.getElementById('plataforma').classList.remove('hidden');
-      document.getElementById('tituloEmpresa').textContent = empresas[empresa].nome;
-      document.getElementById('subtituloEmpresa').textContent = `Bem-vindo à Plataforma ${empresas[empresa].nome}`;
+      el('selecao-empresa').classList.add('hidden');
+      el('plataforma').classList.remove('hidden');
+      el('tituloEmpresa').textContent = empresas[empresa].nome;
+      el('subtituloEmpresa').textContent = `Central de acessos da ${empresas[empresa].nome}`;
+      el('badgeEmpresa').textContent = empresas[empresa].nome;
+
+      el('empresaSuporte').value = empresas[empresa].nome;
+      el('apelido').focus();
+      window.scrollTo({ top: 0, behavior: 'smooth' });
     }
 
     function voltarInicio() {
-      document.getElementById('plataforma').classList.add('hidden');
-      document.getElementById('selecao-empresa').classList.remove('hidden');
-      document.getElementById('resultado').classList.add('hidden');
-      document.getElementById('apelido').value = '';
-      document.getElementById('avisoTTI').classList.add('hidden');
+      el('plataforma').classList.add('hidden');
+      el('selecao-empresa').classList.remove('hidden');
+      limparResultado();
+      fecharCentralAjuda();
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+
+    function limparResultado() {
+      el('resultado').classList.add('hidden');
+      el('apelido').value = '';
+      el('erroApelido').classList.add('hidden');
+      el('erroApelido').textContent = '';
+      el('cardsAcesso').replaceChildren();
+      emailAtual = '';
+      senhaVisivel = false;
+      atualizarExibicaoSenha();
+    }
+
+    function normalizarApelido(valor) {
+      return valor.trim().toLowerCase();
+    }
+
+    function validarApelido(apelido) {
+      if (!apelido) return 'Digite seu apelido antes de continuar.';
+      if (apelido.includes('@')) return 'Digite somente o apelido, sem o domínio do e-mail.';
+      if (apelido.includes(' ')) return 'O apelido não pode conter espaços.';
+      if (!/^[a-z0-9._-]+$/.test(apelido)) return 'Use somente letras, números, ponto, hífen ou sublinhado.';
+      if (apelido.length < 2) return 'Digite um apelido válido.';
+      return '';
     }
 
     function gerarInfo() {
-      const apelido = document.getElementById('apelido').value.trim().toLowerCase();
-      if (!apelido) return;
+      if (!empresaSelecionada || !empresas[empresaSelecionada]) {
+        mostrarToast('Selecione uma empresa primeiro.', 'erro');
+        return;
+      }
+
+      const apelido = normalizarApelido(el('apelido').value);
+      const erro = validarApelido(apelido);
+
+      el('apelido').value = apelido;
+
+      if (erro) {
+        el('erroApelido').textContent = erro;
+        el('erroApelido').classList.remove('hidden');
+        el('resultado').classList.add('hidden');
+        el('apelido').focus();
+        return;
+      }
+
+      el('erroApelido').classList.add('hidden');
+      el('erroApelido').textContent = '';
+
       const empresa = empresas[empresaSelecionada];
-      const email = `${apelido}@${empresa.dominio}`;
-      const isTTI = apelido.includes('tti');
-      const lista = document.getElementById('linksAcesso');
+      emailAtual = `${apelido}@${empresa.dominio}`;
 
-      lista.innerHTML = `
-        <li><span class="font-semibold text-gray-700">E-mail:</span> <span class="text-gray-800">${email}</span></li>
-        <li><span class="font-semibold text-gray-700">Senha:</span> <span class="text-gray-800">${senhaPadrao}</span></li>`;
+      el('emailGerado').textContent = emailAtual;
+      el('linhaEmail').classList.remove('opacity-60');
+      el('botaoCopiarEmail').disabled = false;
+      el('botaoCopiarCredenciais').textContent = 'Copiar todas as credenciais';
 
-      empresa.links.forEach(link => {
-        lista.innerHTML += `<li><a href="${link.url}" target="_blank" class="flex items-center gap-2 text-primary hover:underline hover:pl-1 transition-all duration-200">${link.nome}</a></li>`;
+      el('apelidoSuporte').value = apelido;
+      renderizarCards(empresa.links);
+
+      senhaVisivel = false;
+      atualizarExibicaoSenha();
+      el('resultado').classList.remove('hidden');
+
+      requestAnimationFrame(() => {
+        el('resultado').scrollIntoView({ behavior: 'smooth', block: 'start' });
       });
+    }
 
-      document.getElementById('resultado').classList.remove('hidden');
-      document.getElementById('avisoTTI').classList.toggle('hidden', !isTTI);
+    function renderizarCards(links) {
+      const container = el('cardsAcesso');
+      container.replaceChildren();
+
+      links.forEach((link) => {
+        const ancora = document.createElement('a');
+        ancora.href = link.url;
+        ancora.target = '_blank';
+        ancora.rel = 'noopener noreferrer';
+        ancora.className = 'focus-ring group flex items-center justify-between rounded-xl border border-gray-200 bg-white px-4 py-4 transition hover:-translate-y-0.5 hover:border-primary/30 hover:bg-primaryLight hover:shadow-md';
+
+        const nome = document.createElement('span');
+        nome.className = 'text-sm font-extrabold text-gray-900';
+        nome.textContent = link.nome;
+
+        const acessar = document.createElement('span');
+        acessar.className = 'ml-3 shrink-0 rounded-lg bg-primaryLight px-3 py-2 text-xs font-bold text-primary transition group-hover:bg-primary group-hover:text-white';
+        acessar.textContent = 'Acessar';
+
+        ancora.append(nome, acessar);
+        container.appendChild(ancora);
+      });
+    }
+
+    function atualizarExibicaoSenha() {
+      el('senhaGerada').textContent = senhaVisivel ? senhaPadrao : '••••••••••';
+      el('botaoMostrarSenha').textContent = senhaVisivel ? 'Ocultar' : 'Mostrar';
+      el('botaoMostrarSenha').setAttribute('aria-pressed', String(senhaVisivel));
+    }
+
+    function alternarSenha() {
+      senhaVisivel = !senhaVisivel;
+      atualizarExibicaoSenha();
+    }
+
+    async function copiarTexto(texto, mensagem) {
+      if (!texto) {
+        mostrarToast('Não há informação disponível para copiar.', 'erro');
+        return;
+      }
+
+      try {
+        await navigator.clipboard.writeText(texto);
+        mostrarToast(mensagem);
+      } catch (erro) {
+        const area = document.createElement('textarea');
+        area.value = texto;
+        area.style.position = 'fixed';
+        area.style.opacity = '0';
+        document.body.appendChild(area);
+        area.select();
+
+        try {
+          document.execCommand('copy');
+          mostrarToast(mensagem);
+        } catch {
+          mostrarToast('O navegador bloqueou a cópia. Copie manualmente.', 'erro');
+        } finally {
+          area.remove();
+        }
+      }
+    }
+
+    function copiarEmail() {
+      copiarTexto(emailAtual, 'E-mail copiado com sucesso!');
+    }
+
+    function copiarSenha() {
+      copiarTexto(senhaPadrao, 'Senha temporária copiada com sucesso!');
     }
 
     function copiarCredenciais() {
-      const apelido = document.getElementById('apelido').value.trim().toLowerCase();
-      if (!apelido || !empresaSelecionada) {
-        mostrarToast('Gere as informações primeiro.');
+      if (!el('resultado').classList.contains('hidden')) {
+        const texto = `E-mail: ${emailAtual}\nSenha temporária: ${senhaPadrao}`;
+        copiarTexto(texto, 'Credenciais copiadas com sucesso!');
         return;
       }
-      const empresa = empresas[empresaSelecionada];
-      const email = `${apelido}@${empresa.dominio}`;
-      const credenciais = `E-mail: ${email}\nSenha: ${senhaPadrao}`;
-      navigator.clipboard.writeText(credenciais);
-      mostrarToast('E-mail e senha copiados com sucesso!');
+      mostrarToast('Gere as informações primeiro.', 'erro');
     }
 
-    function mostrarToast(msg) {
-      const toast = document.getElementById('toast');
-      toast.textContent = msg;
+    function mostrarToast(mensagem, tipo = 'sucesso') {
+      clearTimeout(toastTimer);
+      const toast = el('toast');
+      toast.textContent = mensagem;
+      toast.style.background = tipo === 'erro' ? '#991B1B' : '#002D28';
       toast.classList.add('show');
-      setTimeout(() => toast.classList.remove('show'), 2500);
+      toastTimer = setTimeout(() => toast.classList.remove('show'), 3000);
+    }
+
+    function alternarCentralAjuda() {
+      const painel = el('centralAjuda');
+      const abrir = painel.classList.contains('hidden');
+      painel.classList.toggle('hidden', !abrir);
+      el('botaoAjuda').setAttribute('aria-expanded', String(abrir));
+    }
+
+    function fecharCentralAjuda() {
+      el('centralAjuda').classList.add('hidden');
+      el('botaoAjuda').setAttribute('aria-expanded', 'false');
     }
 
     function abrirModalSuporte() {
-      const modal = document.getElementById('modalSuporte');
+      if (empresaSelecionada) {
+        el('empresaSuporte').value = empresas[empresaSelecionada].nome;
+        el('apelidoSuporte').value = normalizarApelido(el('apelido').value);
+      }
+
+      const modal = el('modalSuporte');
       modal.classList.remove('hidden');
       modal.classList.add('flex');
+      document.body.style.overflow = 'hidden';
+      setTimeout(() => el('tipoSuporte').focus(), 50);
     }
 
     function fecharModalSuporte() {
-      const modal = document.getElementById('modalSuporte');
+      const modal = el('modalSuporte');
       modal.classList.add('hidden');
       modal.classList.remove('flex');
+      document.body.style.overflow = '';
     }
 
-    function abrirEmailSuporte(tipo) {
-  const emailSuporte = 'tiimob@evenimob.com.br';
-  const assunto = `${tipo} - Even Imob`;
+    function enviarEmailSuporte(event) {
+      event.preventDefault();
 
-  const corpo = `Olá, preciso de suporte.
+      const tipo = el('tipoSuporte').value;
+      const plataforma = el('plataformaSuporte').value;
+      const empresa = el('empresaSuporte').value.trim() || 'Não informada';
+      const apelido = el('apelidoSuporte').value.trim() || 'Não informado';
+      const descricao = el('descricaoSuporte').value.trim();
 
-Tipo da solicitação: ${tipo}
-Empresa:
-Apelido:
+      const emailSuporte = 'tiimob@evenimob.com.br';
+      const assunto = `${tipo} - ${plataforma} - Even Imob`;
+      const corpo = `Olá, preciso de suporte.\n\nTipo da solicitação: ${tipo}\nPlataforma: ${plataforma}\nEmpresa: ${empresa}\nApelido: ${apelido}\n\nDescrição do problema:\n${descricao}\n\nObrigado.`;
 
-Descreva abaixo o problema:`;
+      window.location.href = `mailto:${emailSuporte}?subject=${encodeURIComponent(assunto)}&body=${encodeURIComponent(corpo)}`;
+      fecharModalSuporte();
+    }
 
-  window.location.href =
-    `mailto:${emailSuporte}?subject=${encodeURIComponent(assunto)}&body=${encodeURIComponent(corpo)}`;
-
-  fecharModalSuporte();
-}
-
-    document.getElementById('apelido').addEventListener('click', function () {
-      this.select();
-      navigator.clipboard.writeText(this.value);
+    el('apelido').addEventListener('keydown', (event) => {
+      if (event.key === 'Enter') gerarInfo();
     });
+
+
+    el('apelido').addEventListener('input', () => {
+      if (!el('erroApelido').classList.contains('hidden')) {
+        el('erroApelido').classList.add('hidden');
+      }
+    });
+
+    el('modalSuporte').addEventListener('click', (event) => {
+      if (event.target === el('modalSuporte')) fecharModalSuporte();
+    });
+
+    document.addEventListener('click', (event) => {
+      const painel = el('centralAjuda');
+      const botao = el('botaoAjuda');
+      if (!painel.classList.contains('hidden') && !painel.contains(event.target) && !botao.contains(event.target)) {
+        fecharCentralAjuda();
+      }
+    });
+
+    document.addEventListener('keydown', (event) => {
+      if (event.key === 'Escape') {
+        fecharCentralAjuda();
+        fecharModalSuporte();
+      }
+    });
+
   </script>
 </body>
 </html>
