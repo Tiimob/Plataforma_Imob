@@ -58,6 +58,7 @@
       <button onclick="selecionarEmpresa('evenmore')" class="w-full bg-evenmore text-white font-semibold py-2 rounded-lg hover:opacity-90 transition-all duration-300 transform hover:scale-105">Even More</button>
       <button onclick="selecionarEmpresa('evenvendas')" class="w-full bg-evenvendas text-white font-semibold py-2 rounded-lg hover:opacity-90 transition-all duration-300 transform hover:scale-105">Even Vendas</button>
       <button onclick="abrirModalSuporte()" class="w-full bg-gray-400 text-white text-sm font-medium py-2 rounded-lg hover:bg-gray-500 transition-all duration-300">Falar com o Suporte</button>
+
     </div>
   </div>
 
@@ -93,6 +94,28 @@
     </div>
   </div>
 
+
+  <!-- Ajuda flutuante do Hypnobox -->
+  <a
+    href="https://documentacao.senior.com.br/hypnobox/manual-do-usuario/sobre-ferramenta/sobre-hypnobox/"
+    target="_blank"
+    rel="noopener noreferrer"
+    aria-label="Abrir manual oficial do Hypnobox"
+    title="Abrir manual oficial do Hypnobox"
+    class="fixed bottom-5 right-5 z-40 group flex items-center gap-3 bg-primary text-white rounded-full shadow-2xl p-3 sm:py-3 sm:px-4 hover:bg-[#001F1C] hover:-translate-y-1 transition-all duration-300 focus:outline-none focus:ring-4 focus:ring-white/40"
+  >
+    <span class="relative flex h-11 w-11 shrink-0 items-center justify-center rounded-full bg-white/15">
+      <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" aria-hidden="true">
+        <path stroke-linecap="round" stroke-linejoin="round" d="M8.25 6.75h7.5M8.25 10.5h7.5m-7.5 3.75h4.5M6 3.75h12A2.25 2.25 0 0 1 20.25 6v12A2.25 2.25 0 0 1 18 20.25H6A2.25 2.25 0 0 1 3.75 18V6A2.25 2.25 0 0 1 6 3.75Z" />
+      </svg>
+      <span class="absolute -right-1 -top-1 flex h-5 w-5 items-center justify-center rounded-full bg-white text-[11px] font-extrabold text-primary shadow">?</span>
+    </span>
+
+    <span class="hidden sm:block pr-2 text-left leading-tight">
+      <span class="block text-sm font-bold">Dúvidas no Hypnobox?</span>
+      <span class="block text-xs font-normal text-white/75">Acesse o manual oficial</span>
+    </span>
+  </a>
   <div id="modalSuporte" class="fixed inset-0 bg-black/50 hidden items-center justify-center z-50">
     <div class="bg-white rounded-xl p-6 w-full max-w-md animate-fade-in shadow-2xl">
       <h2 class="text-xl font-bold text-primary mb-4">Como podemos ajudar?</h2>
