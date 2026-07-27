@@ -116,7 +116,7 @@
 
     @media (max-width: 640px) {
       body {
-        padding: calc(1rem + env(safe-area-inset-top)) 0.75rem calc(8.75rem + env(safe-area-inset-bottom));
+        padding: calc(1rem + env(safe-area-inset-top)) 0.75rem calc(6.5rem + env(safe-area-inset-bottom));
       }
 
       main {
@@ -153,43 +153,87 @@
         font-size: 16px !important;
       }
 
+      /*
+       * Mantemos as linhas de credenciais como flex no mobile, mas mudamos
+       * a direção para coluna. O !important evita conflito com a classe
+       * utilitária "flex" gerada pelo Tailwind CDN em alguns navegadores.
+       */
       .credential-row {
-        display: block;
+        display: flex !important;
+        flex-direction: column !important;
+        align-items: stretch !important;
+        gap: 0.75rem !important;
+      }
+
+      .credential-row > div {
+        width: 100% !important;
+        min-width: 0 !important;
+      }
+
+      #emailGerado {
+        display: block !important;
+        width: 100% !important;
+        max-width: 100% !important;
+        white-space: normal !important;
+        word-break: normal !important;
+        overflow-wrap: anywhere !important;
+        line-height: 1.5;
       }
 
       .credential-row > button,
       .credential-actions {
-        margin-top: 0.75rem;
+        margin-top: 0 !important;
       }
 
       .credential-row > button {
-        width: 100%;
+        width: 100% !important;
       }
 
       .credential-actions {
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-        width: 100%;
+        display: grid !important;
+        grid-template-columns: minmax(0, 1fr) minmax(0, 1fr) !important;
+        width: 100% !important;
+        gap: 0.75rem !important;
       }
 
       .credential-actions button {
+        width: 100%;
+        min-width: 0;
         min-height: 2.75rem;
       }
 
+      #resultado {
+        scroll-margin-top: 1rem;
+      }
+
+      /* No celular, a ajuda vira um botão compacto para não cobrir os cards. */
       #botaoAjuda {
         right: 0.75rem;
         bottom: calc(0.75rem + env(safe-area-inset-bottom));
-        left: 0.75rem;
+        left: auto;
         width: auto;
-        max-width: none;
-        padding: 0.75rem 0.875rem;
-        border-radius: 1rem;
+        max-width: calc(100vw - 1.5rem);
+        min-height: 3.5rem;
+        padding: 0.5rem 0.75rem;
+        border-radius: 999px;
+        gap: 0.625rem;
       }
 
       #botaoAjuda .help-icon {
         width: 2.5rem;
         height: 2.5rem;
-        border-radius: 0.75rem;
+        border-radius: 999px;
+      }
+
+      #botaoAjuda > span:last-child > span:first-child,
+      #botaoAjuda .help-subtitle {
+        display: none;
+      }
+
+      #botaoAjuda > span:last-child > span:nth-child(2) {
+        margin: 0;
+        white-space: nowrap;
+        font-size: 0.875rem;
       }
 
       #centralAjuda {
@@ -370,7 +414,7 @@
           <div id="linhaEmail" class="credential-row flex items-center justify-between gap-3 border-b border-gray-200 pb-4">
             <div class="min-w-0">
               <span class="block text-xs font-bold uppercase tracking-wide text-gray-500">E-mail corporativo</span>
-              <span id="emailGerado" class="mt-1 block break-all text-sm font-semibold text-gray-900"></span>
+              <span id="emailGerado" class="mt-1 block text-sm font-semibold text-gray-900"></span>
             </div>
             <button id="botaoCopiarEmail" type="button" onclick="copiarEmail()"
               class="focus-ring shrink-0 rounded-lg bg-white px-3 py-2 text-xs font-bold text-primary shadow-sm ring-1 ring-gray-200 transition hover:bg-primaryLight disabled:cursor-not-allowed disabled:opacity-40 disabled:hover:bg-white">
