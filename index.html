@@ -2,7 +2,7 @@
 <html lang="pt-BR">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
   <meta name="description" content="Central interna de acessos e suporte da EVEN IMOB" />
   <title>Plataforma EVEN IMOB</title>
 
@@ -35,7 +35,19 @@
     html { scroll-behavior: smooth; }
 
     body {
+      min-height: 100vh;
+      min-height: 100dvh;
+      overflow-x: hidden;
       background: linear-gradient(to bottom, #002D28, #000000);
+      padding: 2rem 1rem;
+    }
+
+    main {
+      min-height: calc(100dvh - 6rem);
+    }
+
+    button, a, input, select, textarea {
+      -webkit-tap-highlight-color: transparent;
     }
 
     .animate-fade-in { animation: fadeIn .45s ease both; }
@@ -96,8 +108,160 @@
       }
     }
 
+    @media (min-width: 641px) {
+      body {
+        padding: 3rem 1rem;
+      }
+    }
+
     @media (max-width: 640px) {
-      .toast { top: 12px; right: 12px; }
+      body {
+        padding: calc(1rem + env(safe-area-inset-top)) 0.75rem calc(8.75rem + env(safe-area-inset-bottom));
+      }
+
+      main {
+        min-height: auto;
+      }
+
+      .toast {
+        top: calc(0.75rem + env(safe-area-inset-top));
+        right: 0.75rem;
+        left: 0.75rem;
+        max-width: none;
+        text-align: center;
+      }
+
+      #selecao-empresa,
+      #plataforma {
+        border-radius: 1rem;
+        padding: 1.25rem 1rem;
+      }
+
+      .company-choice {
+        min-height: 4.5rem;
+        gap: 0.75rem;
+        padding: 0.875rem 1rem;
+      }
+
+      .platform-header {
+        gap: 0.75rem;
+      }
+
+      input,
+      select,
+      textarea {
+        font-size: 16px !important;
+      }
+
+      .credential-row {
+        display: block;
+      }
+
+      .credential-row > button,
+      .credential-actions {
+        margin-top: 0.75rem;
+      }
+
+      .credential-row > button {
+        width: 100%;
+      }
+
+      .credential-actions {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        width: 100%;
+      }
+
+      .credential-actions button {
+        min-height: 2.75rem;
+      }
+
+      #botaoAjuda {
+        right: 0.75rem;
+        bottom: calc(0.75rem + env(safe-area-inset-bottom));
+        left: 0.75rem;
+        width: auto;
+        max-width: none;
+        padding: 0.75rem 0.875rem;
+        border-radius: 1rem;
+      }
+
+      #botaoAjuda .help-icon {
+        width: 2.5rem;
+        height: 2.5rem;
+        border-radius: 0.75rem;
+      }
+
+      #centralAjuda {
+        top: auto;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        max-width: none;
+        max-height: 78dvh;
+        overflow-y: auto;
+        border-radius: 1.5rem 1.5rem 0 0;
+        padding: 1.25rem 1rem calc(1rem + env(safe-area-inset-bottom));
+        overscroll-behavior: contain;
+      }
+
+      .help-option {
+        align-items: flex-start;
+        gap: 0.75rem;
+        padding: 0.875rem;
+      }
+
+      .help-option > span:first-child {
+        min-width: 0;
+      }
+
+      #modalSuporte {
+        align-items: flex-end;
+        padding: 0;
+      }
+
+      #conteudoModalSuporte {
+        width: 100%;
+        max-width: none;
+        max-height: calc(100dvh - env(safe-area-inset-top));
+        border-radius: 1.5rem 1.5rem 0 0;
+        padding: 1.25rem 1rem calc(1rem + env(safe-area-inset-bottom));
+        overscroll-behavior: contain;
+      }
+    }
+
+    @media (max-width: 380px) {
+      .company-choice-action {
+        display: none;
+      }
+
+      .platform-header {
+        align-items: flex-start;
+      }
+
+      #tituloEmpresa {
+        font-size: 1.75rem;
+      }
+
+      #botaoAjuda .help-subtitle {
+        display: none;
+      }
+
+      .help-option {
+        flex-wrap: wrap;
+      }
+
+      .help-option > span:last-child {
+        margin-left: auto;
+      }
+    }
+
+    @media (hover: none) {
+      .hover\:-translate-y-0\.5:hover,
+      .hover\:-translate-y-1:hover {
+        transform: none !important;
+      }
     }
 
     @media (prefers-reduced-motion: reduce) {
@@ -111,10 +275,10 @@
   </style>
 </head>
 
-<body class="min-h-screen px-4 py-8 font-sans text-gray-900 sm:py-12">
+<body class="font-sans text-gray-900">
   <div id="toast" class="toast" role="status" aria-live="polite">Ação concluída.</div>
 
-  <main class="mx-auto flex min-h-[calc(100vh-6rem)] w-full max-w-md flex-col justify-center">
+  <main class="mx-auto flex w-full max-w-md flex-col justify-center">
 
     <!-- TELA INICIAL -->
     <section id="selecao-empresa" class="animate-fade-in rounded-2xl bg-white p-6 shadow-card sm:p-8">
@@ -134,21 +298,21 @@
 
       <div class="mt-7 grid gap-3">
         <button type="button" onclick="selecionarEmpresa('evenmore')"
-          class="focus-ring group flex w-full items-center justify-between rounded-xl bg-primary px-5 py-4 text-left text-white transition hover:-translate-y-0.5 hover:bg-primaryDark hover:shadow-lg">
+          class="company-choice focus-ring group flex w-full items-center justify-between rounded-xl bg-primary px-5 py-4 text-left text-white transition hover:-translate-y-0.5 hover:bg-primaryDark hover:shadow-lg">
           <span>
             <span class="block text-base font-bold">Even More</span>
             <span class="block text-xs text-white/70">Acessos da operação Even More</span>
           </span>
-          <span class="text-xs font-bold uppercase tracking-wide text-white/70">Selecionar</span>
+          <span class="company-choice-action text-xs font-bold uppercase tracking-wide text-white/70">Selecionar</span>
         </button>
 
         <button type="button" onclick="selecionarEmpresa('evenvendas')"
-          class="focus-ring group flex w-full items-center justify-between rounded-xl bg-primary px-5 py-4 text-left text-white transition hover:-translate-y-0.5 hover:bg-primaryDark hover:shadow-lg">
+          class="company-choice focus-ring group flex w-full items-center justify-between rounded-xl bg-primary px-5 py-4 text-left text-white transition hover:-translate-y-0.5 hover:bg-primaryDark hover:shadow-lg">
           <span>
             <span class="block text-base font-bold">Even Vendas</span>
             <span class="block text-xs text-white/70">Acessos da operação Even Vendas</span>
           </span>
-          <span class="text-xs font-bold uppercase tracking-wide text-white/70">Selecionar</span>
+          <span class="company-choice-action text-xs font-bold uppercase tracking-wide text-white/70">Selecionar</span>
         </button>
 
         <button type="button" onclick="abrirModalSuporte()"
@@ -161,7 +325,7 @@
 
     <!-- TELA DA EMPRESA -->
     <section id="plataforma" class="hidden animate-fade-in rounded-2xl bg-white p-5 shadow-card sm:p-8">
-      <header class="mb-6 flex items-start justify-between gap-4">
+      <header class="platform-header mb-6 flex items-start justify-between gap-4">
         <div>
           <span id="badgeEmpresa" class="inline-flex rounded-full bg-primaryLight px-3 py-1 text-xs font-bold uppercase tracking-wide text-primary">
             Empresa selecionada
@@ -179,7 +343,7 @@
       <div class="space-y-5">
         <div>
           <label for="apelido" class="mb-2 block text-sm font-bold text-gray-700">Digite seu apelido</label>
-          <input id="apelido" type="text" inputmode="text" autocomplete="off" maxlength="40"
+          <input id="apelido" type="text" inputmode="text" autocomplete="username" autocapitalize="none" spellcheck="false" maxlength="40"
             placeholder="Ex.: seu.apelido"
             aria-describedby="ajudaApelido erroApelido"
             class="focus-ring w-full rounded-xl border border-gray-300 px-4 py-3 text-sm text-gray-800 transition placeholder:text-gray-400 focus:border-primary" />
@@ -203,7 +367,7 @@
 
         <!-- CREDENCIAIS -->
         <div class="rounded-2xl border border-gray-200 bg-gray-50 p-4">
-          <div id="linhaEmail" class="flex items-center justify-between gap-3 border-b border-gray-200 pb-4">
+          <div id="linhaEmail" class="credential-row flex items-center justify-between gap-3 border-b border-gray-200 pb-4">
             <div class="min-w-0">
               <span class="block text-xs font-bold uppercase tracking-wide text-gray-500">E-mail corporativo</span>
               <span id="emailGerado" class="mt-1 block break-all text-sm font-semibold text-gray-900"></span>
@@ -214,13 +378,13 @@
             </button>
           </div>
 
-          <div class="flex items-center justify-between gap-3 pt-4">
+          <div class="credential-row flex items-center justify-between gap-3 pt-4">
             <div class="min-w-0">
               <span class="block text-xs font-bold uppercase tracking-wide text-gray-500">Senha temporária</span>
               <span id="senhaGerada" class="mt-1 block font-mono text-sm font-bold tracking-wider text-gray-900">••••••••••</span>
             </div>
 
-            <div class="flex shrink-0 gap-2">
+            <div class="credential-actions flex shrink-0 gap-2">
               <button id="botaoMostrarSenha" type="button" onclick="alternarSenha()"
                 class="focus-ring rounded-lg bg-white px-3 py-2 text-xs font-bold text-gray-700 shadow-sm ring-1 ring-gray-200 transition hover:bg-gray-100"
                 aria-pressed="false">
@@ -270,11 +434,11 @@
   <button id="botaoAjuda" type="button" onclick="alternarCentralAjuda()"
     class="help-attention focus-ring fixed bottom-5 right-4 z-40 flex max-w-[calc(100vw-2rem)] items-center gap-3 rounded-2xl border-2 border-white/85 bg-primary px-4 py-3 text-white transition hover:-translate-y-1 hover:bg-primaryDark sm:right-5 sm:px-5"
     aria-expanded="false" aria-controls="centralAjuda" aria-label="Abrir Central de Ajuda">
-    <span class="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-white text-xl font-extrabold text-primary" aria-hidden="true">?</span>
+    <span class="help-icon flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-white text-xl font-extrabold text-primary" aria-hidden="true">?</span>
     <span class="min-w-0 text-left leading-tight">
       <span class="mb-1 block text-[10px] font-bold uppercase tracking-[.14em] text-white/70">Manual e suporte</span>
       <span class="block text-sm font-extrabold sm:text-base">Precisa de ajuda?</span>
-      <span class="mt-0.5 block text-xs text-white/80">Consulte orientações ou abra um chamado</span>
+      <span class="help-subtitle mt-0.5 block text-xs text-white/80">Consulte orientações ou abra um chamado</span>
     </span>
   </button>
 
@@ -293,7 +457,7 @@
     <div class="grid gap-2">
       <a href="https://documentacao.senior.com.br/hypnobox/manual-do-usuario/sobre-ferramenta/sobre-hypnobox/"
         target="_blank" rel="noopener noreferrer"
-        class="group flex items-center justify-between rounded-xl border border-gray-200 p-4 transition hover:border-primary/30 hover:bg-primaryLight">
+        class="help-option group flex items-center justify-between rounded-xl border border-gray-200 p-4 transition hover:border-primary/30 hover:bg-primaryLight">
         <span>
           <span class="block text-sm font-bold text-gray-900">Manual do Hypnobox</span>
           <span class="mt-1 block text-xs text-gray-500">Consulte a documentação oficial da plataforma</span>
@@ -303,7 +467,7 @@
 
       <a href="https://evenbr-my.sharepoint.com/:f:/g/personal/rnetto_even_com_br/ElfwG_h4zchFmFfFhvPhUO8BPY5t8nrmex1Z2XwtjmGUEw?e=GiMO3d"
         target="_blank" rel="noopener noreferrer"
-        class="group flex items-center justify-between rounded-xl border border-gray-200 p-4 transition hover:border-primary/30 hover:bg-primaryLight">
+        class="help-option group flex items-center justify-between rounded-xl border border-gray-200 p-4 transition hover:border-primary/30 hover:bg-primaryLight">
         <span>
           <span class="block text-sm font-bold text-gray-900">Central de Treinamentos</span>
           <span class="mt-1 block text-xs text-gray-500">Acesse os materiais e orientações da EVEN</span>
@@ -312,7 +476,7 @@
       </a>
 
       <button type="button" onclick="abrirModalSuporte(); fecharCentralAjuda();"
-        class="group flex w-full items-center justify-between rounded-xl border border-gray-200 p-4 text-left transition hover:border-primary/30 hover:bg-primaryLight">
+        class="help-option group flex w-full items-center justify-between rounded-xl border border-gray-200 p-4 text-left transition hover:border-primary/30 hover:bg-primaryLight">
         <span>
           <span class="block text-sm font-bold text-gray-900">Abrir chamado</span>
           <span class="mt-1 block text-xs text-gray-500">Envie uma solicitação completa ao suporte</span>
@@ -379,7 +543,7 @@
           </div>
           <div>
             <label for="apelidoSuporte" class="mb-2 block text-sm font-bold text-gray-700">Apelido</label>
-            <input id="apelidoSuporte" type="text" placeholder="Seu apelido"
+            <input id="apelidoSuporte" type="text" inputmode="text" autocomplete="username" autocapitalize="none" spellcheck="false" placeholder="Seu apelido"
               class="focus-ring w-full rounded-xl border border-gray-300 px-4 py-3 text-sm focus:border-primary" />
           </div>
         </div>
@@ -615,16 +779,24 @@
       toastTimer = setTimeout(() => toast.classList.remove('show'), 3000);
     }
 
+    function atualizarBloqueioRolagem() {
+      const ajudaAberta = !el('centralAjuda').classList.contains('hidden');
+      const modalAberto = !el('modalSuporte').classList.contains('hidden');
+      document.body.style.overflow = ajudaAberta || modalAberto ? 'hidden' : '';
+    }
+
     function alternarCentralAjuda() {
       const painel = el('centralAjuda');
       const abrir = painel.classList.contains('hidden');
       painel.classList.toggle('hidden', !abrir);
       el('botaoAjuda').setAttribute('aria-expanded', String(abrir));
+      atualizarBloqueioRolagem();
     }
 
     function fecharCentralAjuda() {
       el('centralAjuda').classList.add('hidden');
       el('botaoAjuda').setAttribute('aria-expanded', 'false');
+      atualizarBloqueioRolagem();
     }
 
     function abrirModalSuporte() {
@@ -636,7 +808,7 @@
       const modal = el('modalSuporte');
       modal.classList.remove('hidden');
       modal.classList.add('flex');
-      document.body.style.overflow = 'hidden';
+      atualizarBloqueioRolagem();
       setTimeout(() => el('tipoSuporte').focus(), 50);
     }
 
@@ -644,7 +816,7 @@
       const modal = el('modalSuporte');
       modal.classList.add('hidden');
       modal.classList.remove('flex');
-      document.body.style.overflow = '';
+      atualizarBloqueioRolagem();
     }
 
     function enviarEmailSuporte(event) {
