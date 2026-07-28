@@ -108,6 +108,250 @@
       }
     }
 
+
+    /* Assistente Imob */
+    .assistant-panel {
+      height: min(650px, calc(100dvh - 10rem));
+      flex-direction: column;
+    }
+
+    .assistant-panel:not(.hidden) {
+      display: flex;
+    }
+
+    .assistant-header {
+      border-bottom: 1px solid #E5E7EB;
+      background: #FFFFFF;
+      padding: 1rem;
+    }
+
+    .assistant-context {
+      margin-top: .25rem;
+      font-size: .7rem;
+      line-height: 1.35;
+      color: #6B7280;
+    }
+
+    .assistant-messages {
+      min-height: 0;
+      flex: 1;
+      overflow-y: auto;
+      overscroll-behavior: contain;
+      background: #F8FAFC;
+      padding: 1rem;
+      scroll-behavior: smooth;
+    }
+
+    .assistant-message-row {
+      display: flex;
+      align-items: flex-end;
+      gap: .55rem;
+      margin-bottom: .85rem;
+    }
+
+    .assistant-message-row.user {
+      flex-direction: row-reverse;
+    }
+
+    .assistant-avatar {
+      display: flex;
+      width: 2rem;
+      height: 2rem;
+      flex: 0 0 2rem;
+      align-items: center;
+      justify-content: center;
+      border-radius: .65rem;
+      background: #E7F1EF;
+      color: #002D28;
+      font-size: .62rem;
+      font-weight: 800;
+      letter-spacing: .04em;
+    }
+
+    .assistant-message-row.user .assistant-avatar {
+      background: #002D28;
+      color: #FFFFFF;
+    }
+
+    .assistant-bubble {
+      max-width: 84%;
+      border-radius: 1rem;
+      padding: .8rem .9rem;
+      font-size: .8rem;
+      line-height: 1.55;
+      overflow-wrap: anywhere;
+    }
+
+    .assistant-bubble-bot {
+      border: 1px solid #E5E7EB;
+      border-bottom-left-radius: .35rem;
+      background: #FFFFFF;
+      color: #374151;
+      box-shadow: 0 5px 14px rgba(0,0,0,.04);
+    }
+
+    .assistant-bubble-user {
+      border-bottom-right-radius: .35rem;
+      background: #002D28;
+      color: #FFFFFF;
+    }
+
+    .assistant-answer-title {
+      margin-bottom: .35rem;
+      color: #002D28;
+      font-weight: 800;
+    }
+
+    .assistant-category {
+      display: inline-flex;
+      margin-bottom: .5rem;
+      border-radius: 999px;
+      background: #E7F1EF;
+      padding: .2rem .5rem;
+      color: #002D28;
+      font-size: .62rem;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: .06em;
+    }
+
+    .assistant-steps {
+      margin-top: .65rem;
+      padding-left: 1.15rem;
+      list-style: decimal;
+    }
+
+    .assistant-steps li + li {
+      margin-top: .3rem;
+    }
+
+    .assistant-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: .45rem;
+      margin-top: .75rem;
+    }
+
+    .assistant-action {
+      display: inline-flex;
+      min-height: 2.25rem;
+      align-items: center;
+      justify-content: center;
+      border: 1px solid rgba(0,45,40,.18);
+      border-radius: .65rem;
+      background: #E7F1EF;
+      padding: .45rem .65rem;
+      color: #002D28;
+      font-size: .68rem;
+      font-weight: 800;
+      text-align: center;
+      transition: .2s ease;
+    }
+
+    .assistant-action:hover {
+      border-color: #002D28;
+      background: #002D28;
+      color: #FFFFFF;
+    }
+
+    .assistant-related-label {
+      margin-top: .65rem;
+      font-size: .7rem;
+      font-weight: 700;
+      color: #6B7280;
+    }
+
+    .assistant-related {
+      display: grid;
+      gap: .4rem;
+      margin-top: .45rem;
+    }
+
+    .assistant-related .assistant-action {
+      width: 100%;
+      justify-content: flex-start;
+      background: #FFFFFF;
+      text-align: left;
+    }
+
+    .assistant-quick {
+      border-top: 1px solid #E5E7EB;
+      background: #FFFFFF;
+      padding: .65rem .75rem;
+    }
+
+    .assistant-quick-label {
+      margin-bottom: .45rem;
+      font-size: .62rem;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: .08em;
+      color: #6B7280;
+    }
+
+    .assistant-quick-list {
+      display: flex;
+      gap: .45rem;
+      overflow-x: auto;
+      padding-bottom: .2rem;
+      scrollbar-width: thin;
+    }
+
+    .assistant-quick-button {
+      flex: 0 0 auto;
+      border: 1px solid #D1D5DB;
+      border-radius: 999px;
+      background: #FFFFFF;
+      padding: .45rem .7rem;
+      color: #374151;
+      font-size: .68rem;
+      font-weight: 700;
+      white-space: nowrap;
+    }
+
+    .assistant-quick-button:hover {
+      border-color: #002D28;
+      color: #002D28;
+    }
+
+    .assistant-composer {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) auto;
+      gap: .55rem;
+      border-top: 1px solid #E5E7EB;
+      background: #FFFFFF;
+      padding: .75rem;
+    }
+
+    .assistant-input {
+      min-width: 0;
+      border: 1px solid #D1D5DB;
+      border-radius: .75rem;
+      padding: .7rem .8rem;
+      color: #1F2937;
+      font-size: .8rem;
+    }
+
+    .assistant-input:focus {
+      outline: none;
+      border-color: #002D28;
+      box-shadow: 0 0 0 3px rgba(0,45,40,.12);
+    }
+
+    .assistant-send {
+      min-width: 4.4rem;
+      border-radius: .75rem;
+      background: #002D28;
+      padding: .65rem .85rem;
+      color: #FFFFFF;
+      font-size: .72rem;
+      font-weight: 800;
+    }
+
+    .assistant-send:hover {
+      background: #001F1C;
+    }
+
     @media (min-width: 641px) {
       body {
         padding: 3rem 1rem;
@@ -243,11 +487,20 @@
         left: 0;
         width: 100%;
         max-width: none;
-        max-height: 78dvh;
-        overflow-y: auto;
+        height: min(88dvh, 760px);
+        max-height: calc(100dvh - env(safe-area-inset-top));
+        overflow: hidden;
         border-radius: 1.5rem 1.5rem 0 0;
-        padding: 1.25rem 1rem calc(1rem + env(safe-area-inset-bottom));
+        padding: 0;
         overscroll-behavior: contain;
+      }
+
+      .assistant-composer {
+        padding-bottom: calc(.75rem + env(safe-area-inset-bottom));
+      }
+
+      .assistant-bubble {
+        max-width: 88%;
       }
 
       .help-option {
@@ -474,69 +727,59 @@
     </footer>
   </main>
 
-  <!-- BOTÃO FLUTUANTE DE AJUDA -->
+  <!-- BOTÃO FLUTUANTE DO ASSISTENTE -->
   <button id="botaoAjuda" type="button" onclick="alternarCentralAjuda()"
     class="help-attention focus-ring fixed bottom-5 right-4 z-40 flex max-w-[calc(100vw-2rem)] items-center gap-3 rounded-2xl border-2 border-white/85 bg-primary px-4 py-3 text-white transition hover:-translate-y-1 hover:bg-primaryDark sm:right-5 sm:px-5"
-    aria-expanded="false" aria-controls="centralAjuda" aria-label="Abrir Central de Ajuda">
-    <span class="help-icon flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-white text-xl font-extrabold text-primary" aria-hidden="true">?</span>
+    aria-expanded="false" aria-controls="centralAjuda" aria-label="Abrir Assistente Imob">
+    <span class="help-icon flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-white text-sm font-extrabold text-primary" aria-hidden="true">IM</span>
     <span class="min-w-0 text-left leading-tight">
-      <span class="mb-1 block text-[10px] font-bold uppercase tracking-[.14em] text-white/70">Manual e suporte</span>
-      <span class="block text-sm font-extrabold sm:text-base">Precisa de ajuda?</span>
-      <span class="help-subtitle mt-0.5 block text-xs text-white/80">Consulte orientações ou abra um chamado</span>
+      <span class="mb-1 block text-[10px] font-bold uppercase tracking-[.14em] text-white/70">Assistente virtual</span>
+      <span class="block text-sm font-extrabold sm:text-base">Assistente Imob</span>
+      <span class="help-subtitle mt-0.5 block text-xs text-white/80">Tire dúvidas sobre acessos e plataformas</span>
     </span>
   </button>
 
-  <!-- CENTRAL DE AJUDA -->
+  <!-- ASSISTENTE IMOB -->
   <aside id="centralAjuda"
-    class="fixed bottom-32 right-4 z-40 hidden w-[calc(100vw-2rem)] max-w-sm animate-pop rounded-2xl bg-white p-4 shadow-2xl ring-1 ring-black/5 sm:right-5"
-    aria-label="Central de Ajuda">
-    <div class="mb-3 flex items-start justify-between gap-3">
-      <div>
-        <p class="text-xs font-bold uppercase tracking-[.15em] text-primary/60">Central de Ajuda</p>
-        <h2 class="text-lg font-extrabold text-primary">Como podemos ajudar?</h2>
+    class="assistant-panel fixed bottom-32 right-4 z-40 hidden w-[calc(100vw-2rem)] max-w-md animate-pop overflow-hidden rounded-2xl bg-white shadow-2xl ring-1 ring-black/5 sm:right-5"
+    aria-label="Assistente Imob">
+    <header class="assistant-header">
+      <div class="flex items-start justify-between gap-3">
+        <div class="min-w-0">
+          <p class="text-xs font-bold uppercase tracking-[.15em] text-primary/60">Assistente Imob</p>
+          <h2 class="text-lg font-extrabold text-primary">Como posso ajudar?</h2>
+          <p id="assistantContext" class="assistant-context">Selecione a empresa para receber links específicos</p>
+        </div>
+        <div class="flex shrink-0 items-center gap-1">
+          <button id="assistantClear" type="button"
+            class="rounded-lg px-2.5 py-2 text-xs font-bold text-gray-500 hover:bg-gray-100 hover:text-primary"
+            aria-label="Limpar conversa">Limpar</button>
+          <button type="button" onclick="fecharCentralAjuda()"
+            class="rounded-lg p-2 text-gray-500 hover:bg-gray-100" aria-label="Fechar Assistente Imob">×</button>
+        </div>
       </div>
-      <button type="button" onclick="fecharCentralAjuda()" class="rounded-lg p-2 text-gray-500 hover:bg-gray-100" aria-label="Fechar Central de Ajuda">✕</button>
+    </header>
+
+    <div id="assistantMessages" class="assistant-messages" role="log" aria-live="polite" aria-label="Conversa com o Assistente Imob"></div>
+
+    <div class="assistant-quick">
+      <p class="assistant-quick-label">Perguntas rápidas</p>
+      <div class="assistant-quick-list">
+        <button type="button" class="assistant-quick-button" data-assistant-question="Não consigo acessar o Hypnobox">Acesso ao Hypnobox</button>
+        <button type="button" class="assistant-quick-button" data-assistant-question="Não consigo acessar meu e-mail corporativo">Acesso ao Webmail</button>
+        <button type="button" class="assistant-quick-button" data-assistant-question="Não consigo acessar o Portal do Corretor">Portal do Corretor</button>
+        <button type="button" class="assistant-quick-button" data-assistant-question="Não consigo acessar o SIGAV">Acesso ao SIGAV</button>
+        <button type="button" class="assistant-quick-button" data-assistant-question="Esqueci minha senha">Esqueci minha senha</button>
+        <button type="button" class="assistant-quick-button" data-assistant-question="Como abrir um chamado para o TI?">Abrir chamado</button>
+      </div>
     </div>
 
-    <div class="grid gap-2">
-      <a href="https://documentacao.senior.com.br/hypnobox/manual-do-usuario/sobre-ferramenta/sobre-hypnobox/"
-        target="_blank" rel="noopener noreferrer"
-        class="help-option group flex items-center justify-between rounded-xl border border-gray-200 p-4 transition hover:border-primary/30 hover:bg-primaryLight">
-        <span>
-          <span class="block text-sm font-bold text-gray-900">Manual do Hypnobox</span>
-          <span class="mt-1 block text-xs text-gray-500">Consulte a documentação oficial da plataforma</span>
-        </span>
-        <span class="rounded-lg bg-primaryLight px-3 py-2 text-xs font-bold text-primary">Acessar</span>
-      </a>
-
-      <a href="https://evenbr-my.sharepoint.com/:f:/g/personal/rnetto_even_com_br/ElfwG_h4zchFmFfFhvPhUO8BPY5t8nrmex1Z2XwtjmGUEw?e=GiMO3d"
-        target="_blank" rel="noopener noreferrer"
-        class="help-option group flex items-center justify-between rounded-xl border border-gray-200 p-4 transition hover:border-primary/30 hover:bg-primaryLight">
-        <span>
-          <span class="block text-sm font-bold text-gray-900">Central de Treinamentos</span>
-          <span class="mt-1 block text-xs text-gray-500">Acesse os materiais e orientações da EVEN</span>
-        </span>
-        <span class="rounded-lg bg-primaryLight px-3 py-2 text-xs font-bold text-primary">Acessar</span>
-      </a>
-
-      <button type="button" onclick="abrirModalSuporte(); fecharCentralAjuda();"
-        class="help-option group flex w-full items-center justify-between rounded-xl border border-gray-200 p-4 text-left transition hover:border-primary/30 hover:bg-primaryLight">
-        <span>
-          <span class="block text-sm font-bold text-gray-900">Abrir chamado</span>
-          <span class="mt-1 block text-xs text-gray-500">Envie uma solicitação completa ao suporte</span>
-        </span>
-        <span class="rounded-lg bg-primaryLight px-3 py-2 text-xs font-bold text-primary">Abrir</span>
-      </button>
+    <div class="assistant-composer">
+      <input id="assistantInput" class="assistant-input" type="text" inputmode="text"
+        autocomplete="off" maxlength="240"
+        placeholder="Digite sua dúvida..." aria-label="Digite sua dúvida para o Assistente Imob" />
+      <button id="assistantSend" type="button" class="assistant-send">Enviar</button>
     </div>
-
-    <details class="mt-3 rounded-xl bg-gray-50 px-4 py-3">
-      <summary class="cursor-pointer text-sm font-bold text-gray-800">Dúvidas rápidas</summary>
-      <div class="mt-3 space-y-3 text-xs leading-relaxed text-gray-600">
-        <p><strong class="text-gray-800">Esqueci minha senha:</strong> utilize “Abrir chamado” e selecione “Redefinição de senha”.</p>
-        <p><strong class="text-gray-800">Erro no Hypnobox:</strong> consulte primeiro o manual oficial e, se persistir, envie um chamado com a mensagem do erro.</p>
-        <p><strong class="text-gray-800">E-mail não funciona:</strong> confirme a empresa selecionada. Corretores TTI não possuem e-mail corporativo.</p>
-      </div>
-    </details>
   </aside>
 
   <!-- MODAL DE SUPORTE -->
@@ -645,6 +888,25 @@
 
     const el = (id) => document.getElementById(id);
 
+    function obterContextoAssistente() {
+      const empresaAtual = empresas[empresaSelecionada] || null;
+      const todasEmpresas = Object.fromEntries(
+        Object.entries(empresas).map(([chave, empresa]) => [
+          chave,
+          { nome: empresa.nome, dominio: empresa.dominio, links: empresa.links },
+        ])
+      );
+
+      return {
+        chaveEmpresa: empresaSelecionada,
+        nomeEmpresa: empresaAtual?.nome || '',
+        apelido: normalizarApelido(el('apelido')?.value || ''),
+        email: emailAtual,
+        links: empresaAtual?.links || [],
+        todasEmpresas,
+      };
+    }
+
     function selecionarEmpresa(empresa) {
       if (!empresas[empresa]) return;
 
@@ -656,6 +918,9 @@
       el('badgeEmpresa').textContent = empresas[empresa].nome;
 
       el('empresaSuporte').value = empresas[empresa].nome;
+      if (typeof window.atualizarContextoAssistente === 'function') {
+        window.atualizarContextoAssistente();
+      }
       el('apelido').focus();
       window.scrollTo({ top: 0, behavior: 'smooth' });
     }
@@ -665,6 +930,9 @@
       el('selecao-empresa').classList.remove('hidden');
       limparResultado();
       fecharCentralAjuda();
+      if (typeof window.atualizarContextoAssistente === 'function') {
+        window.atualizarContextoAssistente();
+      }
       window.scrollTo({ top: 0, behavior: 'smooth' });
     }
 
@@ -835,6 +1103,13 @@
       painel.classList.toggle('hidden', !abrir);
       el('botaoAjuda').setAttribute('aria-expanded', String(abrir));
       atualizarBloqueioRolagem();
+
+      if (abrir) {
+        if (typeof window.atualizarContextoAssistente === 'function') {
+          window.atualizarContextoAssistente();
+        }
+        setTimeout(() => el('assistantInput')?.focus(), 80);
+      }
     }
 
     function fecharCentralAjuda() {
@@ -911,5 +1186,7 @@
     });
 
   </script>
+  <script src="base-conhecimento.js"></script>
+  <script src="chatbot.js"></script>
 </body>
 </html>
