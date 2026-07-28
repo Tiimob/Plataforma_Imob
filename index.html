@@ -96,16 +96,98 @@
     }
 
     .help-attention {
-      animation: helpAttention 2.8s ease-in-out infinite;
+      animation: assistantFloat 3.2s ease-in-out infinite;
     }
 
-    @keyframes helpAttention {
-      0%, 100% {
-        box-shadow: 0 14px 35px rgba(0, 0, 0, .30), 0 0 0 0 rgba(255, 255, 255, .30);
-      }
-      50% {
-        box-shadow: 0 18px 42px rgba(0, 0, 0, .36), 0 0 0 7px rgba(255, 255, 255, 0);
-      }
+    @keyframes assistantFloat {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-6px); }
+    }
+
+    #botaoAjuda {
+      width: 4.5rem;
+      height: 4.5rem;
+      padding: .45rem;
+      border-radius: 999px;
+      box-shadow: 0 16px 38px rgba(0, 0, 0, .34), 0 0 0 0 rgba(255,255,255,.28);
+      isolation: isolate;
+    }
+
+    #botaoAjuda:hover,
+    #botaoAjuda:focus-visible {
+      animation-play-state: paused;
+      transform: translateY(-3px) scale(1.03);
+      box-shadow: 0 20px 44px rgba(0, 0, 0, .38), 0 0 0 6px rgba(255,255,255,.12);
+    }
+
+    .assistant-launcher-icon {
+      display: flex;
+      width: 100%;
+      height: 100%;
+      align-items: center;
+      justify-content: center;
+      border-radius: 999px;
+      background: #FFFFFF;
+      color: #002D28;
+    }
+
+    .assistant-launcher-icon svg {
+      width: 2.15rem;
+      height: 2.15rem;
+    }
+
+    .assistant-status-dot {
+      position: absolute;
+      top: .2rem;
+      right: .15rem;
+      width: .9rem;
+      height: .9rem;
+      border: 3px solid #002D28;
+      border-radius: 999px;
+      background: #FFFFFF;
+      box-shadow: 0 2px 7px rgba(0,0,0,.22);
+    }
+
+    .assistant-launcher-label {
+      position: absolute;
+      right: calc(100% + .8rem);
+      top: 50%;
+      min-width: 10.5rem;
+      padding: .65rem .8rem;
+      border: 1px solid rgba(0,45,40,.12);
+      border-radius: .8rem;
+      background: #FFFFFF;
+      color: #002D28;
+      box-shadow: 0 12px 30px rgba(0,0,0,.18);
+      opacity: 0;
+      pointer-events: none;
+      transform: translate(.5rem, -50%);
+      transition: opacity .2s ease, transform .2s ease;
+      white-space: nowrap;
+      text-align: left;
+    }
+
+    .assistant-launcher-label strong,
+    .assistant-launcher-label small {
+      display: block;
+    }
+
+    .assistant-launcher-label strong {
+      font-size: .8rem;
+      font-weight: 800;
+    }
+
+    .assistant-launcher-label small {
+      margin-top: .15rem;
+      color: #6B7280;
+      font-size: .68rem;
+      font-weight: 600;
+    }
+
+    #botaoAjuda:hover .assistant-launcher-label,
+    #botaoAjuda:focus-visible .assistant-launcher-label {
+      opacity: 1;
+      transform: translate(0, -50%);
     }
 
 
@@ -123,6 +205,23 @@
       border-bottom: 1px solid #E5E7EB;
       background: #FFFFFF;
       padding: 1rem;
+    }
+
+    .assistant-header-icon {
+      display: flex;
+      width: 2.75rem;
+      height: 2.75rem;
+      flex: 0 0 2.75rem;
+      align-items: center;
+      justify-content: center;
+      border-radius: .85rem;
+      background: #E7F1EF;
+      color: #002D28;
+    }
+
+    .assistant-header-icon svg {
+      width: 1.55rem;
+      height: 1.55rem;
     }
 
     .assistant-context {
@@ -450,34 +549,25 @@
         scroll-margin-top: 1rem;
       }
 
-      /* No celular, a ajuda vira um botão compacto para não cobrir os cards. */
+      /* No celular, o assistente permanece circular e não cobre os cards. */
       #botaoAjuda {
         right: 0.75rem;
         bottom: calc(0.75rem + env(safe-area-inset-bottom));
         left: auto;
-        width: auto;
-        max-width: calc(100vw - 1.5rem);
-        min-height: 3.5rem;
-        padding: 0.5rem 0.75rem;
-        border-radius: 999px;
-        gap: 0.625rem;
-      }
-
-      #botaoAjuda .help-icon {
-        width: 2.5rem;
-        height: 2.5rem;
+        width: 4rem;
+        height: 4rem;
+        min-height: 4rem;
+        padding: .4rem;
         border-radius: 999px;
       }
 
-      #botaoAjuda > span:last-child > span:first-child,
-      #botaoAjuda .help-subtitle {
+      .assistant-launcher-icon svg {
+        width: 1.9rem;
+        height: 1.9rem;
+      }
+
+      .assistant-launcher-label {
         display: none;
-      }
-
-      #botaoAjuda > span:last-child > span:nth-child(2) {
-        margin: 0;
-        white-space: nowrap;
-        font-size: 0.875rem;
       }
 
       #centralAjuda {
@@ -539,10 +629,6 @@
 
       #tituloEmpresa {
         font-size: 1.75rem;
-      }
-
-      #botaoAjuda .help-subtitle {
-        display: none;
       }
 
       .help-option {
@@ -729,13 +815,25 @@
 
   <!-- BOTÃO FLUTUANTE DO ASSISTENTE -->
   <button id="botaoAjuda" type="button" onclick="alternarCentralAjuda()"
-    class="help-attention focus-ring fixed bottom-5 right-4 z-40 flex max-w-[calc(100vw-2rem)] items-center gap-3 rounded-2xl border-2 border-white/85 bg-primary px-4 py-3 text-white transition hover:-translate-y-1 hover:bg-primaryDark sm:right-5 sm:px-5"
+    class="help-attention focus-ring fixed bottom-5 right-4 z-40 flex items-center justify-center border-2 border-white/90 bg-primary text-white transition hover:bg-primaryDark sm:right-5"
     aria-expanded="false" aria-controls="centralAjuda" aria-label="Abrir Assistente Imob">
-    <span class="help-icon flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-white text-sm font-extrabold text-primary" aria-hidden="true">IM</span>
-    <span class="min-w-0 text-left leading-tight">
-      <span class="mb-1 block text-[10px] font-bold uppercase tracking-[.14em] text-white/70">Assistente virtual</span>
-      <span class="block text-sm font-extrabold sm:text-base">Assistente Imob</span>
-      <span class="help-subtitle mt-0.5 block text-xs text-white/80">Tire dúvidas sobre acessos e plataformas</span>
+    <span class="assistant-launcher-icon" aria-hidden="true">
+      <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+        <path d="M24 8V4" stroke="currentColor" stroke-width="3" stroke-linecap="round"/>
+        <circle cx="24" cy="4" r="2" fill="currentColor"/>
+        <rect x="10" y="11" width="28" height="25" rx="8" stroke="currentColor" stroke-width="3"/>
+        <path d="M10 22H6C4.89543 22 4 22.8954 4 24V28C4 29.1046 4.89543 30 6 30H10" stroke="currentColor" stroke-width="3"/>
+        <path d="M38 22H42C43.1046 22 44 22.8954 44 24V28C44 29.1046 43.1046 30 42 30H38" stroke="currentColor" stroke-width="3"/>
+        <circle cx="19" cy="23" r="2.5" fill="currentColor"/>
+        <circle cx="29" cy="23" r="2.5" fill="currentColor"/>
+        <path d="M18 30C20 32 28 32 30 30" stroke="currentColor" stroke-width="3" stroke-linecap="round"/>
+        <path d="M17 36V41M31 36V41M14 42H20M28 42H34" stroke="currentColor" stroke-width="3" stroke-linecap="round"/>
+      </svg>
+    </span>
+    <span class="assistant-status-dot" aria-hidden="true"></span>
+    <span class="assistant-launcher-label" aria-hidden="true">
+      <strong>Assistente Imob</strong>
+      <small>Tire suas dúvidas</small>
     </span>
   </button>
 
@@ -745,10 +843,25 @@
     aria-label="Assistente Imob">
     <header class="assistant-header">
       <div class="flex items-start justify-between gap-3">
-        <div class="min-w-0">
-          <p class="text-xs font-bold uppercase tracking-[.15em] text-primary/60">Assistente Imob</p>
-          <h2 class="text-lg font-extrabold text-primary">Como posso ajudar?</h2>
-          <p id="assistantContext" class="assistant-context">Selecione a empresa para receber links específicos</p>
+        <div class="flex min-w-0 items-start gap-3">
+          <span class="assistant-header-icon" aria-hidden="true">
+            <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+        <path d="M24 8V4" stroke="currentColor" stroke-width="3" stroke-linecap="round"/>
+        <circle cx="24" cy="4" r="2" fill="currentColor"/>
+        <rect x="10" y="11" width="28" height="25" rx="8" stroke="currentColor" stroke-width="3"/>
+        <path d="M10 22H6C4.89543 22 4 22.8954 4 24V28C4 29.1046 4.89543 30 6 30H10" stroke="currentColor" stroke-width="3"/>
+        <path d="M38 22H42C43.1046 22 44 22.8954 44 24V28C44 29.1046 43.1046 30 42 30H38" stroke="currentColor" stroke-width="3"/>
+        <circle cx="19" cy="23" r="2.5" fill="currentColor"/>
+        <circle cx="29" cy="23" r="2.5" fill="currentColor"/>
+        <path d="M18 30C20 32 28 32 30 30" stroke="currentColor" stroke-width="3" stroke-linecap="round"/>
+        <path d="M17 36V41M31 36V41M14 42H20M28 42H34" stroke="currentColor" stroke-width="3" stroke-linecap="round"/>
+      </svg>
+          </span>
+          <div class="min-w-0">
+            <p class="text-xs font-bold uppercase tracking-[.15em] text-primary/60">Assistente Imob</p>
+            <h2 class="text-lg font-extrabold text-primary">Como posso ajudar?</h2>
+            <p id="assistantContext" class="assistant-context">Selecione a empresa para receber links específicos</p>
+          </div>
         </div>
         <div class="flex shrink-0 items-center gap-1">
           <button id="assistantClear" type="button"
