@@ -324,6 +324,22 @@
       margin-top: .3rem;
     }
 
+
+    .assistant-source {
+      display: inline-block;
+      margin-top: 0.75rem;
+      color: #667085;
+      font-size: 0.68rem;
+      font-weight: 600;
+      line-height: 1.35;
+      text-decoration: none;
+    }
+
+    a.assistant-source:hover {
+      color: #002D28;
+      text-decoration: underline;
+    }
+
     .assistant-actions {
       display: flex;
       flex-wrap: wrap;
@@ -879,10 +895,10 @@
       <p class="assistant-quick-label">Perguntas rápidas</p>
       <div class="assistant-quick-list">
         <button type="button" class="assistant-quick-button" data-assistant-question="Não consigo acessar o Hypnobox">Acesso ao Hypnobox</button>
-        <button type="button" class="assistant-quick-button" data-assistant-question="Não consigo acessar meu e-mail corporativo">Acesso ao Webmail</button>
+        <button type="button" class="assistant-quick-button" data-assistant-question="Como alterar a senha do e-mail?">Senha do Webmail</button>
+        <button type="button" class="assistant-quick-button" data-assistant-question="Como cadastrar uma nova FAC no SIGAV?">Cadastrar FAC</button>
+        <button type="button" class="assistant-quick-button" data-assistant-question="Como cadastrar um follow-up no SIGAV?">Follow-up no SIGAV</button>
         <button type="button" class="assistant-quick-button" data-assistant-question="Não consigo acessar o Portal do Corretor">Portal do Corretor</button>
-        <button type="button" class="assistant-quick-button" data-assistant-question="Não consigo acessar o SIGAV">Acesso ao SIGAV</button>
-        <button type="button" class="assistant-quick-button" data-assistant-question="Esqueci minha senha">Esqueci minha senha</button>
         <button type="button" class="assistant-quick-button" data-assistant-question="Como abrir um chamado para o TI?">Abrir chamado</button>
       </div>
     </div>
@@ -1299,7 +1315,7 @@
     });
 
   </script>
-  <script src="base-conhecimento.js"></script>
-  <script src="chatbot.js"></script>
+  <script src="base-conhecimento.js?v=2.0.0"></script>
+  <script src="chatbot.js?v=2.0.0"></script>
 </body>
 </html>
