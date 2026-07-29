@@ -1,0 +1,25 @@
+{
+  "name": "Plataforma EVEN IMOB",
+  "short_name": "EVEN IMOB",
+  "description": "Central interna de acessos e suporte da EVEN IMOB",
+  "start_url": "./",
+  "scope": "./",
+  "display": "standalone",
+  "background_color": "#002D28",
+  "theme_color": "#002D28",
+  "lang": "pt-BR",
+  "icons": [
+    {
+      "src": "icone-imob-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "icone-imob-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any"
+    }
+  ]
+}

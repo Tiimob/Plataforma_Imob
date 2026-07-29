@@ -1,0 +1,3276 @@
+/* Base do Assistente Imob. Publique somente conteúdos aprovados pelo TI. */
+window.BASE_CONHECIMENTO_IMOB_META = {
+  "versao": "4.0.1",
+  "atualizadoEm": "2026-07-29",
+  "revisadoPor": "TI Imob",
+  "armazenamento": "Local no navegador",
+  "quantidade": 72,
+  "fontes": [
+    {
+      "titulo": "Manual oficial do Hypnobox",
+      "url": "https://documentacao.senior.com.br/hypnobox/manual-do-usuario/sobre-ferramenta/sobre-hypnobox/"
+    },
+    {
+      "titulo": "Central de ajuda SkyMail",
+      "url": "https://suporte.skynova.com.br/hc/pt-br"
+    },
+    {
+      "titulo": "Guia de Uso do CRM Sigavi 360",
+      "referencia": "PDF fornecido ao TI"
+    },
+    {
+      "titulo": "Ajuda oficial da Conta do Google — Google Authenticator",
+      "url": "https://support.google.com/accounts/answer/1066447?hl=pt-BR"
+    }
+  ]
+};
+
+window.BASE_CONHECIMENTO_IMOB = [
+  {
+    "id": "hypnobox-visitas-clientes",
+    "categoria": "Hypnobox",
+    "titulo": "Agendar ou acompanhar visita de cliente",
+    "perguntas": [
+      "como agendar visita",
+      "como reagendar visita",
+      "cancelar visita",
+      "registrar visita do cliente",
+      "visita do cliente",
+      "feedback de visita",
+      "visita no sigav",
+      "visita no sigavi"
+    ],
+    "palavrasChave": [
+      "hypnobox",
+      "visita",
+      "agendar",
+      "reagendar",
+      "cancelar",
+      "feedback",
+      "cliente",
+      "empreendimento"
+    ],
+    "resposta": "Na operação EVEN IMOB, as visitas vinculadas à jornada do cliente devem ser tratadas no Hypnobox. Localize o cliente na carteira e utilize as ações disponíveis no cadastro ou na timeline.",
+    "passos": [
+      "Acesse CRM > Clientes.",
+      "Localize e abra o cliente.",
+      "Consulte as ações de visita disponíveis no cadastro ou timeline.",
+      "Se a opção não aparecer, verifique seu perfil com o gestor."
+    ],
+    "acoes": [
+      {
+        "texto": "Consultar manual",
+        "tipo": "link",
+        "url": "https://documentacao.senior.com.br/hypnobox/manual-do-usuario/crm/clientes/timeline-cliente/"
+      },
+      {
+        "texto": "Abrir chamado",
+        "tipo": "suporte"
+      }
+    ],
+    "suporte": {
+      "tipo": "Ajuda com plataforma",
+      "plataforma": "Hypnobox"
+    },
+    "fonte": {
+      "titulo": "Manual oficial do Hypnobox — Timeline do Cliente",
+      "url": "https://documentacao.senior.com.br/hypnobox/manual-do-usuario/crm/clientes/timeline-cliente/"
+    }
+  },
+  {
+    "id": "hypnobox-arquivo-nao-abre",
+    "categoria": "Hypnobox",
+    "titulo": "Arquivo ou documento não abre no Hypnobox",
+    "perguntas": [
+      "arquivo não abre no hypnobox",
+      "documento hypnobox não baixa",
+      "não consigo abrir pdf no hypnobox",
+      "download bloqueado hypnobox"
+    ],
+    "palavrasChave": [
+      "hypnobox",
+      "arquivo",
+      "documento",
+      "pdf",
+      "download",
+      "abrir",
+      "bloqueado"
+    ],
+    "resposta": "Tente abrir o arquivo em uma nova aba e verifique se o navegador bloqueou pop-ups ou downloads. Se o arquivo continuar indisponível, abra um chamado informando o cliente, a tela e o nome do documento.",
+    "passos": [
+      "Libere pop-ups e downloads para o site.",
+      "Teste em uma janela anônima ou outro navegador atualizado.",
+      "Tente abrir novamente.",
+      "Se persistir, envie um chamado com a identificação do documento."
+    ],
+    "acoes": [
+      {
+        "texto": "Problemas ao abrir arquivos",
+        "tipo": "link",
+        "url": "https://documentacao.senior.com.br/hypnobox/manual-do-usuario/ajuda-tecnica/abrir-arquivos"
+      },
+      {
+        "texto": "Abrir chamado",
+        "tipo": "suporte"
+      }
+    ],
+    "suporte": {
+      "tipo": "Reportar erro",
+      "plataforma": "Hypnobox"
+    },
+    "fonte": {
+      "titulo": "Manual oficial do Hypnobox — Problemas ao abrir arquivos",
+      "url": "https://documentacao.senior.com.br/hypnobox/manual-do-usuario/ajuda-tecnica/abrir-arquivos"
+    }
+  },
+  {
+    "id": "hypnobox-sem-permissao",
+    "categoria": "Hypnobox",
+    "titulo": "Botão, menu ou função não aparece no Hypnobox",
+    "perguntas": [
+      "botão não aparece no hypnobox",
+      "não aparece opção no hypnobox",
+      "menu sumiu",
+      "não consigo editar cliente",
+      "sem permissão no hypnobox",
+      "função bloqueada"
+    ],
+    "palavrasChave": [
+      "hypnobox",
+      "botao",
+      "menu",
+      "opcao",
+      "permissao",
+      "bloqueada",
+      "editar"
+    ],
+    "resposta": "Algumas funções dependem do perfil e das permissões do usuário. Também confirme se você está acessando a operação correta.",
+    "passos": [
+      "Atualize a página e confirme a empresa acessada.",
+      "Verifique se a função aparece para outro usuário com o mesmo perfil.",
+      "Confirme com seu gestor se a atividade faz parte do seu perfil.",
+      "Abra um chamado informando qual botão ou menu deveria aparecer."
+    ],
+    "acoes": [
+      {
+        "texto": "Consultar orientação oficial",
+        "tipo": "link",
+        "url": "https://documentacao.senior.com.br/hypnobox/manual-do-usuario/sobre-ferramenta/sobre-hypnobox/"
+      },
+      {
+        "texto": "Abrir chamado",
+        "tipo": "suporte"
+      }
+    ],
+    "suporte": {
+      "tipo": "Ajuda com plataforma",
+      "plataforma": "Hypnobox"
+    },
+    "fonte": {
+      "titulo": "Manual oficial do Hypnobox",
+      "url": "https://documentacao.senior.com.br/hypnobox/manual-do-usuario/sobre-ferramenta/sobre-hypnobox/"
+    }
+  },
+  {
+    "id": "hypnobox-cadastro-cliente",
+    "categoria": "Hypnobox",
+    "titulo": "Cadastrar ou atualizar um cliente no Hypnobox",
+    "perguntas": [
+      "como cadastrar cliente",
+      "como criar cliente",
+      "não consigo cadastrar cliente",
+      "como atualizar cliente",
+      "como editar cliente",
+      "alterar dados do cliente",
+      "erro ao salvar cliente",
+      "cpf já cadastrado",
+      "cliente duplicado",
+      "telefone já existe no hypnobox",
+      "não consigo editar cadastro"
+    ],
+    "palavrasChave": [
+      "hypnobox",
+      "cadastrar",
+      "cadastro",
+      "criar",
+      "atualizar",
+      "editar",
+      "cliente",
+      "cpf",
+      "duplicado",
+      "telefone",
+      "email",
+      "salvar"
+    ],
+    "resposta": "Acesse Clientes no Hypnobox. Antes de criar um cadastro, pesquise por nome, CPF, telefone ou e-mail. Para alterar um cliente existente, localize-o, abra o menu de ações, selecione Editar, atualize os campos e clique em Salvar.",
+    "passos": [
+      "Abra CRM > Clientes.",
+      "Pesquise o cliente para evitar cadastro duplicado.",
+      "Para um novo cadastro, clique em Criar cliente e preencha os campos obrigatórios.",
+      "Para atualizar, abra o menu de ações do cliente e selecione Editar.",
+      "Salve e confirme a alteração."
+    ],
+    "acoes": [
+      {
+        "texto": "Consultar manual",
+        "tipo": "link",
+        "url": "https://documentacao.senior.com.br/hypnobox/manual-do-usuario/crm/clientes/clientes/"
+      },
+      {
+        "texto": "Abrir chamado",
+        "tipo": "suporte"
+      }
+    ],
+    "suporte": {
+      "tipo": "Ajuda com plataforma",
+      "plataforma": "Hypnobox"
+    },
+    "fonte": {
+      "titulo": "Manual oficial do Hypnobox — Clientes",
+      "url": "https://documentacao.senior.com.br/hypnobox/manual-do-usuario/crm/clientes/clientes/"
+    }
+  },
+  {
+    "id": "hypnobox-clientes-nao-aparecem",
+    "categoria": "Hypnobox",
+    "titulo": "Clientes ou leads não aparecem no Hypnobox",
+    "perguntas": [
+      "meus clientes não aparecem no hypnobox",
+      "não vejo meus leads",
+      "carteira de clientes vazia",
+      "cliente sumiu do hypnobox",
+      "lead não chegou",
+      "não recebi cliente no hypnobox"
+    ],
+    "palavrasChave": [
+      "hypnobox",
+      "cliente",
+      "clientes",
+      "lead",
+      "leads",
+      "carteira",
+      "sumiu",
+      "recebi"
+    ],
+    "resposta": "Primeiro confira os filtros, período e responsável selecionados. A visualização também pode depender da carteira ou das permissões definidas para o seu usuário.",
+    "passos": [
+      "Limpe os filtros da tela.",
+      "Amplie o período da consulta.",
+      "Pesquise pelo nome, telefone ou e-mail do cliente.",
+      "Confirme com o gestor se o cliente está vinculado à sua carteira.",
+      "Se o registro deveria estar disponível, abra um chamado informando um exemplo."
+    ],
+    "acoes": [
+      {
+        "texto": "Consultar manual",
+        "tipo": "link",
+        "url": "https://documentacao.senior.com.br/hypnobox/manual-do-usuario/sobre-ferramenta/sobre-hypnobox/"
+      }
+    ],
+    "suporte": {
+      "tipo": "Ajuda com plataforma",
+      "plataforma": "Hypnobox"
+    },
+    "fonte": {
+      "titulo": "Manual oficial do Hypnobox",
+      "url": "https://documentacao.senior.com.br/hypnobox/manual-do-usuario/sobre-ferramenta/sobre-hypnobox/"
+    }
+  },
+  {
+    "id": "hypnobox-carteira-clientes",
+    "categoria": "Hypnobox",
+    "titulo": "Consultar a carteira de clientes",
+    "perguntas": [
+      "como vejo minha carteira de clientes",
+      "onde ficam meus clientes",
+      "consultar carteira",
+      "pesquisar cliente",
+      "achar cliente pelo cpf",
+      "achar cliente pelo telefone",
+      "filtrar clientes",
+      "lista de clientes"
+    ],
+    "palavrasChave": [
+      "hypnobox",
+      "carteira",
+      "clientes",
+      "cliente",
+      "pesquisar",
+      "buscar",
+      "filtro",
+      "cpf",
+      "telefone",
+      "email"
+    ],
+    "resposta": "No Hypnobox, acesse CRM > Clientes. Pesquise por nome, e-mail, CPF, ID ou telefone, ou utilize os filtros disponíveis. Para voltar à lista completa, limpe os filtros.",
+    "passos": [
+      "Abra a área Clientes.",
+      "Escolha o critério de pesquisa.",
+      "Digite o dado correspondente e clique em Buscar.",
+      "Use os filtros para refinar a carteira."
+    ],
+    "acoes": [
+      {
+        "texto": "Acessar Hypnobox",
+        "tipo": "plataforma",
+        "plataforma": "Hypnobox"
+      },
+      {
+        "texto": "Consultar manual",
+        "tipo": "link",
+        "url": "https://documentacao.senior.com.br/hypnobox/manual-do-usuario/crm/clientes/clientes/"
+      }
+    ],
+    "suporte": {
+      "tipo": "Ajuda com plataforma",
+      "plataforma": "Hypnobox"
+    },
+    "fonte": {
+      "titulo": "Manual oficial do Hypnobox — Clientes",
+      "url": "https://documentacao.senior.com.br/hypnobox/manual-do-usuario/crm/clientes/clientes/"
+    }
+  },
+  {
+    "id": "hypnobox-timeline-cliente",
+    "categoria": "Hypnobox",
+    "titulo": "Consultar o histórico e a timeline do cliente",
+    "perguntas": [
+      "como ver histórico do cliente",
+      "onde vejo as interações do cliente",
+      "timeline do cliente",
+      "histórico de atendimento",
+      "ações realizadas no cliente",
+      "acompanhar cliente",
+      "ver contatos anteriores"
+    ],
+    "palavrasChave": [
+      "hypnobox",
+      "timeline",
+      "historico",
+      "interacao",
+      "cliente",
+      "atendimento",
+      "contato",
+      "acompanhar"
+    ],
+    "resposta": "Abra o cadastro do cliente na carteira do Hypnobox. A timeline reúne, em ordem cronológica, as interações, alterações e principais informações do relacionamento com o cliente.",
+    "passos": [
+      "Acesse CRM > Clientes.",
+      "Localize o cliente.",
+      "Clique no cadastro ou use Abrir em nova aba.",
+      "Consulte a timeline e as ações disponíveis."
+    ],
+    "acoes": [
+      {
+        "texto": "Consultar manual",
+        "tipo": "link",
+        "url": "https://documentacao.senior.com.br/hypnobox/manual-do-usuario/crm/clientes/timeline-cliente/"
+      }
+    ],
+    "suporte": {
+      "tipo": "Ajuda com plataforma",
+      "plataforma": "Hypnobox"
+    },
+    "fonte": {
+      "titulo": "Manual oficial do Hypnobox — Timeline do Cliente",
+      "url": "https://documentacao.senior.com.br/hypnobox/manual-do-usuario/crm/clientes/timeline-cliente/"
+    }
+  },
+  {
+    "id": "hypnobox-nao-carrega",
+    "categoria": "Hypnobox",
+    "titulo": "Hypnobox não carrega ou fica em tela branca",
+    "perguntas": [
+      "hypnobox não carrega",
+      "hypnobox tela branca",
+      "hypnobox fica carregando",
+      "site do hypnobox travado",
+      "hypnobox lento",
+      "página do hypnobox não abre"
+    ],
+    "palavrasChave": [
+      "hypnobox",
+      "carrega",
+      "branca",
+      "travado",
+      "lento",
+      "pagina",
+      "abre"
+    ],
+    "resposta": "Atualize a página e teste o acesso em uma janela anônima. Se funcionar, limpe os dados de navegação do site; se continuar em branco ou carregando, abra um chamado com print e horário do erro.",
+    "passos": [
+      "Atualize a página e teste novamente.",
+      "Abra o Hypnobox em uma janela anônima.",
+      "Teste em outro navegador atualizado.",
+      "Verifique se outros sites estão funcionando normalmente.",
+      "Se persistir, envie um chamado com print, horário e mensagem apresentada."
+    ],
+    "acoes": [
+      {
+        "texto": "Como limpar o cache",
+        "tipo": "link",
+        "url": "https://documentacao.senior.com.br/hypnobox/manual-do-usuario/ajuda-tecnica/limpar-cache"
+      },
+      {
+        "texto": "Navegadores compatíveis",
+        "tipo": "link",
+        "url": "https://documentacao.senior.com.br/hypnobox/manual-do-usuario/ajuda-tecnica/navegadores"
+      },
+      {
+        "texto": "Abrir chamado",
+        "tipo": "suporte"
+      }
+    ],
+    "suporte": {
+      "tipo": "Reportar erro",
+      "plataforma": "Hypnobox"
+    },
+    "fonte": {
+      "titulo": "Manual oficial do Hypnobox — Ajuda técnica",
+      "url": "https://documentacao.senior.com.br/hypnobox/manual-do-usuario/ajuda-tecnica/limpar-cache"
+    }
+  },
+  {
+    "id": "hypnobox-manual",
+    "categoria": "Hypnobox",
+    "titulo": "Manual e orientações do Hypnobox",
+    "perguntas": [
+      "manual do hypnobox",
+      "como usar o hypnobox",
+      "treinamento hypnobox",
+      "documentação hypnobox",
+      "tutorial do hypnobox",
+      "ajuda hypnobox"
+    ],
+    "palavrasChave": [
+      "hypnobox",
+      "manual",
+      "documentacao",
+      "tutorial",
+      "treinamento",
+      "ajuda"
+    ],
+    "resposta": "A documentação oficial do Hypnobox reúne orientações sobre as principais funções da plataforma.",
+    "passos": [
+      "Acesse o manual oficial pelo botão abaixo e procure pelo assunto desejado."
+    ],
+    "acoes": [
+      {
+        "texto": "Abrir manual do Hypnobox",
+        "tipo": "link",
+        "url": "https://documentacao.senior.com.br/hypnobox/manual-do-usuario/sobre-ferramenta/sobre-hypnobox/"
+      }
+    ],
+    "suporte": {
+      "tipo": "Ajuda com plataforma",
+      "plataforma": "Hypnobox"
+    },
+    "fonte": {
+      "titulo": "Manual oficial do Hypnobox",
+      "url": "https://documentacao.senior.com.br/hypnobox/manual-do-usuario/sobre-ferramenta/sobre-hypnobox/"
+    }
+  },
+  {
+    "id": "hypnobox-login",
+    "categoria": "Hypnobox",
+    "titulo": "Não consigo entrar no Hypnobox",
+    "perguntas": [
+      "não consigo acessar o hypnobox",
+      "hypnobox não entra",
+      "erro de login no hypnobox",
+      "senha do hypnobox não funciona",
+      "acesso negado no hypnobox",
+      "usuário inválido no hypnobox"
+    ],
+    "palavrasChave": [
+      "hypnobox",
+      "login",
+      "senha",
+      "acesso",
+      "usuario",
+      "entrar",
+      "negado"
+    ],
+    "resposta": "Confirme se você está usando o endereço do Hypnobox correspondente à sua empresa. Digite novamente o usuário e a senha; se o acesso continuar negado, use a recuperação de senha ou abra um chamado informando a mensagem exibida.",
+    "passos": [
+      "Confirme se a empresa selecionada é Even More ou Even Vendas.",
+      "Abra o Hypnobox pelo card da Plataforma Imob para evitar um endereço incorreto.",
+      "Digite o usuário sem espaços antes ou depois.",
+      "Se a senha não for aceita, consulte a recuperação de senha ou abra um chamado."
+    ],
+    "acoes": [
+      {
+        "texto": "Consultar manual",
+        "tipo": "link",
+        "url": "https://documentacao.senior.com.br/hypnobox/manual-do-usuario/sobre-ferramenta/sobre-hypnobox/"
+      },
+      {
+        "texto": "Abrir chamado",
+        "tipo": "suporte"
+      }
+    ],
+    "suporte": {
+      "tipo": "Redefinição de senha",
+      "plataforma": "Hypnobox"
+    },
+    "fonte": {
+      "titulo": "Manual oficial do Hypnobox",
+      "url": "https://documentacao.senior.com.br/hypnobox/manual-do-usuario/ajuda-tecnica/login-crm"
+    }
+  },
+  {
+    "id": "hypnobox-notificacoes-leads",
+    "categoria": "Hypnobox",
+    "titulo": "Não recebo notificações de novos leads",
+    "perguntas": [
+      "não recebo notificação de lead no hypnobox",
+      "notificação de novo cliente não aparece",
+      "lead chegou sem aviso",
+      "ativar notificações hypnobox"
+    ],
+    "palavrasChave": [
+      "hypnobox",
+      "notificacao",
+      "lead",
+      "leads",
+      "aviso",
+      "novo",
+      "cliente"
+    ],
+    "resposta": "Confira se as notificações do site estão permitidas no navegador e consulte a orientação oficial do Hypnobox. Se outros corretores recebem o aviso e você não, abra um chamado para verificar seu usuário.",
+    "passos": [
+      "Permita notificações para o endereço do Hypnobox.",
+      "Atualize a página e faça um novo teste.",
+      "Consulte o guia oficial de notificações.",
+      "Se persistir, abra um chamado com um exemplo de lead."
+    ],
+    "acoes": [
+      {
+        "texto": "Notificações para leads",
+        "tipo": "link",
+        "url": "https://documentacao.senior.com.br/hypnobox/manual-do-usuario/ajuda-tecnica/notificacoes-leads"
+      },
+      {
+        "texto": "Abrir chamado",
+        "tipo": "suporte"
+      }
+    ],
+    "suporte": {
+      "tipo": "Ajuda com plataforma",
+      "plataforma": "Hypnobox"
+    },
+    "fonte": {
+      "titulo": "Manual oficial do Hypnobox — Notificações para leads",
+      "url": "https://documentacao.senior.com.br/hypnobox/manual-do-usuario/ajuda-tecnica/notificacoes-leads"
+    }
+  },
+  {
+    "id": "hypnobox-crm-deslogado",
+    "categoria": "Hypnobox",
+    "titulo": "O Hypnobox desconecta sozinho",
+    "perguntas": [
+      "hypnobox desconecta sozinho",
+      "crm deslogado",
+      "sessão do hypnobox caiu",
+      "hypnobox me desloga",
+      "fui desconectado do crm"
+    ],
+    "palavrasChave": [
+      "hypnobox",
+      "crm",
+      "deslogado",
+      "desconecta",
+      "sessao",
+      "login"
+    ],
+    "resposta": "Entre novamente pelo endereço correto da sua empresa. Se a desconexão ocorrer repetidamente, teste uma janela anônima e verifique se o navegador está bloqueando cookies; persistindo, abra um chamado com o horário do ocorrido.",
+    "passos": [
+      "Feche abas antigas do Hypnobox.",
+      "Acesse novamente pelo card da Plataforma Imob.",
+      "Teste em uma janela anônima.",
+      "Se voltar a desconectar, envie print e horário no chamado."
+    ],
+    "acoes": [
+      {
+        "texto": "Consultar orientação oficial",
+        "tipo": "link",
+        "url": "https://documentacao.senior.com.br/hypnobox/manual-do-usuario/ajuda-tecnica/crm-deslogado"
+      },
+      {
+        "texto": "Abrir chamado",
+        "tipo": "suporte"
+      }
+    ],
+    "suporte": {
+      "tipo": "Reportar erro",
+      "plataforma": "Hypnobox"
+    },
+    "fonte": {
+      "titulo": "Manual oficial do Hypnobox — CRM deslogado",
+      "url": "https://documentacao.senior.com.br/hypnobox/manual-do-usuario/ajuda-tecnica/crm-deslogado"
+    }
+  },
+  {
+    "id": "hypnobox-oferta-ativa",
+    "categoria": "Hypnobox",
+    "titulo": "Oferta ativa e distribuição de clientes",
+    "perguntas": [
+      "como funciona oferta ativa",
+      "oferta ativa não aparece",
+      "como pegar cliente na oferta ativa",
+      "cliente não volta para oferta ativa",
+      "retirar cliente da oferta ativa",
+      "distribuição da oferta ativa",
+      "oferta ativa sigav",
+      "mailing de clientes"
+    ],
+    "palavrasChave": [
+      "hypnobox",
+      "oferta",
+      "ativa",
+      "cliente",
+      "clientes",
+      "distribuicao",
+      "mailing",
+      "carteira",
+      "devolucao"
+    ],
+    "resposta": "Na operação EVEN IMOB, a oferta ativa de clientes é tratada no Hypnobox. A disponibilidade depende das regras, horários, equipe, regional e permissões configuradas para a operação.",
+    "passos": [
+      "Acesse o Hypnobox da sua empresa.",
+      "Abra a área de clientes ou oferta ativa disponível para o seu perfil.",
+      "Confira se há filtros, horário ou equipe selecionados.",
+      "Se a oferta não aparecer, confirme sua participação com o gestor ou abra um chamado."
+    ],
+    "acoes": [
+      {
+        "texto": "Acessar Hypnobox",
+        "tipo": "plataforma",
+        "plataforma": "Hypnobox"
+      },
+      {
+        "texto": "Consultar manual",
+        "tipo": "link",
+        "url": "https://documentacao.senior.com.br/hypnobox/manual-do-usuario/crm/clientes/clientes/"
+      },
+      {
+        "texto": "Abrir chamado",
+        "tipo": "suporte"
+      }
+    ],
+    "suporte": {
+      "tipo": "Ajuda com plataforma",
+      "plataforma": "Hypnobox"
+    },
+    "fonte": {
+      "titulo": "Orientação interna TI e Manual oficial do Hypnobox",
+      "url": "https://documentacao.senior.com.br/hypnobox/manual-do-usuario/crm/clientes/clientes/"
+    }
+  },
+  {
+    "id": "hypnobox-gestao-clientes-oficial",
+    "categoria": "Hypnobox",
+    "titulo": "Onde devo fazer a gestão de clientes?",
+    "perguntas": [
+      "onde faço a gestão de clientes",
+      "qual sistema uso para clientes",
+      "cliente é no sigav ou hypnobox",
+      "onde atualizo cliente",
+      "onde vejo minha carteira",
+      "onde faço atendimento de cliente",
+      "onde cadastro lead",
+      "onde faço oferta ativa",
+      "como trabalhar uma fac",
+      "gestão de clientes",
+      "carteira de clientes"
+    ],
+    "palavrasChave": [
+      "hypnobox",
+      "cliente",
+      "clientes",
+      "carteira",
+      "lead",
+      "leads",
+      "atendimento",
+      "gestao",
+      "atualizar",
+      "oferta ativa",
+      "fac",
+      "follow-up",
+      "visita",
+      "proposta"
+    ],
+    "resposta": "Na operação EVEN IMOB, toda a gestão da carteira de clientes é realizada no Hypnobox. Use o CRM para consultar, cadastrar e atualizar clientes, acompanhar interações, trabalhar leads, visitas, propostas e oferta ativa.",
+    "passos": [
+      "Acesse o Hypnobox correspondente à sua empresa.",
+      "Entre na área Clientes para localizar a carteira e o cadastro desejado.",
+      "Abra o cliente para consultar a timeline e registrar as ações do atendimento.",
+      "Se a função necessária não aparecer, confirme seu perfil com o gestor ou abra um chamado."
+    ],
+    "acoes": [
+      {
+        "texto": "Acessar Hypnobox",
+        "tipo": "plataforma",
+        "plataforma": "Hypnobox"
+      },
+      {
+        "texto": "Consultar manual",
+        "tipo": "link",
+        "url": "https://documentacao.senior.com.br/hypnobox/manual-do-usuario/crm/clientes/clientes/"
+      }
+    ],
+    "suporte": {
+      "tipo": "Ajuda com plataforma",
+      "plataforma": "Hypnobox"
+    },
+    "fonte": {
+      "titulo": "Orientação interna TI e Manual oficial do Hypnobox",
+      "url": "https://documentacao.senior.com.br/hypnobox/manual-do-usuario/crm/clientes/clientes/"
+    }
+  },
+  {
+    "id": "hypnobox-filtros",
+    "categoria": "Hypnobox",
+    "titulo": "Pesquisa ou filtros do Hypnobox não retornam resultados",
+    "perguntas": [
+      "pesquisa do hypnobox não funciona",
+      "filtro não mostra clientes",
+      "não encontro cliente",
+      "busca sem resultado",
+      "como limpar filtros hypnobox"
+    ],
+    "palavrasChave": [
+      "hypnobox",
+      "pesquisa",
+      "filtro",
+      "busca",
+      "resultado",
+      "encontro",
+      "limpar"
+    ],
+    "resposta": "Um filtro antigo pode ocultar os registros. Limpe os filtros, amplie o período e pesquise usando dados diferentes do cliente.",
+    "passos": [
+      "Use a opção de limpar ou redefinir filtros.",
+      "Amplie o intervalo de datas.",
+      "Pesquise por nome, telefone, CPF ou e-mail.",
+      "Confirme se está consultando a carteira e o responsável corretos."
+    ],
+    "acoes": [
+      {
+        "texto": "Consultar manual",
+        "tipo": "link",
+        "url": "https://documentacao.senior.com.br/hypnobox/manual-do-usuario/sobre-ferramenta/sobre-hypnobox/"
+      }
+    ],
+    "suporte": {
+      "tipo": "Ajuda com plataforma",
+      "plataforma": "Hypnobox"
+    },
+    "fonte": {
+      "titulo": "Manual oficial do Hypnobox",
+      "url": "https://documentacao.senior.com.br/hypnobox/manual-do-usuario/sobre-ferramenta/sobre-hypnobox/"
+    }
+  },
+  {
+    "id": "hypnobox-proposta",
+    "categoria": "Hypnobox",
+    "titulo": "Problemas com proposta no Hypnobox",
+    "perguntas": [
+      "não consigo criar proposta no hypnobox",
+      "proposta não salva",
+      "proposta não aparece",
+      "erro ao registrar proposta",
+      "botão da proposta não aparece",
+      "não consigo enviar proposta"
+    ],
+    "palavrasChave": [
+      "hypnobox",
+      "proposta",
+      "salvar",
+      "registrar",
+      "enviar",
+      "botao",
+      "erro"
+    ],
+    "resposta": "Confirme se todos os campos obrigatórios foram preenchidos e se o cliente e o produto estão vinculados corretamente. A função também pode depender do perfil do usuário.",
+    "passos": [
+      "Revise os campos obrigatórios destacados na tela.",
+      "Confirme o cliente e o empreendimento selecionados.",
+      "Atualize a página e tente novamente.",
+      "Se houver mensagem de erro, copie o texto ou envie um print no chamado."
+    ],
+    "acoes": [
+      {
+        "texto": "Consultar manual",
+        "tipo": "link",
+        "url": "https://documentacao.senior.com.br/hypnobox/manual-do-usuario/sobre-ferramenta/sobre-hypnobox/"
+      },
+      {
+        "texto": "Abrir chamado",
+        "tipo": "suporte"
+      }
+    ],
+    "suporte": {
+      "tipo": "Reportar erro",
+      "plataforma": "Hypnobox"
+    },
+    "fonte": {
+      "titulo": "Manual oficial do Hypnobox",
+      "url": "https://documentacao.senior.com.br/hypnobox/manual-do-usuario/sobre-ferramenta/sobre-hypnobox/"
+    }
+  },
+  {
+    "id": "acesso-hypnobox-link",
+    "categoria": "Hypnobox",
+    "titulo": "Qual endereço do Hypnobox devo usar?",
+    "perguntas": [
+      "qual o link do hypnobox",
+      "onde acesso o hypnobox",
+      "qual hypnobox devo acessar",
+      "endereço do hypnobox",
+      "entrar no hypnobox even more",
+      "entrar no hypnobox even vendas"
+    ],
+    "palavrasChave": [
+      "hypnobox",
+      "link",
+      "endereco",
+      "acessar",
+      "entrar"
+    ],
+    "resposta": "O endereço do Hypnobox depende da empresa selecionada. Use sempre o acesso correspondente à Even More ou à Even Vendas.",
+    "passos": [
+      "Confirme sua empresa na tela inicial.",
+      "Abra o card Hypnobox nas plataformas disponíveis.",
+      "Evite utilizar links salvos de outra operação."
+    ],
+    "acoes": [
+      {
+        "texto": "Consultar orientação oficial",
+        "tipo": "link",
+        "url": "https://documentacao.senior.com.br/hypnobox/manual-do-usuario/sobre-ferramenta/sobre-hypnobox/"
+      },
+      {
+        "texto": "Acessar Hypnobox",
+        "tipo": "plataforma",
+        "plataforma": "Hypnobox"
+      }
+    ],
+    "suporte": {
+      "tipo": "Ajuda com plataforma",
+      "plataforma": "Hypnobox"
+    },
+    "fonte": {
+      "titulo": "Manual oficial do Hypnobox",
+      "url": "https://documentacao.senior.com.br/hypnobox/manual-do-usuario/sobre-ferramenta/sobre-hypnobox/"
+    }
+  },
+  {
+    "id": "hypnobox-distribuicao-leads",
+    "categoria": "Hypnobox",
+    "titulo": "Recebimento e distribuição de leads",
+    "perguntas": [
+      "não recebi lead",
+      "lead não foi distribuído",
+      "como funciona rodízio de leads",
+      "não chegou cliente novo",
+      "fila de atendimento",
+      "distribuição de clientes",
+      "rodizio no sigav",
+      "lead no sigavi"
+    ],
+    "palavrasChave": [
+      "hypnobox",
+      "lead",
+      "leads",
+      "distribuicao",
+      "rodizio",
+      "fila",
+      "cliente",
+      "receber",
+      "atendimento"
+    ],
+    "resposta": "Na operação EVEN IMOB, os leads e clientes são distribuídos pelo Hypnobox. A entrega pode seguir regras de fila, sorteio ou direcionamento e depende da configuração e disponibilidade do corretor.",
+    "passos": [
+      "Confirme se você está conectado ao Hypnobox correto.",
+      "Verifique se há filtros ativos na carteira.",
+      "Confirme com o gestor se você está habilitado na fila ou equipe correta.",
+      "Se um lead específico não chegou, abra um chamado com data, horário e origem."
+    ],
+    "acoes": [
+      {
+        "texto": "Acessar Hypnobox",
+        "tipo": "plataforma",
+        "plataforma": "Hypnobox"
+      },
+      {
+        "texto": "Consultar CRM",
+        "tipo": "link",
+        "url": "https://documentacao.senior.com.br/hypnobox/manual-do-usuario/crm/crm/"
+      },
+      {
+        "texto": "Abrir chamado",
+        "tipo": "suporte"
+      }
+    ],
+    "suporte": {
+      "tipo": "Ajuda com plataforma",
+      "plataforma": "Hypnobox"
+    },
+    "fonte": {
+      "titulo": "Manual oficial do Hypnobox — CRM",
+      "url": "https://documentacao.senior.com.br/hypnobox/manual-do-usuario/crm/crm/"
+    }
+  },
+  {
+    "id": "hypnobox-recuperar-senha",
+    "categoria": "Hypnobox",
+    "titulo": "Recuperar ou redefinir a senha do Hypnobox",
+    "perguntas": [
+      "como recuperar senha do hypnobox",
+      "esqueci senha hypnobox",
+      "redefinir senha do crm",
+      "trocar senha hypnobox",
+      "senha crm esquecida"
+    ],
+    "palavrasChave": [
+      "hypnobox",
+      "senha",
+      "recuperar",
+      "redefinir",
+      "esqueci",
+      "crm"
+    ],
+    "resposta": "Use a recuperação de senha disponível no acesso do CRM e siga as instruções enviadas para o seu e-mail. Se você não receber a mensagem ou não tiver e-mail corporativo, abra um chamado para o TI.",
+    "passos": [
+      "Abra o Hypnobox correspondente à sua empresa.",
+      "Selecione a opção de recuperação de senha.",
+      "Confira a caixa de entrada e o spam.",
+      "Se não receber a mensagem, abra um chamado."
+    ],
+    "acoes": [
+      {
+        "texto": "Recuperar senha",
+        "tipo": "link",
+        "url": "https://documentacao.senior.com.br/hypnobox/manual-do-usuario/ajuda-tecnica/recuperar-senha-crm"
+      },
+      {
+        "texto": "Redefinir senha",
+        "tipo": "link",
+        "url": "https://documentacao.senior.com.br/hypnobox/manual-do-usuario/ajuda-tecnica/redefinir-senha-crm"
+      },
+      {
+        "texto": "Abrir chamado",
+        "tipo": "suporte"
+      }
+    ],
+    "suporte": {
+      "tipo": "Redefinição de senha",
+      "plataforma": "Hypnobox"
+    },
+    "fonte": {
+      "titulo": "Manual oficial do Hypnobox — Recuperação de senha",
+      "url": "https://documentacao.senior.com.br/hypnobox/manual-do-usuario/ajuda-tecnica/recuperar-senha-crm"
+    }
+  },
+  {
+    "id": "hypnobox-followup-atendimento",
+    "categoria": "Hypnobox",
+    "titulo": "Registrar atendimento e acompanhar o cliente",
+    "perguntas": [
+      "como fazer follow up",
+      "onde registrar ligação do cliente",
+      "registrar contato com cliente",
+      "criar próxima atividade",
+      "acompanhar atendimento",
+      "atualizar atendimento do cliente",
+      "follow up no sigav",
+      "follow-up no sigavi"
+    ],
+    "palavrasChave": [
+      "hypnobox",
+      "follow-up",
+      "followup",
+      "atendimento",
+      "cliente",
+      "ligacao",
+      "contato",
+      "atividade",
+      "historico",
+      "timeline"
+    ],
+    "resposta": "O acompanhamento do cliente deve ser registrado no Hypnobox. Abra o cadastro do cliente e use a timeline e as ações disponíveis para manter o histórico e a próxima atividade atualizados.",
+    "passos": [
+      "Abra CRM > Clientes.",
+      "Localize e abra o cadastro do cliente.",
+      "Consulte a timeline.",
+      "Registre a interação ou ação disponível para o seu perfil.",
+      "Confirme se o histórico foi atualizado."
+    ],
+    "acoes": [
+      {
+        "texto": "Consultar timeline",
+        "tipo": "link",
+        "url": "https://documentacao.senior.com.br/hypnobox/manual-do-usuario/crm/clientes/timeline-cliente/"
+      },
+      {
+        "texto": "Abrir chamado",
+        "tipo": "suporte"
+      }
+    ],
+    "suporte": {
+      "tipo": "Ajuda com plataforma",
+      "plataforma": "Hypnobox"
+    },
+    "fonte": {
+      "titulo": "Manual oficial do Hypnobox — Timeline do Cliente",
+      "url": "https://documentacao.senior.com.br/hypnobox/manual-do-usuario/crm/clientes/timeline-cliente/"
+    }
+  },
+  {
+    "id": "hypnobox-usuario-bloqueado",
+    "categoria": "Hypnobox",
+    "titulo": "Usuário bloqueado no Hypnobox",
+    "perguntas": [
+      "usuário bloqueado no hypnobox",
+      "meu acesso hypnobox foi bloqueado",
+      "desbloquear usuário crm",
+      "conta bloqueada hypnobox"
+    ],
+    "palavrasChave": [
+      "hypnobox",
+      "usuario",
+      "bloqueado",
+      "desbloquear",
+      "conta",
+      "crm"
+    ],
+    "resposta": "Use a orientação oficial de desbloqueio do CRM. Caso a opção não esteja disponível para o seu perfil, abra um chamado de redefinição de senha informando seu apelido e a mensagem apresentada.",
+    "passos": [
+      "Não continue repetindo a senha para evitar novos bloqueios.",
+      "Consulte a orientação oficial de desbloqueio.",
+      "Se não conseguir concluir, abra um chamado de redefinição de senha."
+    ],
+    "acoes": [
+      {
+        "texto": "Como desbloquear o usuário",
+        "tipo": "link",
+        "url": "https://documentacao.senior.com.br/hypnobox/manual-do-usuario/ajuda-tecnica/desbloquear-usuario-crm"
+      },
+      {
+        "texto": "Abrir chamado",
+        "tipo": "suporte"
+      }
+    ],
+    "suporte": {
+      "tipo": "Redefinição de senha",
+      "plataforma": "Hypnobox"
+    },
+    "fonte": {
+      "titulo": "Manual oficial do Hypnobox — Desbloquear usuário",
+      "url": "https://documentacao.senior.com.br/hypnobox/manual-do-usuario/ajuda-tecnica/desbloquear-usuario-crm"
+    }
+  },
+  {
+    "id": "authenticator-celular-perdido",
+    "categoria": "Google Authenticator",
+    "titulo": "Celular perdido, roubado ou sem acesso ao Authenticator",
+    "perguntas": [
+      "perdi celular com authenticator",
+      "celular roubado autenticador",
+      "não tenho mais acesso ao autenticador",
+      "apaguei o authenticator",
+      "não consigo gerar código",
+      "fiquei sem o segundo fator"
+    ],
+    "palavrasChave": [
+      "authenticator",
+      "autenticador",
+      "perdi",
+      "roubado",
+      "sem acesso",
+      "apagou",
+      "recuperar",
+      "codigo alternativo"
+    ],
+    "resposta": "Use outra opção de verificação disponível, como código alternativo, telefone, dispositivo confiável ou outro método cadastrado. Em conta corporativa, contate o TI para redefinir o segundo fator. Nunca informe senhas ou códigos pelo chamado.",
+    "passos": [
+      "Na tela de login, selecione Tentar de outro jeito ou Mais opções.",
+      "Use um método alternativo já cadastrado, se disponível.",
+      "Proteja o aparelho perdido e altere a senha da conta quando necessário.",
+      "Abra um chamado ao TI para redefinir o autenticador corporativo."
+    ],
+    "acoes": [
+      {
+        "texto": "Consultar recuperação oficial",
+        "tipo": "link",
+        "url": "https://support.google.com/accounts/answer/185834?hl=pt-BR"
+      },
+      {
+        "texto": "Abrir chamado",
+        "tipo": "suporte"
+      }
+    ],
+    "suporte": {
+      "tipo": "Redefinição de senha",
+      "plataforma": "Google Authenticator"
+    },
+    "fonte": {
+      "titulo": "Ajuda oficial da Conta do Google — Problemas com a verificação em duas etapas",
+      "url": "https://support.google.com/accounts/answer/185834?hl=pt-BR"
+    }
+  },
+  {
+    "id": "authenticator-codigo-invalido",
+    "categoria": "Google Authenticator",
+    "titulo": "Código do Authenticator inválido ou expirado",
+    "perguntas": [
+      "código do authenticator não funciona",
+      "código inválido autenticador",
+      "código expirou",
+      "erro no código de seis dígitos",
+      "autenticador dá código errado",
+      "não aceita o código do google authenticator"
+    ],
+    "palavrasChave": [
+      "authenticator",
+      "autenticador",
+      "codigo",
+      "invalido",
+      "expirado",
+      "errado",
+      "horario",
+      "fuso",
+      "sincronizado"
+    ],
+    "resposta": "Aguarde um novo código e tente novamente. Confirme se está usando o código da conta e da plataforma corretas e se a data, o horário e o fuso do celular estão configurados automaticamente.",
+    "passos": [
+      "Espere o código atual mudar e digite o novo antes de expirar.",
+      "Confirme o nome da conta e da plataforma exibidos no aplicativo.",
+      "Ative data e hora automáticas no celular.",
+      "Feche e abra novamente o aplicativo.",
+      "Se continuar, use outra forma de verificação disponível ou abra um chamado."
+    ],
+    "acoes": [
+      {
+        "texto": "Consultar solução oficial",
+        "tipo": "link",
+        "url": "https://support.google.com/accounts/answer/1066447?hl=pt-BR"
+      },
+      {
+        "texto": "Abrir chamado",
+        "tipo": "suporte"
+      }
+    ],
+    "suporte": {
+      "tipo": "Reportar erro",
+      "plataforma": "Google Authenticator"
+    },
+    "fonte": {
+      "titulo": "Ajuda oficial da Conta do Google — Corrigir código incorreto",
+      "url": "https://support.google.com/accounts/answer/1066447?hl=pt-BR"
+    }
+  },
+  {
+    "id": "authenticator-configurar",
+    "categoria": "Google Authenticator",
+    "titulo": "Configurar o Google Authenticator",
+    "perguntas": [
+      "como usar o autenticador",
+      "como usar o authenticator",
+      "como usar o google authenticator",
+      "como configurar google authenticator",
+      "como instalar autenticador",
+      "como ler qr code do autenticador",
+      "como adicionar conta no authenticator",
+      "primeiro acesso autenticador",
+      "ativar autenticação de dois fatores"
+    ],
+    "palavrasChave": [
+      "google",
+      "authenticator",
+      "autenticador",
+      "configurar",
+      "instalar",
+      "qr code",
+      "adicionar",
+      "conta",
+      "ativar",
+      "2fa"
+    ],
+    "resposta": "Instale o Google Authenticator no celular. Na plataforma que está ativando a autenticação, abra a configuração de segurança, exiba o QR Code, toque em adicionar no aplicativo, leia o código e confirme com o código temporário mostrado.",
+    "passos": [
+      "Instale o Google Authenticator pela loja oficial do celular.",
+      "Na plataforma, inicie a configuração da autenticação em duas etapas.",
+      "No aplicativo, toque em adicionar e escolha Ler QR Code.",
+      "Leia o QR Code exibido pela plataforma.",
+      "Digite na plataforma o código temporário gerado pelo aplicativo."
+    ],
+    "acoes": [
+      {
+        "texto": "Consultar configuração oficial",
+        "tipo": "link",
+        "url": "https://support.google.com/accounts/answer/1066447?hl=pt-BR"
+      }
+    ],
+    "suporte": {
+      "tipo": "Ajuda com plataforma",
+      "plataforma": "Google Authenticator"
+    },
+    "fonte": {
+      "titulo": "Ajuda oficial da Conta do Google — Configurar o Authenticator",
+      "url": "https://support.google.com/accounts/answer/1066447?hl=pt-BR"
+    }
+  },
+  {
+    "id": "authenticator-sem-internet",
+    "categoria": "Google Authenticator",
+    "titulo": "O Authenticator funciona sem internet?",
+    "perguntas": [
+      "authenticator funciona sem internet",
+      "precisa de internet para gerar código",
+      "autenticador offline",
+      "sem sinal no celular",
+      "sem dados móveis authenticator"
+    ],
+    "palavrasChave": [
+      "authenticator",
+      "autenticador",
+      "internet",
+      "offline",
+      "sinal",
+      "dados moveis",
+      "codigo"
+    ],
+    "resposta": "Sim. Depois de configurado, o Google Authenticator consegue gerar códigos mesmo sem internet ou sinal de celular. O horário do aparelho precisa estar correto.",
+    "passos": [],
+    "acoes": [
+      {
+        "texto": "Consultar ajuda do Google",
+        "tipo": "link",
+        "url": "https://support.google.com/accounts/answer/1066447?hl=pt-BR"
+      }
+    ],
+    "suporte": {
+      "tipo": "Ajuda com plataforma",
+      "plataforma": "Google Authenticator"
+    },
+    "fonte": {
+      "titulo": "Ajuda oficial da Conta do Google — Códigos sem internet",
+      "url": "https://support.google.com/accounts/answer/1066447?hl=pt-BR"
+    }
+  },
+  {
+    "id": "authenticator-o-que-e",
+    "categoria": "Google Authenticator",
+    "titulo": "O que é o Google Authenticator?",
+    "perguntas": [
+      "o que é google authenticator",
+      "para que serve o autenticador",
+      "o que é autenticação de dois fatores",
+      "o que é 2fa",
+      "por que pede código de 6 dígitos",
+      "segundo fator de autenticação"
+    ],
+    "palavrasChave": [
+      "google",
+      "authenticator",
+      "autenticador",
+      "2fa",
+      "mfa",
+      "codigo",
+      "seis digitos",
+      "duas etapas",
+      "segundo fator"
+    ],
+    "resposta": "O Google Authenticator gera códigos temporários usados como uma segunda etapa de segurança no acesso às plataformas. O código muda automaticamente e deve ser informado somente na tela oficial de login.",
+    "passos": [],
+    "acoes": [
+      {
+        "texto": "Consultar ajuda do Google",
+        "tipo": "link",
+        "url": "https://support.google.com/accounts/answer/1066447?hl=pt-BR"
+      }
+    ],
+    "suporte": {
+      "tipo": "Ajuda com plataforma",
+      "plataforma": "Google Authenticator"
+    },
+    "fonte": {
+      "titulo": "Ajuda oficial da Conta do Google — Google Authenticator",
+      "url": "https://support.google.com/accounts/answer/1066447?hl=pt-BR"
+    }
+  },
+  {
+    "id": "authenticator-codigos-desapareceram",
+    "categoria": "Google Authenticator",
+    "titulo": "Os códigos desapareceram do Authenticator",
+    "perguntas": [
+      "meus códigos sumiram do authenticator",
+      "contas desapareceram do autenticador",
+      "authenticator vazio",
+      "não aparece código no aplicativo",
+      "troquei conta google e sumiram os códigos"
+    ],
+    "palavrasChave": [
+      "authenticator",
+      "autenticador",
+      "codigo",
+      "sumiu",
+      "desapareceu",
+      "vazio",
+      "conta google",
+      "perfil"
+    ],
+    "resposta": "Confira se o aplicativo está conectado à Conta Google correta. Os códigos podem estar sincronizados em outro perfil ou armazenados somente no aparelho. Caso não consiga recuperá-los, use uma opção alternativa e solicite ao TI a redefinição do segundo fator.",
+    "passos": [
+      "Toque no perfil do aplicativo e confirme a Conta Google selecionada.",
+      "Verifique outras contas conectadas ao aparelho.",
+      "Confira a opção Usar sem uma conta, caso os códigos tenham sido salvos localmente.",
+      "Se não houver acesso, use outro método e abra um chamado."
+    ],
+    "acoes": [
+      {
+        "texto": "Consultar ajuda oficial",
+        "tipo": "link",
+        "url": "https://support.google.com/accounts/answer/1066447?hl=pt-BR"
+      },
+      {
+        "texto": "Abrir chamado",
+        "tipo": "suporte"
+      }
+    ],
+    "suporte": {
+      "tipo": "Ajuda com plataforma",
+      "plataforma": "Google Authenticator"
+    },
+    "fonte": {
+      "titulo": "Ajuda oficial da Conta do Google — Códigos desaparecidos",
+      "url": "https://support.google.com/accounts/answer/1066447?hl=pt-BR"
+    }
+  },
+  {
+    "id": "authenticator-seguranca",
+    "categoria": "Google Authenticator",
+    "titulo": "Segurança dos códigos do Authenticator",
+    "perguntas": [
+      "posso passar código do authenticator",
+      "ti pediu meu código",
+      "compartilhar código de seis dígitos",
+      "como proteger autenticador",
+      "tela de privacidade authenticator",
+      "código do autenticador é senha"
+    ],
+    "palavrasChave": [
+      "authenticator",
+      "autenticador",
+      "seguranca",
+      "compartilhar",
+      "codigo",
+      "privacidade",
+      "biometria",
+      "senha"
+    ],
+    "resposta": "Nunca compartilhe códigos do Authenticator, QR Codes, chaves de configuração, senhas ou códigos alternativos. O TI não precisa do código temporário para prestar suporte. Ative a Tela de privacidade do aplicativo, quando disponível.",
+    "passos": [
+      "Não envie códigos por e-mail, mensagem ou chamado.",
+      "Ative PIN, biometria ou bloqueio de tela no celular.",
+      "No Authenticator, habilite a Tela de privacidade.",
+      "Mantenha métodos alternativos de recuperação protegidos."
+    ],
+    "acoes": [
+      {
+        "texto": "Consultar segurança oficial",
+        "tipo": "link",
+        "url": "https://support.google.com/accounts/answer/185839?hl=pt-BR"
+      }
+    ],
+    "suporte": {
+      "tipo": "Ajuda com plataforma",
+      "plataforma": "Google Authenticator"
+    },
+    "fonte": {
+      "titulo": "Ajuda oficial da Conta do Google — Verificação em duas etapas",
+      "url": "https://support.google.com/accounts/answer/185839?hl=pt-BR"
+    }
+  },
+  {
+    "id": "authenticator-trocar-celular",
+    "categoria": "Google Authenticator",
+    "titulo": "Trocar o Google Authenticator para outro celular",
+    "perguntas": [
+      "troquei de celular authenticator",
+      "como transferir autenticador",
+      "passar códigos para celular novo",
+      "mudar google authenticator de aparelho",
+      "exportar contas authenticator",
+      "importar contas authenticator"
+    ],
+    "palavrasChave": [
+      "authenticator",
+      "autenticador",
+      "trocar",
+      "celular",
+      "novo",
+      "transferir",
+      "exportar",
+      "importar",
+      "qr code",
+      "sincronizar"
+    ],
+    "resposta": "Se os códigos estiverem sincronizados com sua Conta Google, entre na mesma conta no novo aparelho. Sem sincronização, use Transferir contas no aparelho antigo para exportar e leia o QR Code no aparelho novo. Só apague o aparelho antigo depois de testar o acesso.",
+    "passos": [
+      "Instale o Google Authenticator no celular novo.",
+      "Verifique se os códigos aparecem ao entrar na mesma Conta Google.",
+      "Se não aparecerem, no aparelho antigo abra Transferir contas > Exportar contas.",
+      "No aparelho novo, escolha Importar contas e leia o QR Code.",
+      "Teste o acesso antes de remover os códigos do celular antigo."
+    ],
+    "acoes": [
+      {
+        "texto": "Consultar transferência oficial",
+        "tipo": "link",
+        "url": "https://support.google.com/accounts/answer/1066447?hl=pt-BR"
+      }
+    ],
+    "suporte": {
+      "tipo": "Ajuda com plataforma",
+      "plataforma": "Google Authenticator"
+    },
+    "fonte": {
+      "titulo": "Ajuda oficial da Conta do Google — Transferir códigos",
+      "url": "https://support.google.com/accounts/answer/1066447?hl=pt-BR"
+    }
+  },
+  {
+    "id": "authenticator-codigos-alternativos",
+    "categoria": "Google Authenticator",
+    "titulo": "Usar códigos alternativos",
+    "perguntas": [
+      "o que são códigos alternativos",
+      "como entrar sem authenticator",
+      "código de backup google",
+      "não consigo usar segundo fator",
+      "usar código reserva",
+      "backup codes"
+    ],
+    "palavrasChave": [
+      "authenticator",
+      "autenticador",
+      "codigo alternativo",
+      "backup",
+      "reserva",
+      "segundo fator",
+      "entrar"
+    ],
+    "resposta": "Códigos alternativos podem ser usados quando o método normal de verificação não está disponível. Cada código funciona uma única vez e deve ser guardado em local seguro. Nunca compartilhe esses códigos.",
+    "passos": [
+      "Na tela de verificação, escolha outra forma de login.",
+      "Selecione a opção de código alternativo, quando disponível.",
+      "Digite um código ainda não utilizado.",
+      "Depois de recuperar o acesso, revise seus métodos de segurança."
+    ],
+    "acoes": [
+      {
+        "texto": "Consultar códigos alternativos",
+        "tipo": "link",
+        "url": "https://support.google.com/accounts/answer/1187538?hl=pt-BR"
+      }
+    ],
+    "suporte": {
+      "tipo": "Ajuda com plataforma",
+      "plataforma": "Google Authenticator"
+    },
+    "fonte": {
+      "titulo": "Ajuda oficial da Conta do Google — Códigos alternativos",
+      "url": "https://support.google.com/accounts/answer/1187538?hl=pt-BR"
+    }
+  },
+  {
+    "id": "webmail-caixa-cheia",
+    "categoria": "Webmail",
+    "titulo": "Caixa de e-mail cheia",
+    "perguntas": [
+      "caixa de email cheia",
+      "sem espaço no webmail",
+      "armazenamento do email cheio",
+      "quota excedida",
+      "não recebo porque caixa está cheia"
+    ],
+    "palavrasChave": [
+      "webmail",
+      "email",
+      "caixa",
+      "cheia",
+      "espaco",
+      "armazenamento",
+      "quota"
+    ],
+    "resposta": "Exclua mensagens antigas e arquivos grandes das pastas Caixa de entrada, Enviados e Lixeira. Depois, esvazie a Lixeira para liberar espaço.",
+    "passos": [
+      "Localize mensagens com anexos grandes.",
+      "Exclua o que não for necessário.",
+      "Revise a pasta Enviados.",
+      "Esvazie a Lixeira.",
+      "Aguarde alguns minutos e teste novamente."
+    ],
+    "acoes": [
+      {
+        "texto": "Acessar Webmail",
+        "tipo": "plataforma",
+        "plataforma": "Webmail"
+      },
+      {
+        "texto": "Consultar ajuda SkyMail",
+        "tipo": "link",
+        "url": "https://suporte.skynova.com.br/hc/pt-br/categories/360003931671-Skymail"
+      },
+      {
+        "texto": "Abrir chamado",
+        "tipo": "suporte"
+      }
+    ],
+    "suporte": {
+      "tipo": "Ajuda com plataforma",
+      "plataforma": "Webmail"
+    },
+    "fonte": {
+      "titulo": "Central oficial de ajuda SkyMail",
+      "url": "https://suporte.skynova.com.br/hc/pt-br/categories/360003931671-Skymail"
+    }
+  },
+  {
+    "id": "webmail-alterar-senha",
+    "categoria": "Webmail",
+    "titulo": "Como alterar a senha do e-mail",
+    "perguntas": [
+      "como alterar senha do webmail",
+      "trocar senha do email corporativo",
+      "mudar senha skymail",
+      "alterar senha do e-mail"
+    ],
+    "palavrasChave": [
+      "webmail",
+      "email",
+      "skymail",
+      "senha",
+      "alterar",
+      "trocar",
+      "configuracoes"
+    ],
+    "resposta": "No Webmail, abra os três pontos no canto inferior esquerdo, entre em Configurações e selecione Senha. Informe a senha atual, digite e confirme a nova senha e clique em Salvar.",
+    "passos": [
+      "Acesse o Webmail.",
+      "Clique nos três pontos no canto inferior esquerdo.",
+      "Abra Configurações e depois Senha.",
+      "Preencha a senha atual e a nova senha duas vezes.",
+      "Clique em Salvar."
+    ],
+    "acoes": [
+      {
+        "texto": "Acessar Webmail",
+        "tipo": "plataforma",
+        "plataforma": "Webmail"
+      },
+      {
+        "texto": "Ver instrução completa",
+        "tipo": "link",
+        "url": "https://suporte.skynova.com.br/hc/pt-br/articles/360049112492-Alterar-senha-do-e-mail-Webmail-Skymail"
+      }
+    ],
+    "suporte": {
+      "tipo": "Redefinição de senha",
+      "plataforma": "Webmail"
+    },
+    "fonte": {
+      "titulo": "SkyMail — Alterar senha do e-mail",
+      "url": "https://suporte.skynova.com.br/hc/pt-br/articles/360049112492-Alterar-senha-do-e-mail-Webmail-Skymail"
+    }
+  },
+  {
+    "id": "webmail-filtro-regra",
+    "categoria": "Webmail",
+    "titulo": "Como criar filtro ou regra no Webmail",
+    "perguntas": [
+      "como criar regra no webmail",
+      "criar filtro skymail",
+      "mover email automaticamente para pasta",
+      "organizar emails com filtro"
+    ],
+    "palavrasChave": [
+      "webmail",
+      "filtro",
+      "regra",
+      "pasta",
+      "mensagem",
+      "organizar",
+      "skymail"
+    ],
+    "resposta": "Abra Configurações pelos três pontos e crie um filtro, ou clique com o botão direito na mensagem, escolha Mais e depois Criar filtro. Defina o nome, as condições e as ações e clique em Salvar.",
+    "passos": [
+      "Abra Configurações ou clique com o botão direito na mensagem.",
+      "Selecione Criar filtro.",
+      "Defina nome, escopo, regras e ações.",
+      "Marque a aplicação em uma pasta existente quando necessário.",
+      "Clique em Salvar."
+    ],
+    "acoes": [
+      {
+        "texto": "Ver instrução completa",
+        "tipo": "link",
+        "url": "https://suporte.skynova.com.br/hc/pt-br/articles/360049591471-Criar-filtro-Criar-regra-no-webmail-responsivo"
+      }
+    ],
+    "suporte": {
+      "tipo": "Ajuda com plataforma",
+      "plataforma": "Webmail"
+    },
+    "fonte": {
+      "titulo": "SkyMail — Criar filtro e regra",
+      "url": "https://suporte.skynova.com.br/hc/pt-br/articles/360049591471-Criar-filtro-Criar-regra-no-webmail-responsivo"
+    }
+  },
+  {
+    "id": "webmail-resposta-automatica",
+    "categoria": "Webmail",
+    "titulo": "Como criar uma resposta automática no Webmail",
+    "perguntas": [
+      "como criar resposta automática no webmail",
+      "mensagem pronta skymail",
+      "criar resposta rápida no email",
+      "resposta automática de email"
+    ],
+    "palavrasChave": [
+      "webmail",
+      "resposta",
+      "automatica",
+      "mensagem",
+      "pronta",
+      "skymail",
+      "configuracoes"
+    ],
+    "resposta": "No Webmail, abra os três pontos, entre em Configurações e depois em Respostas. Clique em Criar, informe um nome e o texto da resposta e salve. Ao redigir um e-mail, use a opção Respostas para inserir o texto pronto.",
+    "passos": [
+      "Abra Configurações pelos três pontos.",
+      "Selecione Respostas e clique em Criar.",
+      "Informe o nome e o conteúdo da resposta.",
+      "Clique em Salvar.",
+      "Ao escrever uma mensagem, clique em Respostas e escolha o modelo."
+    ],
+    "acoes": [
+      {
+        "texto": "Acessar Webmail",
+        "tipo": "plataforma",
+        "plataforma": "Webmail"
+      },
+      {
+        "texto": "Ver instrução completa",
+        "tipo": "link",
+        "url": "https://suporte.skynova.com.br/hc/pt-br/articles/360049591391-Configurar-e-utilizar-resposta-autom%C3%A1tica"
+      }
+    ],
+    "suporte": {
+      "tipo": "Ajuda com plataforma",
+      "plataforma": "Webmail"
+    },
+    "fonte": {
+      "titulo": "SkyMail — Configurar e utilizar resposta automática",
+      "url": "https://suporte.skynova.com.br/hc/pt-br/articles/360049591391-Configurar-e-utilizar-resposta-autom%C3%A1tica"
+    }
+  },
+  {
+    "id": "webmail-preferencias-mensagem",
+    "categoria": "Webmail",
+    "titulo": "Configurar assinatura e preferências de mensagem",
+    "perguntas": [
+      "como colocar assinatura no webmail",
+      "configurar fonte do email",
+      "pedir confirmação de leitura",
+      "alterar modo de responder email",
+      "preferências de mensagem skymail"
+    ],
+    "palavrasChave": [
+      "webmail",
+      "assinatura",
+      "fonte",
+      "confirmacao",
+      "leitura",
+      "redigir",
+      "preferencias",
+      "mensagem"
+    ],
+    "resposta": "No Webmail, abra os três pontos, entre em Configurações, Preferências e Redigir mensagens. Nessa área você pode ajustar formato HTML, confirmações, posição da resposta, encaminhamento, fonte, assinatura e verificação ortográfica.",
+    "passos": [
+      "Abra Configurações.",
+      "Entre em Preferências.",
+      "Selecione Redigir mensagens.",
+      "Ajuste as opções desejadas e salve."
+    ],
+    "acoes": [
+      {
+        "texto": "Ver opções disponíveis",
+        "tipo": "link",
+        "url": "https://suporte.skynova.com.br/hc/pt-br/articles/360049591431-Redigir-mensagens"
+      }
+    ],
+    "suporte": {
+      "tipo": "Ajuda com plataforma",
+      "plataforma": "Webmail"
+    },
+    "fonte": {
+      "titulo": "SkyMail — Redigir mensagens",
+      "url": "https://suporte.skynova.com.br/hc/pt-br/articles/360049591431-Redigir-mensagens"
+    }
+  },
+  {
+    "id": "webmail-configurar-android-gmail",
+    "categoria": "Webmail",
+    "titulo": "Configurar e-mail no Android pelo Gmail",
+    "perguntas": [
+      "configurar email skymail no android",
+      "colocar email corporativo no gmail",
+      "configurar imap no celular android",
+      "servidor skymail gmail"
+    ],
+    "palavrasChave": [
+      "webmail",
+      "email",
+      "android",
+      "gmail",
+      "imap",
+      "smtp",
+      "configurar",
+      "servidor"
+    ],
+    "resposta": "No Android, adicione uma conta do tipo IMAP no Gmail. Use imap.skymail.net.br como servidor de entrada e smtp.skymail.net.br como servidor de saída, informando seu e-mail completo e sua senha.",
+    "passos": [
+      "Abra as configurações de contas e escolha Adicionar conta.",
+      "Selecione IMAP.",
+      "Informe o e-mail e a senha.",
+      "Use imap.skymail.net.br na entrada.",
+      "Use smtp.skymail.net.br na saída.",
+      "Conclua e teste o envio e o recebimento."
+    ],
+    "acoes": [
+      {
+        "texto": "Ver configuração completa",
+        "tipo": "link",
+        "url": "https://suporte.skynova.com.br/hc/pt-br/articles/360047601291-Configurar-Gmail-App-IMAP"
+      }
+    ],
+    "suporte": {
+      "tipo": "Ajuda com plataforma",
+      "plataforma": "Webmail"
+    },
+    "fonte": {
+      "titulo": "SkyMail — Configurar Gmail App por IMAP",
+      "url": "https://suporte.skynova.com.br/hc/pt-br/articles/360047601291-Configurar-Gmail-App-IMAP"
+    }
+  },
+  {
+    "id": "webmail-configurar-outlook-app",
+    "categoria": "Webmail",
+    "titulo": "Configurar e-mail no aplicativo Outlook",
+    "perguntas": [
+      "configurar email skymail no outlook app",
+      "colocar email corporativo no outlook celular",
+      "outlook imap skymail",
+      "portas imap smtp outlook"
+    ],
+    "palavrasChave": [
+      "webmail",
+      "email",
+      "outlook",
+      "app",
+      "imap",
+      "smtp",
+      "configurar",
+      "porta"
+    ],
+    "resposta": "No Outlook App, altere o provedor da conta para IMAP e abra as configurações avançadas. Use os servidores SkyMail com SSL/TLS; quando as portas forem solicitadas, use IMAP 993 e SMTP 465.",
+    "passos": [
+      "Inicie a inclusão da conta no Outlook.",
+      "Altere o provedor para IMAP.",
+      "Abra Configurações avançadas.",
+      "Preencha os servidores e dados da conta.",
+      "Use IMAP 993 e SMTP 465 com SSL/TLS.",
+      "Conclua a configuração."
+    ],
+    "acoes": [
+      {
+        "texto": "Ver configuração completa",
+        "tipo": "link",
+        "url": "https://suporte.skynova.com.br/hc/pt-br/articles/360047156912-Configurar-Outlook-App-IMAP"
+      }
+    ],
+    "suporte": {
+      "tipo": "Ajuda com plataforma",
+      "plataforma": "Webmail"
+    },
+    "fonte": {
+      "titulo": "SkyMail — Configurar Outlook App por IMAP",
+      "url": "https://suporte.skynova.com.br/hc/pt-br/articles/360047156912-Configurar-Outlook-App-IMAP"
+    }
+  },
+  {
+    "id": "webmail-configurar-iphone",
+    "categoria": "Webmail",
+    "titulo": "Configurar e-mail no iPhone pelo IMAP",
+    "perguntas": [
+      "configurar email skymail no iphone",
+      "colocar email corporativo no ios",
+      "configurar webmail no iphone",
+      "imap iphone skymail"
+    ],
+    "palavrasChave": [
+      "webmail",
+      "email",
+      "iphone",
+      "ios",
+      "imap",
+      "smtp",
+      "configurar"
+    ],
+    "resposta": "No iPhone, acesse Ajustes, Mail, Contas, Adicionar Conta, Outra e Adicionar Conta de E-mail. Selecione IMAP, informe suas credenciais e configure SMTP com porta 465 e IMAP com porta 993.",
+    "passos": [
+      "Abra Ajustes > Mail > Contas > Adicionar Conta.",
+      "Selecione Outra > Adicionar Conta de E-mail.",
+      "Informe nome, e-mail e senha.",
+      "Selecione IMAP.",
+      "Configure SMTP na porta 465 e IMAP na porta 993.",
+      "Salve a conta."
+    ],
+    "acoes": [
+      {
+        "texto": "Ver configuração completa",
+        "tipo": "link",
+        "url": "https://suporte.skynova.com.br/hc/pt-br/articles/360047627411-Configurar-iPhone-Mail-IMAP"
+      }
+    ],
+    "suporte": {
+      "tipo": "Ajuda com plataforma",
+      "plataforma": "Webmail"
+    },
+    "fonte": {
+      "titulo": "SkyMail — Configurar iPhone Mail por IMAP",
+      "url": "https://suporte.skynova.com.br/hc/pt-br/articles/360047627411-Configurar-iPhone-Mail-IMAP"
+    }
+  },
+  {
+    "id": "webmail-mensagem-grande",
+    "categoria": "Webmail",
+    "titulo": "Erro de mensagem ou anexo muito grande",
+    "perguntas": [
+      "email message is too large",
+      "mensagem muito grande no email",
+      "anexo grande não envia",
+      "erro 552 message too large",
+      "email com anexo não foi enviado"
+    ],
+    "palavrasChave": [
+      "webmail",
+      "email",
+      "mensagem",
+      "anexo",
+      "grande",
+      "552",
+      "too",
+      "large",
+      "enviar"
+    ],
+    "resposta": "Esse erro indica que o servidor do destinatário não aceita uma mensagem desse tamanho. Remova anexos, reduza o tamanho dos arquivos ou diminua o conteúdo da mensagem e tente novamente.",
+    "passos": [
+      "Remova anexos desnecessários.",
+      "Compacte ou reduza os arquivos.",
+      "Quando permitido, compartilhe um link em vez de anexar.",
+      "Tente enviar novamente."
+    ],
+    "acoes": [
+      {
+        "texto": "Ver explicação oficial",
+        "tipo": "link",
+        "url": "https://suporte.skynova.com.br/hc/pt-br/articles/360049592131-Email-message-is-too-large"
+      }
+    ],
+    "suporte": {
+      "tipo": "Reportar erro",
+      "plataforma": "Webmail"
+    },
+    "fonte": {
+      "titulo": "SkyMail — Email message is too large",
+      "url": "https://suporte.skynova.com.br/hc/pt-br/articles/360049592131-Email-message-is-too-large"
+    }
+  },
+  {
+    "id": "webmail-bloqueio-spam-554",
+    "categoria": "Webmail",
+    "titulo": "Erro SMTP 554 ou conta bloqueada por suspeita de spam",
+    "perguntas": [
+      "erro smtp 554",
+      "conta bloqueada por spam",
+      "falha ao adicionar destinatário",
+      "email bloqueado definitivamente",
+      "não envia por suspeita de spam"
+    ],
+    "palavrasChave": [
+      "webmail",
+      "email",
+      "smtp",
+      "554",
+      "spam",
+      "bloqueada",
+      "destinatario",
+      "envio"
+    ],
+    "resposta": "Altere a senha do e-mail pelo Webmail e aguarde alguns minutos antes de testar o envio. Revise também os computadores, celulares e aplicativos configurados com a conta, pois o bloqueio pode ocorrer após envios incomuns ou comprometimento da senha.",
+    "passos": [
+      "Altere a senha pelo Webmail.",
+      "Aguarde alguns minutos.",
+      "Verifique dispositivos e aplicativos configurados com a conta.",
+      "Faça um novo teste de envio.",
+      "Se continuar bloqueada, abra um chamado."
+    ],
+    "acoes": [
+      {
+        "texto": "Ver solução oficial",
+        "tipo": "link",
+        "url": "https://suporte.skynova.com.br/hc/pt-br/articles/50562806385684-Erro-SMTP-554-Falha-ao-adicionar-o-destinat%C3%A1rio"
+      },
+      {
+        "texto": "Abrir chamado",
+        "tipo": "suporte"
+      }
+    ],
+    "suporte": {
+      "tipo": "Reportar erro",
+      "plataforma": "Webmail"
+    },
+    "fonte": {
+      "titulo": "SkyMail — Erro SMTP 554",
+      "url": "https://suporte.skynova.com.br/hc/pt-br/articles/50562806385684-Erro-SMTP-554-Falha-ao-adicionar-o-destinat%C3%A1rio"
+    }
+  },
+  {
+    "id": "webmail-login",
+    "categoria": "Webmail",
+    "titulo": "Não consigo acessar o Webmail",
+    "perguntas": [
+      "não consigo entrar no webmail",
+      "email corporativo não entra",
+      "senha do webmail não funciona",
+      "erro de login no email",
+      "skymail acesso negado"
+    ],
+    "palavrasChave": [
+      "webmail",
+      "email",
+      "skymail",
+      "login",
+      "senha",
+      "acesso",
+      "entrar"
+    ],
+    "resposta": "Confirme o endereço do Webmail da sua empresa e digite o e-mail corporativo completo. Se a senha não for aceita, tente alterá-la pelo próprio Webmail; se a opção não aparecer ou o acesso continuar bloqueado, abra um chamado.",
+    "passos": [
+      "Abra o Webmail pelo card da Plataforma Imob.",
+      "Digite o endereço de e-mail completo.",
+      "Confira se não há espaços na senha.",
+      "Se necessário, abra um chamado de redefinição de senha."
+    ],
+    "acoes": [
+      {
+        "texto": "Acessar Webmail",
+        "tipo": "plataforma",
+        "plataforma": "Webmail"
+      },
+      {
+        "texto": "Ajuda do Webmail",
+        "tipo": "link",
+        "url": "https://suporte.skynova.com.br/hc/pt-br/categories/360003931671-Skymail"
+      },
+      {
+        "texto": "Abrir chamado",
+        "tipo": "suporte"
+      }
+    ],
+    "suporte": {
+      "tipo": "Redefinição de senha",
+      "plataforma": "Webmail"
+    },
+    "fonte": {
+      "titulo": "Central oficial de ajuda SkyMail",
+      "url": "https://suporte.skynova.com.br/hc/pt-br/categories/360003931671-Skymail"
+    }
+  },
+  {
+    "id": "webmail-nao-envia",
+    "categoria": "Webmail",
+    "titulo": "Não consigo enviar e-mail",
+    "perguntas": [
+      "não consigo enviar email",
+      "email fica na caixa de saída",
+      "erro ao enviar mensagem",
+      "webmail não envia",
+      "mensagem voltou",
+      "email rejeitado"
+    ],
+    "palavrasChave": [
+      "webmail",
+      "email",
+      "enviar",
+      "saida",
+      "erro",
+      "mensagem",
+      "rejeitado"
+    ],
+    "resposta": "Confira o endereço do destinatário e o tamanho dos anexos. Mensagens muito grandes ou endereços incorretos podem ser recusados.",
+    "passos": [
+      "Revise o endereço do destinatário.",
+      "Tente enviar sem anexos.",
+      "Reduza ou compacte arquivos grandes.",
+      "Copie a mensagem de erro apresentada.",
+      "Se persistir, abra um chamado com o destinatário e o horário da tentativa."
+    ],
+    "acoes": [
+      {
+        "texto": "Acessar Webmail",
+        "tipo": "plataforma",
+        "plataforma": "Webmail"
+      },
+      {
+        "texto": "Consultar ajuda SkyMail",
+        "tipo": "link",
+        "url": "https://suporte.skynova.com.br/hc/pt-br/categories/360003931671-Skymail"
+      },
+      {
+        "texto": "Abrir chamado",
+        "tipo": "suporte"
+      }
+    ],
+    "suporte": {
+      "tipo": "Reportar erro",
+      "plataforma": "Webmail"
+    },
+    "fonte": {
+      "titulo": "Central oficial de ajuda SkyMail",
+      "url": "https://suporte.skynova.com.br/hc/pt-br/categories/360003931671-Skymail"
+    }
+  },
+  {
+    "id": "webmail-nao-recebe",
+    "categoria": "Webmail",
+    "titulo": "Não estou recebendo e-mails",
+    "perguntas": [
+      "não recebo email",
+      "email não chega",
+      "mensagem não chegou no webmail",
+      "não estou recebendo mensagens",
+      "email atrasado",
+      "caixa de entrada vazia"
+    ],
+    "palavrasChave": [
+      "webmail",
+      "email",
+      "receber",
+      "recebo",
+      "chega",
+      "mensagem",
+      "entrada"
+    ],
+    "resposta": "Verifique as pastas Spam, Lixo eletrônico e outras pastas de filtragem. Confirme também com o remetente se o endereço foi digitado corretamente.",
+    "passos": [
+      "Atualize a caixa de entrada.",
+      "Consulte Spam e Lixo eletrônico.",
+      "Pesquise pelo remetente ou assunto.",
+      "Peça ao remetente para confirmar o endereço utilizado.",
+      "Se várias mensagens não chegarem, abra um chamado com exemplos e horários."
+    ],
+    "acoes": [
+      {
+        "texto": "Acessar Webmail",
+        "tipo": "plataforma",
+        "plataforma": "Webmail"
+      },
+      {
+        "texto": "Consultar ajuda SkyMail",
+        "tipo": "link",
+        "url": "https://suporte.skynova.com.br/hc/pt-br/categories/360003931671-Skymail"
+      },
+      {
+        "texto": "Abrir chamado",
+        "tipo": "suporte"
+      }
+    ],
+    "suporte": {
+      "tipo": "Reportar erro",
+      "plataforma": "Webmail"
+    },
+    "fonte": {
+      "titulo": "Central oficial de ajuda SkyMail",
+      "url": "https://suporte.skynova.com.br/hc/pt-br/categories/360003931671-Skymail"
+    }
+  },
+  {
+    "id": "webmail-link",
+    "categoria": "Webmail",
+    "titulo": "Qual Webmail devo acessar?",
+    "perguntas": [
+      "qual o link do webmail",
+      "onde acesso meu email",
+      "qual webmail devo usar",
+      "entrar no skymail",
+      "link do email corporativo"
+    ],
+    "palavrasChave": [
+      "webmail",
+      "email",
+      "link",
+      "acessar",
+      "skymail",
+      "endereco"
+    ],
+    "resposta": "Use o card Webmail da empresa selecionada na Plataforma Imob. Even More e Even Vendas possuem endereços diferentes, então evite utilizar um link salvo de outra operação.",
+    "passos": [
+      "Selecione sua empresa na tela inicial.",
+      "Gere as informações de acesso.",
+      "Abra o card Webmail."
+    ],
+    "acoes": [
+      {
+        "texto": "Acessar Webmail",
+        "tipo": "plataforma",
+        "plataforma": "Webmail"
+      },
+      {
+        "texto": "Central de ajuda SkyMail",
+        "tipo": "link",
+        "url": "https://suporte.skynova.com.br/hc/pt-br/categories/360003931671-Skymail"
+      }
+    ],
+    "suporte": {
+      "tipo": "Ajuda com plataforma",
+      "plataforma": "Webmail"
+    },
+    "fonte": {
+      "titulo": "Central oficial de ajuda SkyMail",
+      "url": "https://suporte.skynova.com.br/hc/pt-br/categories/360003931671-Skymail"
+    }
+  },
+  {
+    "id": "portal-link",
+    "categoria": "Portal do Corretor",
+    "titulo": "Acessar o Portal do Corretor",
+    "perguntas": [
+      "qual o link do portal do corretor",
+      "onde acesso o portal",
+      "entrar no portal do corretor",
+      "site do portal do corretor"
+    ],
+    "palavrasChave": [
+      "portal",
+      "corretor",
+      "link",
+      "acessar",
+      "entrar",
+      "site"
+    ],
+    "resposta": "O Portal do Corretor está disponível no card de plataformas após gerar suas informações de acesso.",
+    "passos": [
+      "Selecione a empresa, gere as informações e abra o card Portal do Corretor."
+    ],
+    "acoes": [
+      {
+        "texto": "Acessar Portal do Corretor",
+        "tipo": "plataforma",
+        "plataforma": "Portal do Corretor"
+      }
+    ],
+    "suporte": {
+      "tipo": "Ajuda com plataforma",
+      "plataforma": "Portal do Corretor"
+    }
+  },
+  {
+    "id": "portal-dados-incorretos",
+    "categoria": "Portal do Corretor",
+    "titulo": "Meus dados estão incorretos no Portal",
+    "perguntas": [
+      "meus dados estão errados no portal",
+      "nome incorreto no portal",
+      "gerente errado no portal",
+      "email incorreto no portal do corretor",
+      "cadastro desatualizado"
+    ],
+    "palavrasChave": [
+      "portal",
+      "dados",
+      "errados",
+      "incorreto",
+      "nome",
+      "gerente",
+      "cadastro",
+      "desatualizado"
+    ],
+    "resposta": "Dados cadastrais podem vir de outros sistemas internos. Abra um chamado informando qual campo está incorreto e qual seria a informação correta.",
+    "passos": [
+      "Identifique exatamente o campo incorreto.",
+      "Não envie documentos pessoais pelo campo de descrição.",
+      "Abra o chamado e aguarde a validação da área responsável."
+    ],
+    "acoes": [
+      {
+        "texto": "Abrir chamado",
+        "tipo": "suporte"
+      }
+    ],
+    "suporte": {
+      "tipo": "Ajuda com plataforma",
+      "plataforma": "Portal do Corretor"
+    }
+  },
+  {
+    "id": "portal-login",
+    "categoria": "Portal do Corretor",
+    "titulo": "Não consigo entrar no Portal do Corretor",
+    "perguntas": [
+      "não consigo acessar o portal do corretor",
+      "portal não entra",
+      "senha do portal não funciona",
+      "login inválido no portal",
+      "acesso negado portal do corretor"
+    ],
+    "palavrasChave": [
+      "portal",
+      "corretor",
+      "login",
+      "senha",
+      "acesso",
+      "negado",
+      "entrar"
+    ],
+    "resposta": "Confirme o usuário e a senha utilizados. Se a senha temporária já foi alterada, use a senha atualizada da plataforma.",
+    "passos": [
+      "Abra o portal pelo card da Plataforma Imob.",
+      "Digite novamente suas credenciais.",
+      "Teste em uma janela anônima.",
+      "Se o erro continuar, abra um chamado informando a mensagem exibida."
+    ],
+    "acoes": [
+      {
+        "texto": "Abrir chamado",
+        "tipo": "suporte"
+      }
+    ],
+    "suporte": {
+      "tipo": "Redefinição de senha",
+      "plataforma": "Portal do Corretor"
+    }
+  },
+  {
+    "id": "portal-indisponivel",
+    "categoria": "Portal do Corretor",
+    "titulo": "Portal do Corretor não carrega",
+    "perguntas": [
+      "portal do corretor não abre",
+      "portal fora do ar",
+      "portal fica carregando",
+      "tela branca no portal",
+      "portal lento"
+    ],
+    "palavrasChave": [
+      "portal",
+      "corretor",
+      "abre",
+      "fora",
+      "carregando",
+      "branca",
+      "lento"
+    ],
+    "resposta": "Teste a conexão e o navegador. Se o problema ocorrer com vários usuários, pode ser uma indisponibilidade da plataforma.",
+    "passos": [
+      "Atualize a página.",
+      "Teste em janela anônima ou em outro navegador.",
+      "Verifique se outras páginas abrem normalmente.",
+      "Abra um chamado informando horário e se outros usuários também foram afetados."
+    ],
+    "acoes": [
+      {
+        "texto": "Abrir chamado",
+        "tipo": "suporte"
+      }
+    ],
+    "suporte": {
+      "tipo": "Reportar erro",
+      "plataforma": "Portal do Corretor"
+    }
+  },
+  {
+    "id": "portal-proposta-documento",
+    "categoria": "Portal do Corretor",
+    "titulo": "Proposta ou documento não aparece no Portal",
+    "perguntas": [
+      "proposta não aparece no portal",
+      "documento não aparece",
+      "não vejo minha venda no portal",
+      "arquivo sumiu do portal",
+      "status da proposta não atualiza"
+    ],
+    "palavrasChave": [
+      "portal",
+      "proposta",
+      "documento",
+      "venda",
+      "arquivo",
+      "status",
+      "aparece"
+    ],
+    "resposta": "Atualizações podem depender da sincronização, do status da proposta ou do vínculo com o corretor. Confirme os filtros e os dados da negociação.",
+    "passos": [
+      "Limpe os filtros e amplie o período.",
+      "Confirme o cliente e o empreendimento.",
+      "Verifique se a proposta está vinculada ao seu usuário.",
+      "Abra um chamado com o número ou identificação da proposta, sem incluir dados sensíveis desnecessários."
+    ],
+    "acoes": [
+      {
+        "texto": "Abrir chamado",
+        "tipo": "suporte"
+      }
+    ],
+    "suporte": {
+      "tipo": "Ajuda com plataforma",
+      "plataforma": "Portal do Corretor"
+    }
+  },
+  {
+    "id": "sigav-link",
+    "categoria": "SIGAV",
+    "titulo": "Acessar o SIGAV (Sigavi 360)",
+    "perguntas": [
+      "qual o link do sigav",
+      "onde acesso o sigavi",
+      "entrar no sigav 360",
+      "abrir sigavi",
+      "link do crm sigavi"
+    ],
+    "palavrasChave": [
+      "sigav",
+      "sigavi",
+      "sigavi360",
+      "link",
+      "acessar",
+      "crm"
+    ],
+    "resposta": "Acesse o SIGAV pelo card da Plataforma Imob. O usuário precisa estar previamente cadastrado pela empresa para conseguir entrar.",
+    "passos": [
+      "Selecione sua empresa.",
+      "Gere as informações de acesso.",
+      "Abra o card SIGAV.",
+      "Informe as credenciais recebidas no cadastro."
+    ],
+    "acoes": [
+      {
+        "texto": "Acessar SIGAV",
+        "tipo": "plataforma",
+        "plataforma": "SIGAV"
+      }
+    ],
+    "suporte": {
+      "tipo": "Ajuda com plataforma",
+      "plataforma": "SIGAV"
+    },
+    "fonte": {
+      "titulo": "Guia de Uso do CRM Sigavi 360",
+      "referencia": "p. 6"
+    }
+  },
+  {
+    "id": "sigav-alterar-senha",
+    "categoria": "SIGAV",
+    "titulo": "Alterar a senha dentro do SIGAV",
+    "perguntas": [
+      "como alterar senha do sigav",
+      "trocar senha sigavi",
+      "mudar senha no sigav 360"
+    ],
+    "palavrasChave": [
+      "sigav",
+      "sigavi",
+      "senha",
+      "alterar",
+      "trocar",
+      "foto",
+      "perfil"
+    ],
+    "resposta": "Clique na sua foto, selecione Alterar a Senha, informe a nova senha e confirme. Depois clique em Prosseguir.",
+    "passos": [
+      "Clique na sua foto no canto superior.",
+      "Selecione Alterar a Senha.",
+      "Digite e confirme a nova senha.",
+      "Clique em Prosseguir."
+    ],
+    "acoes": [
+      {
+        "texto": "Acessar SIGAV",
+        "tipo": "plataforma",
+        "plataforma": "SIGAV"
+      }
+    ],
+    "suporte": {
+      "tipo": "Redefinição de senha",
+      "plataforma": "SIGAV"
+    },
+    "fonte": {
+      "titulo": "Guia de Uso do CRM Sigavi 360",
+      "referencia": "p. 7"
+    }
+  },
+  {
+    "id": "sigav-buscar-empreendimento",
+    "categoria": "SIGAV",
+    "titulo": "Buscar empreendimentos no SIGAV",
+    "perguntas": [
+      "como buscar empreendimento no sigav",
+      "pesquisar projeto sigavi",
+      "ver detalhes empreendimento sigav",
+      "filtrar por bairro valor dormitórios"
+    ],
+    "palavrasChave": [
+      "sigav",
+      "sigavi",
+      "empreendimento",
+      "buscar",
+      "bairro",
+      "valor",
+      "dormitorios",
+      "detalhes"
+    ],
+    "resposta": "Abra Empreendimento no menu lateral ou na Home. Pesquise por fase, incorporador, zona, valores, área, dormitórios e outros filtros. Clique em Buscar e depois em Ver Detalhes no resultado desejado.",
+    "passos": [
+      "Abra o módulo Empreendimento.",
+      "Preencha os filtros.",
+      "Clique em Buscar.",
+      "Clique em Ver Detalhes para consultar o empreendimento."
+    ],
+    "acoes": [
+      {
+        "texto": "Acessar SIGAV",
+        "tipo": "plataforma",
+        "plataforma": "SIGAV"
+      }
+    ],
+    "suporte": {
+      "tipo": "Ajuda com plataforma",
+      "plataforma": "SIGAV"
+    },
+    "fonte": {
+      "titulo": "Guia de Uso do CRM Sigavi 360",
+      "referencia": "p. 36–38"
+    }
+  },
+  {
+    "id": "sigav-buscar-imovel",
+    "categoria": "SIGAV",
+    "titulo": "Buscar um imóvel no SIGAV",
+    "perguntas": [
+      "como buscar imóvel no sigav",
+      "pesquisar unidade sigavi",
+      "achar imóvel no crm",
+      "filtro de imóvel sigav"
+    ],
+    "palavrasChave": [
+      "sigav",
+      "sigavi",
+      "imovel",
+      "buscar",
+      "pesquisar",
+      "unidade",
+      "filtro"
+    ],
+    "resposta": "Abra Imóvel no menu lateral ou pelo ícone da Home, informe os filtros desejados e clique em Buscar. Use os resultados para consultar as unidades disponíveis conforme os critérios informados.",
+    "passos": [
+      "Abra o módulo Imóvel.",
+      "Preencha os filtros disponíveis.",
+      "Clique em Buscar.",
+      "Abra o resultado desejado."
+    ],
+    "acoes": [
+      {
+        "texto": "Acessar SIGAV",
+        "tipo": "plataforma",
+        "plataforma": "SIGAV"
+      }
+    ],
+    "suporte": {
+      "tipo": "Ajuda com plataforma",
+      "plataforma": "SIGAV"
+    },
+    "fonte": {
+      "titulo": "Guia de Uso do CRM Sigavi 360",
+      "referencia": "p. 35"
+    }
+  },
+  {
+    "id": "sigav-configurar-email",
+    "categoria": "SIGAV",
+    "titulo": "Configurar e-mail no SIGAV",
+    "perguntas": [
+      "como configurar email no sigav",
+      "configurar e-mail sigavi",
+      "email no crm sigavi"
+    ],
+    "palavrasChave": [
+      "sigav",
+      "sigavi",
+      "email",
+      "configurar",
+      "provedor",
+      "foto"
+    ],
+    "resposta": "Clique na sua foto, selecione Configurar E-mail, informe o provedor solicitado e confirme. Depois clique em Prosseguir para salvar.",
+    "passos": [
+      "Clique na sua foto.",
+      "Selecione Configurar E-mail.",
+      "Informe o provedor e os dados solicitados.",
+      "Clique em Prosseguir."
+    ],
+    "acoes": [
+      {
+        "texto": "Acessar SIGAV",
+        "tipo": "plataforma",
+        "plataforma": "SIGAV"
+      }
+    ],
+    "suporte": {
+      "tipo": "Ajuda com plataforma",
+      "plataforma": "SIGAV"
+    },
+    "fonte": {
+      "titulo": "Guia de Uso do CRM Sigavi 360",
+      "referencia": "p. 8"
+    }
+  },
+  {
+    "id": "sigav-dashboard",
+    "categoria": "SIGAV",
+    "titulo": "Entender o Dashboard do SIGAV",
+    "perguntas": [
+      "como funciona dashboard sigav",
+      "o que aparece no painel do sigavi",
+      "indicadores do crm sigav",
+      "mudar período dashboard sigavi"
+    ],
+    "palavrasChave": [
+      "sigav",
+      "sigavi",
+      "dashboard",
+      "painel",
+      "indicadores",
+      "periodo",
+      "grafico"
+    ],
+    "resposta": "O Dashboard mostra indicadores do CRM em gráficos. Os itens são interativos: clique em um indicador para abrir os detalhes e use Semana, Mês Atual, 3 meses, 12 meses ou Outro para alterar o período analisado.",
+    "passos": [
+      "Escolha o período no topo do painel.",
+      "Clique no indicador desejado.",
+      "Analise os detalhes exibidos no painel aberto."
+    ],
+    "acoes": [
+      {
+        "texto": "Acessar SIGAV",
+        "tipo": "plataforma",
+        "plataforma": "SIGAV"
+      }
+    ],
+    "suporte": {
+      "tipo": "Ajuda com plataforma",
+      "plataforma": "SIGAV"
+    },
+    "fonte": {
+      "titulo": "Guia de Uso do CRM Sigavi 360",
+      "referencia": "p. 9–13"
+    }
+  },
+  {
+    "id": "sigav-login",
+    "categoria": "SIGAV",
+    "titulo": "Não consigo entrar no SIGAV",
+    "perguntas": [
+      "não consigo acessar o sigav",
+      "sigavi não entra",
+      "erro de login sigav",
+      "acesso negado sigavi",
+      "usuário não cadastrado sigav"
+    ],
+    "palavrasChave": [
+      "sigav",
+      "sigavi",
+      "login",
+      "acesso",
+      "usuario",
+      "senha",
+      "entrar"
+    ],
+    "resposta": "Confirme se seu usuário já foi cadastrado pela empresa e digite as credenciais recebidas. Se a senha não for aceita, use Esqueci a senha; após cinco tentativas incorretas, o acesso pode ser bloqueado.",
+    "passos": [
+      "Abra o SIGAV pelo card da Plataforma Imob.",
+      "Digite o login e a senha novamente.",
+      "Se necessário, use Esqueci a senha.",
+      "Se houver bloqueio ou cadastro inexistente, abra um chamado."
+    ],
+    "acoes": [
+      {
+        "texto": "Acessar SIGAV",
+        "tipo": "plataforma",
+        "plataforma": "SIGAV"
+      },
+      {
+        "texto": "Abrir chamado",
+        "tipo": "suporte"
+      }
+    ],
+    "suporte": {
+      "tipo": "Redefinição de senha",
+      "plataforma": "SIGAV"
+    },
+    "fonte": {
+      "titulo": "Guia de Uso do CRM Sigavi 360",
+      "referencia": "p. 6–8"
+    }
+  },
+  {
+    "id": "sigav-esqueci-senha",
+    "categoria": "SIGAV",
+    "titulo": "Recuperar a senha do SIGAV",
+    "perguntas": [
+      "esqueci senha do sigav",
+      "recuperar senha sigavi",
+      "trocar senha esquecida sigav",
+      "esqueci minha senha sigavi 360"
+    ],
+    "palavrasChave": [
+      "sigav",
+      "sigavi",
+      "senha",
+      "esqueci",
+      "recuperar",
+      "email",
+      "24h"
+    ],
+    "resposta": "Na tela de acesso, informe seu login e clique em Esqueci minha senha. O SIGAV enviará um e-mail para a troca; o procedimento deve ser concluído em até 24 horas, senão será necessário solicitar novamente.",
+    "passos": [
+      "Informe seu login na tela de acesso.",
+      "Clique em Esqueci minha senha.",
+      "Abra o e-mail recebido.",
+      "Conclua a troca em até 24 horas."
+    ],
+    "acoes": [
+      {
+        "texto": "Acessar SIGAV",
+        "tipo": "plataforma",
+        "plataforma": "SIGAV"
+      },
+      {
+        "texto": "Não recebi o e-mail",
+        "tipo": "suporte"
+      }
+    ],
+    "suporte": {
+      "tipo": "Redefinição de senha",
+      "plataforma": "SIGAV"
+    },
+    "fonte": {
+      "titulo": "Guia de Uso do CRM Sigavi 360",
+      "referencia": "p. 7"
+    }
+  },
+  {
+    "id": "sigav-permissao",
+    "categoria": "SIGAV",
+    "titulo": "Sem acesso a uma função do SIGAV",
+    "perguntas": [
+      "sem permissão no sigav",
+      "menu não aparece sigav",
+      "não consigo editar no sigav",
+      "função bloqueada sigav",
+      "perfil incorreto sigav"
+    ],
+    "palavrasChave": [
+      "sigav",
+      "permissao",
+      "menu",
+      "editar",
+      "bloqueada",
+      "perfil",
+      "funcao"
+    ],
+    "resposta": "As funções do SIGAV dependem do perfil de acesso. Confirme com seu gestor se a atividade faz parte da sua função e abra um chamado para validação.",
+    "passos": [
+      "Confirme que está usando o usuário correto.",
+      "Verifique com o gestor qual função deveria estar disponível.",
+      "Abra um chamado com o nome da tela, botão ou menu ausente."
+    ],
+    "acoes": [
+      {
+        "texto": "Acessar SIGAV",
+        "tipo": "plataforma",
+        "plataforma": "SIGAV"
+      },
+      {
+        "texto": "Abrir chamado",
+        "tipo": "suporte"
+      }
+    ],
+    "suporte": {
+      "tipo": "Ajuda com plataforma",
+      "plataforma": "SIGAV"
+    },
+    "fonte": {
+      "titulo": "Guia de Uso do CRM Sigavi 360",
+      "referencia": "orientação complementar do TI"
+    }
+  },
+  {
+    "id": "sigav-nao-carrega",
+    "categoria": "SIGAV",
+    "titulo": "SIGAV não carrega ou apresenta erro",
+    "perguntas": [
+      "sigav não abre",
+      "sigav fica carregando",
+      "erro no sigav",
+      "sigav fora do ar",
+      "tela branca sigav",
+      "sigav lento"
+    ],
+    "palavrasChave": [
+      "sigav",
+      "abre",
+      "carregando",
+      "erro",
+      "fora",
+      "branca",
+      "lento"
+    ],
+    "resposta": "Faça os testes de navegador e conexão. Se o erro continuar, registre um chamado com print, horário e descrição da ação realizada.",
+    "passos": [
+      "Atualize a página.",
+      "Teste em janela anônima.",
+      "Teste outro navegador atualizado.",
+      "Verifique se outros usuários apresentam o mesmo erro.",
+      "Abra um chamado com evidências."
+    ],
+    "acoes": [
+      {
+        "texto": "Acessar SIGAV",
+        "tipo": "plataforma",
+        "plataforma": "SIGAV"
+      },
+      {
+        "texto": "Abrir chamado",
+        "tipo": "suporte"
+      }
+    ],
+    "suporte": {
+      "tipo": "Reportar erro",
+      "plataforma": "SIGAV"
+    },
+    "fonte": {
+      "titulo": "Guia de Uso do CRM Sigavi 360",
+      "referencia": "orientação complementar do TI"
+    }
+  },
+  {
+    "id": "sigav-bloqueio-seguranca",
+    "categoria": "SIGAV",
+    "titulo": "Usuário bloqueado ou acesso impedido no SIGAV",
+    "perguntas": [
+      "usuário bloqueado sigav",
+      "sigavi bloqueou minha conta",
+      "senha errada cinco vezes sigav",
+      "login simultâneo sigavi",
+      "creci inválido sigav"
+    ],
+    "palavrasChave": [
+      "sigav",
+      "sigavi",
+      "bloqueado",
+      "senha",
+      "cinco",
+      "login",
+      "simultaneo",
+      "creci",
+      "seguranca"
+    ],
+    "resposta": "O SIGAV pode bloquear logins simultâneos, cinco tentativas de senha incorreta, uso de senha anterior ou acesso com CRECI inválido. Pare de repetir a senha e abra um chamado informando a mensagem exibida.",
+    "passos": [
+      "Anote ou tire print da mensagem.",
+      "Não continue repetindo a senha.",
+      "Confirme se não existe outra sessão aberta.",
+      "Abra um chamado para validação do usuário."
+    ],
+    "acoes": [
+      {
+        "texto": "Abrir chamado",
+        "tipo": "suporte"
+      }
+    ],
+    "suporte": {
+      "tipo": "Reportar erro",
+      "plataforma": "SIGAV"
+    },
+    "fonte": {
+      "titulo": "Guia de Uso do CRM Sigavi 360",
+      "referencia": "p. 8"
+    }
+  },
+  {
+    "id": "email-corporativo-formato",
+    "categoria": "Credenciais",
+    "titulo": "Como é formado meu e-mail corporativo?",
+    "perguntas": [
+      "qual é meu email corporativo",
+      "como saber meu email",
+      "formato do email even more",
+      "formato email even vendas",
+      "meu endereço de email"
+    ],
+    "palavrasChave": [
+      "email",
+      "corporativo",
+      "formato",
+      "endereco",
+      "apelido",
+      "dominio"
+    ],
+    "resposta": "O e-mail é formado pelo seu apelido e pelo domínio da empresa selecionada. Digite apenas o apelido no campo da Plataforma Imob para gerar o endereço.",
+    "passos": [
+      "Selecione Even More ou Even Vendas.",
+      "Digite somente seu apelido, sem @ e sem domínio.",
+      "Clique em Gerar informações de acesso."
+    ],
+    "acoes": [],
+    "suporte": {
+      "tipo": "Ajuda com plataforma",
+      "plataforma": "Webmail"
+    }
+  },
+  {
+    "id": "senha-temporaria",
+    "categoria": "Credenciais",
+    "titulo": "Como funciona a senha temporária?",
+    "perguntas": [
+      "qual é a senha temporária",
+      "como usar a senha temporária",
+      "preciso trocar a senha",
+      "senha inicial",
+      "senha provisória",
+      "primeiro acesso"
+    ],
+    "palavrasChave": [
+      "senha",
+      "temporaria",
+      "inicial",
+      "provisoria",
+      "trocar",
+      "primeiro",
+      "acesso"
+    ],
+    "resposta": "A senha exibida na plataforma é destinada ao primeiro acesso. Quando a plataforma solicitar, crie uma nova senha e guarde-a com segurança.",
+    "passos": [
+      "Copie a senha temporária pela Plataforma Imob.",
+      "Acesse a plataforma desejada.",
+      "Altere a senha quando for solicitado.",
+      "Não compartilhe sua senha com outras pessoas."
+    ],
+    "acoes": [],
+    "suporte": {
+      "tipo": "Redefinição de senha",
+      "plataforma": "Outra"
+    }
+  },
+  {
+    "id": "tti-email",
+    "categoria": "Credenciais",
+    "titulo": "Corretor TTI possui e-mail corporativo?",
+    "perguntas": [
+      "tti tem email corporativo",
+      "corretor tti tem email",
+      "autônomo tem webmail",
+      "sou tti e o email não funciona",
+      "perfil tti"
+    ],
+    "palavrasChave": [
+      "tti",
+      "autonomo",
+      "email",
+      "corporativo",
+      "webmail",
+      "perfil"
+    ],
+    "resposta": "Autônomos associados com perfil TTI não possuem acesso ao e-mail corporativo. Os demais acessos devem ser confirmados conforme o credenciamento.",
+    "passos": [
+      "Não tente utilizar o Webmail com perfil TTI.",
+      "Se houver dúvida sobre seu credenciamento, abra um chamado para validação."
+    ],
+    "acoes": [
+      {
+        "texto": "Abrir chamado",
+        "tipo": "suporte"
+      }
+    ],
+    "suporte": {
+      "tipo": "Ajuda com plataforma",
+      "plataforma": "Outra"
+    }
+  },
+  {
+    "id": "esqueci-senha",
+    "categoria": "Credenciais",
+    "titulo": "Esqueci ou bloqueei minha senha",
+    "perguntas": [
+      "esqueci minha senha",
+      "minha senha bloqueou",
+      "preciso resetar a senha",
+      "redefinir senha",
+      "senha inválida",
+      "não lembro a senha"
+    ],
+    "palavrasChave": [
+      "senha",
+      "esqueci",
+      "bloqueou",
+      "resetar",
+      "redefinir",
+      "invalida",
+      "lembro"
+    ],
+    "resposta": "Abra um chamado de redefinição de senha e informe a plataforma afetada. Nunca envie sua senha atual no chamado.",
+    "passos": [
+      "Selecione Redefinição de senha.",
+      "Informe a plataforma e a empresa.",
+      "Descreva a mensagem apresentada.",
+      "Não inclua nenhuma senha no texto."
+    ],
+    "acoes": [
+      {
+        "texto": "Abrir chamado de senha",
+        "tipo": "suporte"
+      }
+    ],
+    "suporte": {
+      "tipo": "Redefinição de senha",
+      "plataforma": "Outra"
+    }
+  },
+  {
+    "id": "empresa-correta",
+    "categoria": "Credenciais",
+    "titulo": "Não sei se sou Even More ou Even Vendas",
+    "perguntas": [
+      "não sei minha empresa",
+      "sou even more ou even vendas",
+      "qual operação escolher",
+      "qual empresa devo selecionar",
+      "não sei meu domínio"
+    ],
+    "palavrasChave": [
+      "empresa",
+      "even",
+      "more",
+      "vendas",
+      "operacao",
+      "selecionar",
+      "dominio"
+    ],
+    "resposta": "A operação deve ser confirmada com seu gestor ou com a equipe responsável pelo credenciamento. Não utilize a opção de outra empresa apenas para testar.",
+    "passos": [
+      "Consulte seu gestor ou a comunicação de credenciamento.",
+      "Depois selecione a empresa correta na tela inicial.",
+      "Se ainda houver dúvida, abra um chamado."
+    ],
+    "acoes": [
+      {
+        "texto": "Abrir chamado",
+        "tipo": "suporte"
+      }
+    ],
+    "suporte": {
+      "tipo": "Ajuda com plataforma",
+      "plataforma": "Outra"
+    }
+  },
+  {
+    "id": "credenciais-nao-funcionam",
+    "categoria": "Credenciais",
+    "titulo": "Nenhuma credencial está funcionando",
+    "perguntas": [
+      "nenhuma senha funciona",
+      "não consigo acessar nenhuma plataforma",
+      "todos os acessos dão erro",
+      "credenciais inválidas",
+      "email e senha não funcionam"
+    ],
+    "palavrasChave": [
+      "credenciais",
+      "senha",
+      "email",
+      "acesso",
+      "plataforma",
+      "erro",
+      "invalidas"
+    ],
+    "resposta": "Confirme a empresa, o apelido e se a senha temporária já foi alterada. Como cada sistema pode ter uma senha atualizada em momentos diferentes, informe no chamado quais plataformas falharam.",
+    "passos": [
+      "Gere novamente o e-mail na empresa correta.",
+      "Teste uma plataforma por vez.",
+      "Anote a mensagem exibida em cada uma.",
+      "Abra um chamado detalhando os acessos afetados."
+    ],
+    "acoes": [
+      {
+        "texto": "Abrir chamado",
+        "tipo": "suporte"
+      }
+    ],
+    "suporte": {
+      "tipo": "Redefinição de senha",
+      "plataforma": "Outra"
+    }
+  },
+  {
+    "id": "treinamentos",
+    "categoria": "Treinamentos",
+    "titulo": "Onde encontro treinamentos e materiais?",
+    "perguntas": [
+      "onde ficam os treinamentos",
+      "material de treinamento",
+      "curso das plataformas",
+      "manual das ferramentas",
+      "preciso aprender a usar a plataforma"
+    ],
+    "palavrasChave": [
+      "treinamento",
+      "material",
+      "curso",
+      "manual",
+      "aprender",
+      "plataforma"
+    ],
+    "resposta": "Acesse a Central de Treinamentos para materiais internos. Para dúvidas de uso, o Assistente Imob também consulta orientações consolidadas dos manuais do Hypnobox, SkyMail e SIGAV.",
+    "passos": [
+      "Escolha uma das opções abaixo conforme o conteúdo desejado."
+    ],
+    "acoes": [
+      {
+        "texto": "Central de Treinamentos",
+        "tipo": "link",
+        "url": "https://evenbr-my.sharepoint.com/:f:/g/personal/rnetto_even_com_br/ElfwG_h4zchFmFfFhvPhUO8BPY5t8nrmex1Z2XwtjmGUEw?e=GiMO3d"
+      },
+      {
+        "texto": "Manual do Hypnobox",
+        "tipo": "link",
+        "url": "https://documentacao.senior.com.br/hypnobox/manual-do-usuario/sobre-ferramenta/sobre-hypnobox/"
+      }
+    ],
+    "suporte": {
+      "tipo": "Ajuda com plataforma",
+      "plataforma": "Outra"
+    }
+  },
+  {
+    "id": "abrir-chamado",
+    "categoria": "Suporte",
+    "titulo": "Como abrir um chamado para o TI?",
+    "perguntas": [
+      "como abrir chamado",
+      "preciso falar com o ti",
+      "quero suporte",
+      "reportar problema",
+      "abrir solicitação",
+      "falar com suporte"
+    ],
+    "palavrasChave": [
+      "chamado",
+      "ti",
+      "suporte",
+      "problema",
+      "solicitacao",
+      "reportar"
+    ],
+    "resposta": "Use o formulário da Plataforma Imob para informar tipo, plataforma, empresa, apelido e descrição do problema.",
+    "passos": [
+      "Clique em Abrir chamado.",
+      "Selecione a plataforma e o tipo da solicitação.",
+      "Descreva o que aconteceu e inclua a mensagem de erro.",
+      "Gere o e-mail e envie ao suporte."
+    ],
+    "acoes": [
+      {
+        "texto": "Abrir chamado",
+        "tipo": "suporte"
+      }
+    ],
+    "suporte": {
+      "tipo": "Ajuda com plataforma",
+      "plataforma": "Outra"
+    }
+  },
+  {
+    "id": "lentidao-conexao",
+    "categoria": "Suporte",
+    "titulo": "Plataformas lentas ou conexão instável",
+    "perguntas": [
+      "sistema está lento",
+      "plataformas demorando",
+      "internet cai",
+      "site demora para abrir",
+      "tudo travando",
+      "conexão instável"
+    ],
+    "palavrasChave": [
+      "lento",
+      "demorando",
+      "internet",
+      "conexao",
+      "travando",
+      "instavel",
+      "sistema"
+    ],
+    "resposta": "Verifique se a lentidão ocorre em apenas uma plataforma ou em todos os sites. Essa informação ajuda a diferenciar falha do sistema e problema de conexão.",
+    "passos": [
+      "Teste outro site.",
+      "Troque de rede, quando possível.",
+      "Feche abas e aplicativos desnecessários.",
+      "Anote qual plataforma está lenta e o horário.",
+      "Abra um chamado se o problema persistir."
+    ],
+    "acoes": [
+      {
+        "texto": "Abrir chamado",
+        "tipo": "suporte"
+      }
+    ],
+    "suporte": {
+      "tipo": "Reportar erro",
+      "plataforma": "Outra"
+    }
+  },
+  {
+    "id": "navegador-cache",
+    "categoria": "Suporte",
+    "titulo": "Problema de navegador, cache ou sessão",
+    "perguntas": [
+      "como limpar cache",
+      "site funciona em outro computador",
+      "plataforma travada no navegador",
+      "erro de sessão",
+      "janela anônima",
+      "página desatualizada"
+    ],
+    "palavrasChave": [
+      "cache",
+      "navegador",
+      "sessao",
+      "anonima",
+      "travada",
+      "pagina",
+      "computador"
+    ],
+    "resposta": "Quando a plataforma funciona em outro dispositivo, o problema pode estar no cache, em extensões ou na sessão do navegador.",
+    "passos": [
+      "Teste em uma janela anônima.",
+      "Feche e abra o navegador.",
+      "Atualize o navegador.",
+      "Desative temporariamente extensões que possam bloquear páginas.",
+      "Se persistir, abra um chamado informando navegador e dispositivo."
+    ],
+    "acoes": [
+      {
+        "texto": "Abrir chamado",
+        "tipo": "suporte"
+      }
+    ],
+    "suporte": {
+      "tipo": "Reportar erro",
+      "plataforma": "Outra"
+    }
+  },
+  {
+    "id": "acesso-mobile",
+    "categoria": "Suporte",
+    "titulo": "Problemas de acesso pelo celular",
+    "perguntas": [
+      "não funciona no celular",
+      "plataforma bugada no mobile",
+      "site cortado no celular",
+      "teclado cobre a tela",
+      "não consigo clicar pelo celular",
+      "acesso mobile"
+    ],
+    "palavrasChave": [
+      "celular",
+      "mobile",
+      "telefone",
+      "tela",
+      "cortado",
+      "clicar",
+      "teclado"
+    ],
+    "resposta": "Use um navegador atualizado e mantenha o celular na orientação vertical. Alguns sistemas corporativos podem funcionar melhor no computador.",
+    "passos": [
+      "Atualize o navegador do celular.",
+      "Feche outras abas e recarregue a página.",
+      "Teste a orientação vertical.",
+      "Se uma função específica não estiver disponível, teste no computador e abra um chamado."
+    ],
+    "acoes": [
+      {
+        "texto": "Abrir chamado",
+        "tipo": "suporte"
+      }
+    ],
+    "suporte": {
+      "tipo": "Reportar erro",
+      "plataforma": "Outra"
+    }
+  },
+  {
+    "id": "como-enviar-evidencia",
+    "categoria": "Suporte",
+    "titulo": "Quais informações devo enviar no chamado?",
+    "perguntas": [
+      "o que colocar no chamado",
+      "como enviar print",
+      "quais informações o suporte precisa",
+      "como descrever erro",
+      "o que informar ao ti"
+    ],
+    "palavrasChave": [
+      "chamado",
+      "print",
+      "informacoes",
+      "descrever",
+      "erro",
+      "suporte",
+      "evidencia"
+    ],
+    "resposta": "Um chamado completo reduz o tempo de atendimento. Informe o que tentou fazer, o resultado esperado, a mensagem apresentada e quando ocorreu.",
+    "passos": [
+      "Informe empresa, apelido e plataforma.",
+      "Descreva o passo realizado antes do erro.",
+      "Inclua a mensagem exata ou um print sem dados sensíveis.",
+      "Informe horário aproximado e se o problema afeta outras pessoas.",
+      "Nunca envie senhas."
+    ],
+    "acoes": [
+      {
+        "texto": "Abrir chamado",
+        "tipo": "suporte"
+      }
+    ],
+    "suporte": {
+      "tipo": "Reportar erro",
+      "plataforma": "Outra"
+    }
+  }
+];
