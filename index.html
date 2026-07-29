@@ -467,6 +467,43 @@
       background: #001F1C;
     }
 
+    .assistant-send:disabled,
+    .assistant-input:disabled,
+    .assistant-quick-button:disabled {
+      cursor: wait;
+      opacity: .62;
+    }
+
+    .assistant-thinking-bubble {
+      display: inline-flex;
+      align-items: center;
+      gap: .55rem;
+      color: #4B5563;
+      font-weight: 700;
+    }
+
+    .assistant-thinking-dots {
+      display: inline-flex;
+      align-items: center;
+      gap: .22rem;
+    }
+
+    .assistant-thinking-dots span {
+      width: .32rem;
+      height: .32rem;
+      border-radius: 999px;
+      background: #002D28;
+      animation: assistantThinking 1.15s ease-in-out infinite;
+    }
+
+    .assistant-thinking-dots span:nth-child(2) { animation-delay: .16s; }
+    .assistant-thinking-dots span:nth-child(3) { animation-delay: .32s; }
+
+    @keyframes assistantThinking {
+      0%, 60%, 100% { opacity: .28; transform: translateY(0); }
+      30% { opacity: 1; transform: translateY(-.18rem); }
+    }
+
     @media (min-width: 641px) {
       body {
         padding: 3rem 1rem;
@@ -895,9 +932,9 @@
       <p class="assistant-quick-label">Perguntas rápidas</p>
       <div class="assistant-quick-list">
         <button type="button" class="assistant-quick-button" data-assistant-question="Não consigo acessar o Hypnobox">Acesso ao Hypnobox</button>
+        <button type="button" class="assistant-quick-button" data-assistant-question="Como atualizar um cliente no Hypnobox?">Atualizar cliente</button>
+        <button type="button" class="assistant-quick-button" data-assistant-question="Como usar o Google Authenticator?">Google Authenticator</button>
         <button type="button" class="assistant-quick-button" data-assistant-question="Como alterar a senha do e-mail?">Senha do Webmail</button>
-        <button type="button" class="assistant-quick-button" data-assistant-question="Como cadastrar uma nova FAC no SIGAV?">Cadastrar FAC</button>
-        <button type="button" class="assistant-quick-button" data-assistant-question="Como cadastrar um follow-up no SIGAV?">Follow-up no SIGAV</button>
         <button type="button" class="assistant-quick-button" data-assistant-question="Não consigo acessar o Portal do Corretor">Portal do Corretor</button>
         <button type="button" class="assistant-quick-button" data-assistant-question="Como abrir um chamado para o TI?">Abrir chamado</button>
       </div>
@@ -943,6 +980,7 @@
             <option>Hypnobox</option>
             <option>Portal do Corretor</option>
             <option>SIGAV</option>
+            <option>Google Authenticator</option>
             <option>Outra</option>
           </select>
         </div>
@@ -1315,7 +1353,7 @@
     });
 
   </script>
-  <script src="base-conhecimento.js?v=2.0.0"></script>
-  <script src="chatbot.js?v=2.0.0"></script>
+  <script src="base-conhecimento.js?v=3.0.0"></script>
+  <script src="chatbot.js?v=3.0.0"></script>
 </body>
 </html>
