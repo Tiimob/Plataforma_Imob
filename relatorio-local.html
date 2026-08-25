@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="icon" type="image/png" sizes="32x32" href="favicon-even-32.png?v=5.0.0" />
+  <link rel="shortcut icon" href="favicon-even.ico?v=5.0.0" />
+  <meta name="theme-color" content="#002D28" />
+  <title>Diagnóstico local — Assistente Imob</title>
+  <style>
+    :root { color-scheme: light; font-family: Inter, Arial, sans-serif; }
+    * { box-sizing: border-box; }
+    body { margin: 0; min-height: 100vh; background: #F3F4F6; color: #1F2937; }
+    main { width: min(1180px, calc(100% - 2rem)); margin: 2rem auto; }
+    .header, .card { border-radius: 1rem; background: #FFF; box-shadow: 0 10px 30px rgba(0,0,0,.08); }
+    .header { padding: 1.4rem; border-top: .35rem solid #002D28; }
+    h1 { margin: 0; color: #002D28; font-size: clamp(1.4rem, 3vw, 2rem); }
+    p { line-height: 1.55; }
+    .warning { border: 1px solid #F59E0B; background: #FFFBEB; color: #92400E; padding: .8rem 1rem; border-radius: .8rem; }
+    .summary { display: grid; grid-template-columns: repeat(auto-fit, minmax(160px, 1fr)); gap: .8rem; margin: 1rem 0; }
+    .metric { padding: 1rem; border-radius: .9rem; background: #FFF; box-shadow: 0 8px 20px rgba(0,0,0,.06); }
+    .metric strong { display: block; color: #002D28; font-size: 1.5rem; }
+    .metric span { color: #6B7280; font-size: .78rem; }
+    .toolbar { display: flex; flex-wrap: wrap; gap: .55rem; align-items: center; padding: 1rem; }
+    button, select, input { min-height: 2.5rem; border: 1px solid #D1D5DB; border-radius: .7rem; background: #FFF; padding: .55rem .75rem; }
+    button { cursor: pointer; font-weight: 700; color: #002D28; }
+    button.primary { border-color: #002D28; background: #002D28; color: #FFF; }
+    button.danger { color: #991B1B; }
+    .table-wrap { overflow: auto; border-top: 1px solid #E5E7EB; }
+    table { width: 100%; border-collapse: collapse; min-width: 900px; }
+    th, td { padding: .7rem; border-bottom: 1px solid #E5E7EB; text-align: left; vertical-align: top; font-size: .76rem; }
+    th { position: sticky; top: 0; background: #F9FAFB; color: #374151; }
+    td.question { max-width: 380px; white-space: normal; word-break: break-word; }
+    .empty { padding: 2rem; text-align: center; color: #6B7280; }
+    a { color: #00695C; font-weight: 700; }
+  </style>
+</head>
+<body>
+  <main>
+    <section class="header">
+      <h1>Diagnóstico local do Assistente Imob</h1>
+      <p>Visualize perguntas sem resposta, avaliações e respostas apresentadas neste navegador.</p>
+      <p class="warning"><strong>Limitação importante:</strong> sem servidor ou aplicação externa, esta página não recebe dados de outros computadores ou celulares. Cada navegador mantém apenas os próprios registros.</p>
+      <a href="./index.html">Voltar para a plataforma</a>
+    </section>
+
+    <section id="summary" class="summary" aria-label="Resumo dos registros"></section>
+
+    <section class="card">
+      <div class="toolbar">
+        <select id="typeFilter" aria-label="Filtrar por tipo">
+          <option value="">Todos os registros</option>
+          <option value="pergunta_sem_resposta">Perguntas sem resposta</option>
+          <option value="pergunta_ambigua">Perguntas ambíguas</option>
+          <option value="resposta_exibida">Respostas exibidas</option>
+          <option value="feedback">Avaliações</option>
+        </select>
+        <input id="searchFilter" type="search" placeholder="Pesquisar pergunta ou categoria" aria-label="Pesquisar registros" />
+        <button id="exportCsv" class="primary" type="button">Exportar CSV</button>
+        <button id="exportJson" type="button">Exportar JSON</button>
+        <button id="clearLogs" class="danger" type="button">Limpar registros locais</button>
+      </div>
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr>
+              <th>Data e hora</th>
+              <th>Tipo</th>
+              <th>Empresa</th>
+              <th>Apelido</th>
+              <th>Pergunta</th>
+              <th>Categoria</th>
+              <th>Resposta/Avaliação</th>
+            </tr>
+          </thead>
+          <tbody id="logRows"></tbody>
+        </table>
+        <p id="emptyState" class="empty" hidden>Nenhum registro local encontrado.</p>
+      </div>
+    </section>
+  </main>
+
+  <script>
+    (function () {
+      'use strict';
+      const KEY = 'assistenteImob.logs.v4';
+      const rows = document.getElementById('logRows');
+      const empty = document.getElementById('emptyState');
+      const typeFilter = document.getElementById('typeFilter');
+      const searchFilter = document.getElementById('searchFilter');
+      const summary = document.getElementById('summary');
+
+      function readLogs() {
+        try { return JSON.parse(localStorage.getItem(KEY) || '[]'); }
+        catch (_) { return []; }
+      }
+
+      function escapeHtml(value) {
+        return String(value ?? '').replace(/[&<>'"]/g, (char) => ({
+          '&': '&amp;', '<': '&lt;', '>': '&gt;', "'": '&#39;', '"': '&quot;'
+        }[char]));
+      }
+
+      function labelType(type) {
+        return ({
+          pergunta_sem_resposta: 'Sem resposta',
+          pergunta_ambigua: 'Ambígua',
+          resposta_exibida: 'Resposta exibida',
+          resposta_confirmada: 'Resposta confirmada',
+          feedback: 'Avaliação'
+        })[type] || type || 'Registro';
+      }
+
+      function filteredLogs() {
+        const type = typeFilter.value;
+        const term = searchFilter.value.trim().toLowerCase();
+        return readLogs().filter((log) => {
+          const matchesType = !type || log.tipo === type;
+          const haystack = [log.pergunta, log.categoria, log.categoriaDetectada, log.respostaTitulo, log.avaliacao, log.empresa, log.apelido].join(' ').toLowerCase();
+          return matchesType && (!term || haystack.includes(term));
+        }).reverse();
+      }
+
+      function renderSummary(logs) {
+        const count = (type) => logs.filter((log) => log.tipo === type).length;
+        const negative = logs.filter((log) => log.tipo === 'feedback' && log.avaliacao === 'nao_ajudou').length;
+        summary.innerHTML = [
+          ['Total', logs.length],
+          ['Sem resposta', count('pergunta_sem_resposta')],
+          ['Ambíguas', count('pergunta_ambigua')],
+          ['Não ajudou', negative]
+        ].map(([label, value]) => `<article class="metric"><strong>${value}</strong><span>${label}</span></article>`).join('');
+      }
+
+      function render() {
+        const all = readLogs();
+        const logs = filteredLogs();
+        renderSummary(all);
+        rows.innerHTML = logs.map((log) => {
+          const date = log.dataHora ? new Date(log.dataHora).toLocaleString('pt-BR') : '';
+          const result = log.tipo === 'feedback'
+            ? log.avaliacao
+            : (log.respostaTitulo || log.respostaId || '');
+          return `<tr>
+            <td>${escapeHtml(date)}</td>
+            <td>${escapeHtml(labelType(log.tipo))}</td>
+            <td>${escapeHtml(log.empresa)}</td>
+            <td>${escapeHtml(log.apelido)}</td>
+            <td class="question">${escapeHtml(log.pergunta)}</td>
+            <td>${escapeHtml(log.categoria || log.categoriaDetectada)}</td>
+            <td>${escapeHtml(result)}</td>
+          </tr>`;
+        }).join('');
+        empty.hidden = logs.length > 0;
+      }
+
+      function download(name, type, content) {
+        const blob = new Blob([content], { type });
+        const url = URL.createObjectURL(blob);
+        const link = document.createElement('a');
+        link.href = url;
+        link.download = name;
+        document.body.appendChild(link);
+        link.click();
+        link.remove();
+        URL.revokeObjectURL(url);
+      }
+
+      document.getElementById('exportJson').addEventListener('click', () => {
+        download('assistente-imob-registros.json', 'application/json;charset=utf-8', JSON.stringify(filteredLogs(), null, 2));
+      });
+
+      document.getElementById('exportCsv').addEventListener('click', () => {
+        const headers = ['data_hora','tipo','empresa','apelido','pergunta','categoria','resposta','avaliacao'];
+        const quote = (value) => `"${String(value ?? '').replace(/"/g, '""')}"`;
+        const body = filteredLogs().map((log) => [
+          log.dataHora, log.tipo, log.empresa, log.apelido, log.pergunta,
+          log.categoria || log.categoriaDetectada, log.respostaTitulo || log.respostaId, log.avaliacao
+        ].map(quote).join(';'));
+        download('assistente-imob-registros.csv', 'text/csv;charset=utf-8', '\uFEFF' + [headers.join(';'), ...body].join('\n'));
+      });
+
+      document.getElementById('clearLogs').addEventListener('click', () => {
+        if (!confirm('Deseja apagar os registros deste navegador?')) return;
+        localStorage.removeItem(KEY);
+        render();
+      });
+
+      typeFilter.addEventListener('change', render);
+      searchFilter.addEventListener('input', render);
+      render();
+    }());
+  </script>
+</body>
+</html>

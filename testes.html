@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="icon" type="image/png" sizes="32x32" href="favicon-even-32.png?v=5.0.0" />
+  <link rel="shortcut icon" href="favicon-even.ico?v=5.0.0" />
+  <title>Testes da base — Assistente Imob</title>
+  <style>
+    * { box-sizing: border-box; }
+    body { margin: 0; background: #F3F4F6; color: #1F2937; font-family: Inter, Arial, sans-serif; }
+    main { width: min(1050px, calc(100% - 2rem)); margin: 2rem auto; }
+    header, section { background: #FFF; border-radius: 1rem; box-shadow: 0 10px 30px rgba(0,0,0,.07); }
+    header { padding: 1.4rem; border-top: .35rem solid #002D28; }
+    h1 { margin: 0; color: #002D28; }
+    .summary { display: flex; flex-wrap: wrap; gap: .7rem; margin: 1rem 0; }
+    .badge { border-radius: 999px; padding: .5rem .8rem; font-weight: 800; }
+    .ok { background: #DCFCE7; color: #166534; }
+    .fail { background: #FEE2E2; color: #991B1B; }
+    table { width: 100%; border-collapse: collapse; }
+    th, td { padding: .75rem; border-bottom: 1px solid #E5E7EB; text-align: left; font-size: .82rem; vertical-align: top; }
+    th { background: #F9FAFB; }
+    .table-wrap { overflow: auto; }
+    a { color: #00695C; font-weight: 700; }
+  </style>
+</head>
+<body data-assistant-test="true">
+  <main>
+    <header>
+      <h1>Testes automáticos da base</h1>
+      <p>Esta página verifica se perguntas importantes continuam sendo encaminhadas para a categoria correta.</p>
+      <a href="./index.html">Voltar para a plataforma</a>
+    </header>
+    <div id="summary" class="summary"></div>
+    <section class="table-wrap">
+      <table>
+        <thead><tr><th>Resultado</th><th>Pergunta</th><th>Esperado</th><th>Encontrado</th><th>Orientação</th><th>Confiança</th></tr></thead>
+        <tbody id="results"></tbody>
+      </table>
+    </section>
+    <div id="assistantMessages" hidden></div>
+  </main>
+
+  <script src="base-conhecimento.js?v=5.0.0"></script>
+  <script src="chatbot.js?v=5.0.0"></script>
+  <script>
+    window.addEventListener('DOMContentLoaded', () => {
+      const cases = [
+        ['Como atualizar um cliente?', 'Hypnobox'],
+        ['Como faço uma oferta ativa?', 'Hypnobox'],
+        ['Quero cadastrar uma proposta para o cliente', 'Hypnobox'],
+        ['Não consigo encontrar um cliente na carteira', 'Hypnobox'],
+        ['Meu código de seis dígitos não funciona', 'Google Authenticator'],
+        ['Como trocar o Google Authenticator de celular?', 'Google Authenticator'],
+        ['Como alterar a senha do webmail?', 'Webmail'],
+        ['Como configurar o e-mail no Outlook?', 'Webmail'],
+        ['Qual Webmail devo acessar?', 'Webmail'],
+        ['Qual o link do Hypnobox?', 'Hypnobox'],
+        ['Qual é meu e-mail corporativo?', 'Credenciais'],
+        ['Quanto tempo o cliente fica na minha carteira?', 'Hypnobox'],
+        ['Meu cliente expirou, o que faço?', 'Hypnobox'],
+        ['Quanto tempo a FAC fica na base do gerente?', 'Hypnobox'],
+        ['Meu cliente foi para a base da empresa', 'Hypnobox'],
+        ['Comentário atualiza o cliente?', 'Hypnobox'],
+        ['O Portal do Corretor não abre', 'Portal do Corretor'],
+        ['Esqueci a senha do SIGAV', 'SIGAV'],
+        ['Como abrir um chamado para o TI?', 'Suporte']
+      ];
+
+      const results = cases.map(([question, expected]) => {
+        const found = window.AssistenteImobDebug.testarPergunta(question);
+        return { question, expected, ...found, ok: found.categoria === expected };
+      });
+
+      const passed = results.filter((item) => item.ok).length;
+      document.getElementById('summary').innerHTML = `
+        <span class="badge ${passed === results.length ? 'ok' : 'fail'}">${passed}/${results.length} aprovados</span>
+        <span class="badge ok">Base ${window.BASE_CONHECIMENTO_IMOB_META?.versao || ''}</span>`;
+
+      document.getElementById('results').innerHTML = results.map((item) => `
+        <tr>
+          <td><span class="badge ${item.ok ? 'ok' : 'fail'}">${item.ok ? 'OK' : 'REVISAR'}</span></td>
+          <td>${item.question}</td>
+          <td>${item.expected}</td>
+          <td>${item.categoria || 'Nenhuma'}</td>
+          <td>${item.titulo || 'Nenhuma'}</td>
+          <td>${item.confianca} (${item.pontuacao.toFixed(1)})</td>
+        </tr>`).join('');
+    });
+  </script>
+</body>
+</html>

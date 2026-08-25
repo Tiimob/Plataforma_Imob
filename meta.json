@@ -1,0 +1,29 @@
+{
+  "versao": "5.0.0",
+  "atualizadoEm": "2026-08-25",
+  "revisadoPor": "TI Imob",
+  "armazenamento": "Local no navegador",
+  "quantidade": 78,
+  "fontes": [
+    {
+      "titulo": "Manual oficial do Hypnobox",
+      "url": "https://documentacao.senior.com.br/hypnobox/manual-do-usuario/sobre-ferramenta/sobre-hypnobox/"
+    },
+    {
+      "titulo": "Regras internas Even Vendas — Gestão de Leads e Clientes",
+      "referencia": "Orientação interna fornecida pelo TI"
+    },
+    {
+      "titulo": "Central de ajuda SkyMail",
+      "url": "https://suporte.skynova.com.br/hc/pt-br"
+    },
+    {
+      "titulo": "Guia de Uso do CRM Sigavi 360",
+      "referencia": "PDF fornecido ao TI"
+    },
+    {
+      "titulo": "Ajuda oficial da Conta do Google — Google Authenticator",
+      "url": "https://support.google.com/accounts/answer/1066447?hl=pt-BR"
+    }
+  ]
+}
