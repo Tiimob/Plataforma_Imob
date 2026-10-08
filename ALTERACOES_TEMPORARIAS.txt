@@ -1,0 +1,24 @@
+PLATAFORMA IMOB — ALTERAÇÕES DA VERSÃO TEMPORÁRIA 5.0.1-temp
+
+Base utilizada:
+- Pacote enviado pelo usuário: Plataforma_Imob-main.zip
+- A base enviada identifica-se internamente como versão 5.0.0.
+
+Alterações:
+1. Restaurada a tela inicial de seleção entre Even More e Even Vendas.
+2. Even More:
+   - E-mail @emci.com.br
+   - Webmail http://webmail.emci.com.br
+   - Hypnobox https://evenmore.hypnobox.com.br
+3. Even Vendas:
+   - E-mail @evci.com.br
+   - Webmail http://webmail.evci.com.br
+   - Hypnobox https://even.hypnobox.com.br
+4. Portal do Corretor e SIGAV permanecem comuns às duas operações.
+5. Modal de suporte volta a registrar a empresa selecionada.
+6. Assistente Imob abre links conforme a operação selecionada.
+7. Orientações de credenciais/Webmail/Hypnobox foram ajustadas para reconhecer os dois ambientes.
+8. Mantida a observação de que regras internas de processo continuam homologadas para Even Vendas.
+9. Cache/PWA e referências de versão atualizados.
+
+Esta versão é temporária e pode ser revertida quando os terceiros concluírem a unificação.
