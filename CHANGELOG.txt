@@ -1,0 +1,8 @@
+VERSÃO 5.2.0 — 11/11/2026
+
+- Unificação concluída: operação exclusiva Even Vendas.
+- Removida seleção temporária Even More / Even Vendas.
+- Removidos avisos temporários de migração.
+- Mantidos somente domínio e links oficiais da Even Vendas.
+- Assistente Imob mantém orientação sobre a descontinuação da Even More.
+- Cache/PWA atualizado para a nova versão.
